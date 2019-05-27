@@ -1,0 +1,1549 @@
+<?xml version="1.0" standalone="yes"?>
+<Configuration xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CurrentConfigDataStores.xsd">
+	<Header>
+		<Configurator>TF6420 Database Configurator 3.0</Configurator>
+		<Timestamp>2019-02-19T10:41:04</Timestamp>
+		<FileVersion>2.1</FileVersion>
+		<TargetSystemNetID>5.57.13.50.1.1</TargetSystemNetID>
+	</Header>
+	<GlobalConfig>
+		<GCfg Name="LogMode">1</GCfg>
+		<GCfg Name="LogPath">C:\TwinCAT\Functions\TF6420-Database-Server\Win32\Server</GCfg>
+		<GCfg Name="MaxLogFileSize">10</GCfg>
+		<GCfg Name="Impersonate">0</GCfg>
+		<GCfg Name="DBNULLAllowed">False</GCfg>
+		<GCfg Name="DBConnectionTimeout">30</GCfg>
+		<GCfg Name="DBCommandTimeout">60</GCfg>
+		<GCfg Name="MaxByteArrayLength">256</GCfg>
+		<GCfg Name="MaxStringLength">256</GCfg>
+		<GCfg Name="WSTRINGSupportActive">False</GCfg>
+		<GCfg Name="PwdInfos">tZuYPxhe+G5NKHWLYSZE+NiFAINdlcBgtIUVD+KtAffYMzM0tUkS3UP+UE5RlbvBr6+DyS4B7iAQXD/H9KK8GSR3/OSHNUufHbjb39qcS+b3vYEeYLSNuv9XUuhgctjJ4qEMzdUvjpY=</GCfg>
+	</GlobalConfig>
+	<BaseConfig>
+		<DataStores>
+			<Databases>
+				<Database Type="12" Name="DB">
+					<DBId>1</DBId>
+					<DBServer>ingine01.iptime.org</DBServer>
+					<DBDatabase>inwave</DBDatabase>
+					<DBUserId>root</DBUserId>
+					<DBPort>3306</DBPort>
+				</Database>
+				<Database Type="12" Name="SCADADB">
+					<DBId>2</DBId>
+					<DBServer>localhost</DBServer>
+					<DBDatabase>SCADA_jeju</DBDatabase>
+					<DBUserId>root</DBUserId>
+					<DBPort>3306</DBPort>
+				</Database>
+			</Databases>
+		</DataStores>
+		<Devices>
+			<AdsDevice DeviceName="AdsDevice">
+				<DeviceId>1</DeviceId>
+				<NetID>5.57.13.50.1.1</NetID>
+				<Port>851</Port>
+				<ADSReadWriteSetting>1</ADSReadWriteSetting>
+			</AdsDevice>
+			<AdsDevice DeviceName="AdsDevice">
+				<DeviceId>2</DeviceId>
+				<NetID>127.0.0.1.1.1</NetID>
+				<Port>851</Port>
+				<ADSReadWriteSetting>1</ADSReadWriteSetting>
+			</AdsDevice>
+		</Devices>
+		<AutoLogGroups>
+			<AutoLogGroup Name="AutoBools">
+				<AutoLogGrpID>1</AutoLogGrpID>
+				<StartUp>AUTOSTART</StartUp>
+				<Direction>DeviceAsSource</Direction>
+				<WriteSettings>
+					<WriteMode>APPEND</WriteMode>
+				</WriteSettings>
+				<SamplingSettings>
+					<SamplingMode>onChange</SamplingMode>
+					<SamplingRate>100</SamplingRate>
+				</SamplingSettings>
+				<Database>
+					<DBId>1</DBId>
+					<DBTable Name="sttable">
+						<ID>1</ID>
+						<TableMode>STANDARD</TableMode>
+						<FailoverTableName>
+						</FailoverTableName>
+					</DBTable>
+				</Database>
+				<Device>
+					<DeviceId>1</DeviceId>
+					<Timeout>2000</Timeout>
+				</Device>
+				<Symbols>
+					<AdsSymbol ID="1" Type="BOOL" IGroup="16448" IOffset="621340" BitSize="8" AllocationName="Alarm">GVL.Alarm</AdsSymbol>
+					<AdsSymbol ID="2" Type="BOOL" IGroup="16448" IOffset="621341" BitSize="8" AllocationName="Alarm_Clear">GVL.Alarm_Clear</AdsSymbol>
+					<AdsSymbol ID="7" Type="BOOL" IGroup="16448" IOffset="13271233" BitSize="8" AllocationName="bbrake">GVL.bbrake</AdsSymbol>
+					<AdsSymbol ID="8" Type="BOOL" IGroup="16448" IOffset="627004" BitSize="8" AllocationName="bbrakeoff">GVL.bbrakeoff</AdsSymbol>
+					<AdsSymbol ID="9" Type="BOOL" IGroup="16448" IOffset="626989" BitSize="8" AllocationName="bbrakeon">GVL.bbrakeon</AdsSymbol>
+					<AdsSymbol ID="10" Type="BOOL" IGroup="16448" IOffset="13271230" BitSize="8" AllocationName="bbrakeonoff">GVL.bbrakeonoff</AdsSymbol>
+					<AdsSymbol ID="11" Type="BOOL" IGroup="16448" IOffset="13271303" BitSize="8" AllocationName="bGen">GVL.bGen</AdsSymbol>
+					<AdsSymbol ID="12" Type="BOOL" IGroup="16448" IOffset="13271342" BitSize="8" AllocationName="bInverter">GVL.bInverter</AdsSymbol>
+					<AdsSymbol ID="13" Type="BOOL" IGroup="16448" IOffset="13271351" BitSize="8" AllocationName="bInverterLocal">GVL.bInverterLocal</AdsSymbol>
+					<AdsSymbol ID="14" Type="BOOL" IGroup="16448" IOffset="13271348" BitSize="8" AllocationName="bInverterLocalRemote">GVL.bInverterLocalRemote</AdsSymbol>
+					<AdsSymbol ID="15" Type="BOOL" IGroup="16448" IOffset="13271345" BitSize="8" AllocationName="bInverteronoff">GVL.bInverteronoff</AdsSymbol>
+					<AdsSymbol ID="16" Type="BOOL" IGroup="16448" IOffset="13271354" BitSize="8" AllocationName="bInverterRemote">GVL.bInverterRemote</AdsSymbol>
+					<AdsSymbol ID="17" Type="BOOL" IGroup="16448" IOffset="627007" BitSize="8" AllocationName="bmode">GVL.bmode</AdsSymbol>
+					<AdsSymbol ID="18" Type="BOOL" IGroup="16448" IOffset="13271239" BitSize="8" AllocationName="bmodeinv">GVL.bmodeinv</AdsSymbol>
+					<AdsSymbol ID="19" Type="BOOL" IGroup="16448" IOffset="626988" BitSize="8" AllocationName="bSystemOn">GVL.bSystemOn</AdsSymbol>
+					<AdsSymbol ID="20" Type="BOOL" IGroup="16448" IOffset="13271236" BitSize="8" AllocationName="Gen_on">GVL.Gen_on</AdsSymbol>
+					<AdsSymbol ID="21" Type="BOOL" IGroup="16448" IOffset="13271300" BitSize="8" AllocationName="Gen_onoff">GVL.Gen_onoff</AdsSymbol>
+					<AdsSymbol ID="42" Type="BOOL" IGroup="16448" IOffset="13271339" BitSize="8" AllocationName="INoff">GVL.INoff</AdsSymbol>
+					<AdsSymbol ID="43" Type="BOOL" IGroup="16448" IOffset="13271336" BitSize="8" AllocationName="INon">GVL.INon</AdsSymbol>
+					<AdsSymbol ID="48" Type="BOOL" IGroup="16448" IOffset="13271306" BitSize="8" AllocationName="RopeAlarm">GVL.RopeAlarm</AdsSymbol>
+					<AdsSymbol ID="57" Type="BOOL" IGroup="16448" IOffset="13271307" BitSize="8" AllocationName="Wavemeteronoff">GVL.Wavemeteronoff</AdsSymbol>
+					<AdsSymbol ID="58" Type="BOOL" IGroup="16448" IOffset="13271357" BitSize="8" AllocationName="Wavemeteronoffsig">GVL.Wavemeteronoffsig</AdsSymbol>
+					<AdsSymbol ID="3" Type="BOOL" IGroup="16448" IOffset="13395038" BitSize="8" AllocationName="Estop">GVL.Estop</AdsSymbol>
+					<AdsSymbol ID="4" Type="BOOL" IGroup="16448" IOffset="13395039" BitSize="8" AllocationName="SeqStop">GVL.SeqStop</AdsSymbol>
+					<AdsSymbol ID="5" Type="BOOL" IGroup="16448" IOffset="13450891" BitSize="8" AllocationName="SimulationSwitch">GVL.SimulationSwitch</AdsSymbol>
+				</Symbols>
+			</AutoLogGroup>
+			<AutoLogGroup Name="Generator">
+				<AutoLogGrpID>2</AutoLogGrpID>
+				<StartUp>AUTOSTART</StartUp>
+				<Direction>DeviceAsSource</Direction>
+				<WriteSettings>
+					<WriteMode>APPEND</WriteMode>
+				</WriteSettings>
+				<SamplingSettings>
+					<SamplingMode>cyclic</SamplingMode>
+					<SamplingRate>20</SamplingRate>
+				</SamplingSettings>
+				<Database>
+					<DBId>1</DBId>
+					<DBTable Name="generator">
+						<ID>2</ID>
+						<TableMode>CUSTOM</TableMode>
+						<FailoverTableName>
+						</FailoverTableName>
+						<Columns>
+							<Column Type="0" Mode="AUTOID" SymbolID="0">ID</Column>
+							<Column Type="8" Mode="TIMESTAMP" SymbolID="0">Timestamp</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="4">GenSpeed1</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="5">GenSpeed2</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="6">GenSpeed3</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="7">GenTorque1</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="8">GenTorque2</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="9">GenTorque3</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="10">GenVoltage1</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="11">GenVoltage2</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="12">GenVoltage3</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="1">GenCurrent1</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="2">GenCurrent2</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="3">GenCurrent3</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="13">GenWatt1</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="14">GenWatt2</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="15">GenWatt3</Column>
+						</Columns>
+					</DBTable>
+				</Database>
+				<Device>
+					<DeviceId>1</DeviceId>
+					<Timeout>2000</Timeout>
+				</Device>
+				<Symbols>
+					<AdsSymbol ID="1" Type="REAL" IGroup="16448" IOffset="13450872" BitSize="32" AllocationName="GenAmp[1]">GVL.GenAmp[1]</AdsSymbol>
+					<AdsSymbol ID="2" Type="REAL" IGroup="16448" IOffset="13450876" BitSize="32" AllocationName="GenAmp[2]">GVL.GenAmp[2]</AdsSymbol>
+					<AdsSymbol ID="3" Type="REAL" IGroup="16448" IOffset="13450880" BitSize="32" AllocationName="GenAmp[3]">GVL.GenAmp[3]</AdsSymbol>
+					<AdsSymbol ID="4" Type="REAL" IGroup="16448" IOffset="13450824" BitSize="32" AllocationName="GenSpeed[1]">GVL.GenSpeed[1]</AdsSymbol>
+					<AdsSymbol ID="5" Type="REAL" IGroup="16448" IOffset="13450828" BitSize="32" AllocationName="GenSpeed[2]">GVL.GenSpeed[2]</AdsSymbol>
+					<AdsSymbol ID="6" Type="REAL" IGroup="16448" IOffset="13450832" BitSize="32" AllocationName="GenSpeed[3]">GVL.GenSpeed[3]</AdsSymbol>
+					<AdsSymbol ID="7" Type="REAL" IGroup="16448" IOffset="13450836" BitSize="32" AllocationName="GenTorque[1]">GVL.GenTorque[1]</AdsSymbol>
+					<AdsSymbol ID="8" Type="REAL" IGroup="16448" IOffset="13450840" BitSize="32" AllocationName="GenTorque[2]">GVL.GenTorque[2]</AdsSymbol>
+					<AdsSymbol ID="9" Type="REAL" IGroup="16448" IOffset="13450844" BitSize="32" AllocationName="GenTorque[3]">GVL.GenTorque[3]</AdsSymbol>
+					<AdsSymbol ID="10" Type="REAL" IGroup="16448" IOffset="13450860" BitSize="32" AllocationName="GenVoltage[1]">GVL.GenVoltage[1]</AdsSymbol>
+					<AdsSymbol ID="11" Type="REAL" IGroup="16448" IOffset="13450864" BitSize="32" AllocationName="GenVoltage[2]">GVL.GenVoltage[2]</AdsSymbol>
+					<AdsSymbol ID="12" Type="REAL" IGroup="16448" IOffset="13450868" BitSize="32" AllocationName="GenVoltage[3]">GVL.GenVoltage[3]</AdsSymbol>
+					<AdsSymbol ID="13" Type="REAL" IGroup="16448" IOffset="13450848" BitSize="32" AllocationName="GenWatt[1]">GVL.GenWatt[1]</AdsSymbol>
+					<AdsSymbol ID="14" Type="REAL" IGroup="16448" IOffset="13450852" BitSize="32" AllocationName="GenWatt[2]">GVL.GenWatt[2]</AdsSymbol>
+					<AdsSymbol ID="15" Type="REAL" IGroup="16448" IOffset="13450856" BitSize="32" AllocationName="GenWatt[3]">GVL.GenWatt[3]</AdsSymbol>
+				</Symbols>
+			</AutoLogGroup>
+			<AutoLogGroup Name="Temperature">
+				<AutoLogGrpID>5</AutoLogGrpID>
+				<StartUp>AUTOSTART</StartUp>
+				<Direction>DeviceAsSource</Direction>
+				<WriteSettings>
+					<WriteMode>APPEND</WriteMode>
+				</WriteSettings>
+				<SamplingSettings>
+					<SamplingMode>onChange</SamplingMode>
+					<SamplingRate>1000</SamplingRate>
+				</SamplingSettings>
+				<Database>
+					<DBId>1</DBId>
+					<DBTable Name="temperature">
+						<ID>5</ID>
+						<TableMode>CUSTOM</TableMode>
+						<FailoverTableName>
+						</FailoverTableName>
+						<Columns>
+							<Column Type="0" Mode="AUTOID" SymbolID="0">ID</Column>
+							<Column Type="8" Mode="TIMESTAMP" SymbolID="0">Timestamp</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="1">Gen1</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="2">Gen2</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="3">Gen3</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="4">Genoil1</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="5">Genoil2</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="6">Genoil3</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="7">Inv1</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="8">Inv2</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="9">Inv3</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="10">Room1</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="11">Room2</Column>
+						</Columns>
+					</DBTable>
+				</Database>
+				<Device>
+					<DeviceId>1</DeviceId>
+					<Timeout>2000</Timeout>
+				</Device>
+				<Symbols>
+					<AdsSymbol ID="1" Type="REAL" IGroup="16448" IOffset="13260244" BitSize="32" AllocationName="GenTemp[1]">GVL.GenTemp[1]</AdsSymbol>
+					<AdsSymbol ID="2" Type="REAL" IGroup="16448" IOffset="13260248" BitSize="32" AllocationName="GenTemp[2]">GVL.GenTemp[2]</AdsSymbol>
+					<AdsSymbol ID="3" Type="REAL" IGroup="16448" IOffset="13260252" BitSize="32" AllocationName="GenTemp[3]">GVL.GenTemp[3]</AdsSymbol>
+					<AdsSymbol ID="4" Type="REAL" IGroup="16448" IOffset="13271320" BitSize="32" AllocationName="GenOilTemp[1]">GVL.GenOilTemp[1]</AdsSymbol>
+					<AdsSymbol ID="5" Type="REAL" IGroup="16448" IOffset="13271324" BitSize="32" AllocationName="GenOilTemp[2]">GVL.GenOilTemp[2]</AdsSymbol>
+					<AdsSymbol ID="6" Type="REAL" IGroup="16448" IOffset="13271328" BitSize="32" AllocationName="GenOilTemp[3]">GVL.GenOilTemp[3]</AdsSymbol>
+					<AdsSymbol ID="7" Type="REAL" IGroup="16448" IOffset="13681656" BitSize="32" AllocationName="InvTemp[1]">GVL.InvTemp[1]</AdsSymbol>
+					<AdsSymbol ID="8" Type="REAL" IGroup="16448" IOffset="13681660" BitSize="32" AllocationName="InvTemp[2]">GVL.InvTemp[2]</AdsSymbol>
+					<AdsSymbol ID="9" Type="REAL" IGroup="16448" IOffset="13681664" BitSize="32" AllocationName="InvTemp[3]">GVL.InvTemp[3]</AdsSymbol>
+					<AdsSymbol ID="10" Type="REAL" IGroup="16448" IOffset="541756" BitSize="32" AllocationName="RoomTemp[1]">GVL.RoomTemp[1]</AdsSymbol>
+					<AdsSymbol ID="11" Type="REAL" IGroup="16448" IOffset="541760" BitSize="32" AllocationName="RoomTemp[2]">GVL.RoomTemp[2]</AdsSymbol>
+					<AdsSymbol ID="12" Type="REAL" IGroup="16448" IOffset="13451016" BitSize="32" AllocationName="IGBTTemp">GVL.IGBTTemp</AdsSymbol>
+				</Symbols>
+			</AutoLogGroup>
+			<AutoLogGroup Name="WaveMeter">
+				<AutoLogGrpID>6</AutoLogGrpID>
+				<StartUp>AUTOSTART</StartUp>
+				<Direction>DeviceAsSource</Direction>
+				<WriteSettings>
+					<WriteMode>APPEND</WriteMode>
+				</WriteSettings>
+				<SamplingSettings>
+					<SamplingMode>onChange</SamplingMode>
+					<SamplingRate>600000</SamplingRate>
+				</SamplingSettings>
+				<Database>
+					<DBId>1</DBId>
+					<DBTable Name="wavemeter">
+						<ID>6</ID>
+						<TableMode>CUSTOM</TableMode>
+						<FailoverTableName>
+						</FailoverTableName>
+						<Columns>
+							<Column Type="0" Mode="AUTOID" SymbolID="0">ID</Column>
+							<Column Type="8" Mode="TIMESTAMP" SymbolID="0">Timestamp</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="4">Hight</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="1">Direction</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="3">Frequency</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="2">WaveEN</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="5">WaterTemp</Column>
+						</Columns>
+					</DBTable>
+				</Database>
+				<Device>
+					<DeviceId>1</DeviceId>
+					<Timeout>2000</Timeout>
+				</Device>
+				<Symbols>
+					<AdsSymbol ID="1" Type="REAL" IGroup="16448" IOffset="13451040" BitSize="32" AllocationName="Wavedirection">GVL.Wavedirection</AdsSymbol>
+					<AdsSymbol ID="2" Type="REAL" IGroup="16448" IOffset="13451152" BitSize="32" AllocationName="WaveEnEst">GVL.WaveEnEst</AdsSymbol>
+					<AdsSymbol ID="3" Type="REAL" IGroup="16448" IOffset="13451060" BitSize="32" AllocationName="WaveFrq">GVL.WaveFrq</AdsSymbol>
+					<AdsSymbol ID="4" Type="REAL" IGroup="16448" IOffset="13451052" BitSize="32" AllocationName="Wavehight">GVL.Wavehight</AdsSymbol>
+					<AdsSymbol ID="5" Type="REAL" IGroup="16448" IOffset="13451048" BitSize="32" AllocationName="watertemp">GVL.watertemp</AdsSymbol>
+				</Symbols>
+			</AutoLogGroup>
+			<AutoLogGroup Name="Gen_wh">
+				<AutoLogGrpID>7</AutoLogGrpID>
+				<StartUp>AUTOSTART</StartUp>
+				<Direction>DeviceAsSource</Direction>
+				<WriteSettings>
+					<WriteMode>APPEND</WriteMode>
+				</WriteSettings>
+				<SamplingSettings>
+					<SamplingMode>cyclic</SamplingMode>
+					<SamplingRate>500</SamplingRate>
+				</SamplingSettings>
+				<Database>
+					<DBId>1</DBId>
+					<DBTable Name="wh_made">
+						<ID>7</ID>
+						<TableMode>CUSTOM</TableMode>
+						<FailoverTableName>
+						</FailoverTableName>
+						<Columns>
+							<Column Type="0" Mode="AUTOID" SymbolID="0">ID</Column>
+							<Column Type="8" Mode="TIMESTAMP" SymbolID="0">Timestamp</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="2">Pure</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="1">PTO</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="3">Total</Column>
+						</Columns>
+					</DBTable>
+				</Database>
+				<Device>
+					<DeviceId>2</DeviceId>
+					<Timeout>2000</Timeout>
+				</Device>
+				<Symbols>
+					<AdsSymbol ID="1" Type="REAL" IGroup="16448" IOffset="541884" BitSize="32" AllocationName="kwh_PTO">GVL.kwh_PTO</AdsSymbol>
+					<AdsSymbol ID="2" Type="REAL" IGroup="16448" IOffset="541776" BitSize="32" AllocationName="kwh_Pure">GVL.kwh_Pure</AdsSymbol>
+					<AdsSymbol ID="3" Type="REAL" IGroup="16448" IOffset="548840" BitSize="32" AllocationName="kwh_Total">GVL.kwh_Total</AdsSymbol>
+				</Symbols>
+			</AutoLogGroup>
+			<AutoLogGroup Name="PowerMeter">
+				<AutoLogGrpID>8</AutoLogGrpID>
+				<StartUp>AUTOSTART</StartUp>
+				<Direction>DeviceAsSource</Direction>
+				<WriteSettings>
+					<WriteMode>APPEND</WriteMode>
+				</WriteSettings>
+				<SamplingSettings>
+					<SamplingMode>cyclic</SamplingMode>
+					<SamplingRate>100</SamplingRate>
+				</SamplingSettings>
+				<Database>
+					<DBId>1</DBId>
+					<DBTable Name="powermeter">
+						<ID>8</ID>
+						<TableMode>CUSTOM</TableMode>
+						<FailoverTableName>
+						</FailoverTableName>
+						<Columns>
+							<Column Type="0" Mode="AUTOID" SymbolID="0">ID</Column>
+							<Column Type="8" Mode="TIMESTAMP" SymbolID="0">Timestamp</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="1">AVG_V</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="2">AVG_I</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="3">R_I</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="4">S_I</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="5">T_I</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="6">A_V</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="7">B_V</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="8">C_V</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="9">AB_V</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="10">BC_V</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="11">CA_V</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="12">powerfactor</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="13">Total_W</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="14">Total_VAR</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="15">TotalVA</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="16">Frequency</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="18">P_W</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="17">P_VAR</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="19">P_VA</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="20">la_L</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="21">lb_L</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="22">lc_L</Column>
+						</Columns>
+					</DBTable>
+				</Database>
+				<Device>
+					<DeviceId>1</DeviceId>
+					<Timeout>2000</Timeout>
+				</Device>
+				<Symbols>
+					<AdsSymbol ID="1" Type="REAL" IGroup="16448" IOffset="13260264" BitSize="32" AllocationName="PowerMeter.Avg_V">MAIN.PowerMeter.Avg_V</AdsSymbol>
+					<AdsSymbol ID="2" Type="REAL" IGroup="16448" IOffset="13260268" BitSize="32" AllocationName="PowerMeter.Avg_I">MAIN.PowerMeter.Avg_I</AdsSymbol>
+					<AdsSymbol ID="3" Type="REAL" IGroup="16448" IOffset="13260272" BitSize="32" AllocationName="PowerMeter.R_I">MAIN.PowerMeter.R_I</AdsSymbol>
+					<AdsSymbol ID="4" Type="REAL" IGroup="16448" IOffset="13260276" BitSize="32" AllocationName="PowerMeter.S_I">MAIN.PowerMeter.S_I</AdsSymbol>
+					<AdsSymbol ID="5" Type="REAL" IGroup="16448" IOffset="13260280" BitSize="32" AllocationName="PowerMeter.T_I">MAIN.PowerMeter.T_I</AdsSymbol>
+					<AdsSymbol ID="6" Type="REAL" IGroup="16448" IOffset="13260284" BitSize="32" AllocationName="PowerMeter.A_V">MAIN.PowerMeter.A_V</AdsSymbol>
+					<AdsSymbol ID="7" Type="REAL" IGroup="16448" IOffset="13260288" BitSize="32" AllocationName="PowerMeter.B_V">MAIN.PowerMeter.B_V</AdsSymbol>
+					<AdsSymbol ID="8" Type="REAL" IGroup="16448" IOffset="13260292" BitSize="32" AllocationName="PowerMeter.C_V">MAIN.PowerMeter.C_V</AdsSymbol>
+					<AdsSymbol ID="9" Type="REAL" IGroup="16448" IOffset="13260296" BitSize="32" AllocationName="PowerMeter.AB_V">MAIN.PowerMeter.AB_V</AdsSymbol>
+					<AdsSymbol ID="10" Type="REAL" IGroup="16448" IOffset="13260300" BitSize="32" AllocationName="PowerMeter.BC_V">MAIN.PowerMeter.BC_V</AdsSymbol>
+					<AdsSymbol ID="11" Type="REAL" IGroup="16448" IOffset="13260304" BitSize="32" AllocationName="PowerMeter.CA_V">MAIN.PowerMeter.CA_V</AdsSymbol>
+					<AdsSymbol ID="12" Type="REAL" IGroup="16448" IOffset="13260308" BitSize="32" AllocationName="PowerMeter.pf">MAIN.PowerMeter.pf</AdsSymbol>
+					<AdsSymbol ID="13" Type="REAL" IGroup="16448" IOffset="13260312" BitSize="32" AllocationName="PowerMeter.Total_W">MAIN.PowerMeter.Total_W</AdsSymbol>
+					<AdsSymbol ID="14" Type="REAL" IGroup="16448" IOffset="13260316" BitSize="32" AllocationName="PowerMeter.Total_VAR">MAIN.PowerMeter.Total_VAR</AdsSymbol>
+					<AdsSymbol ID="15" Type="REAL" IGroup="16448" IOffset="13260320" BitSize="32" AllocationName="PowerMeter.Total_VA">MAIN.PowerMeter.Total_VA</AdsSymbol>
+					<AdsSymbol ID="16" Type="REAL" IGroup="16448" IOffset="13260324" BitSize="32" AllocationName="PowerMeter.Freq">MAIN.PowerMeter.Freq</AdsSymbol>
+					<AdsSymbol ID="17" Type="REAL" IGroup="16448" IOffset="13260328" BitSize="32" AllocationName="PowerMeter.P_VAR">MAIN.PowerMeter.P_VAR</AdsSymbol>
+					<AdsSymbol ID="18" Type="REAL" IGroup="16448" IOffset="13260332" BitSize="32" AllocationName="PowerMeter.P_W">MAIN.PowerMeter.P_W</AdsSymbol>
+					<AdsSymbol ID="19" Type="REAL" IGroup="16448" IOffset="13260336" BitSize="32" AllocationName="PowerMeter.P_VA">MAIN.PowerMeter.P_VA</AdsSymbol>
+					<AdsSymbol ID="20" Type="REAL" IGroup="16448" IOffset="13260340" BitSize="32" AllocationName="PowerMeter.la_L">MAIN.PowerMeter.la_L</AdsSymbol>
+					<AdsSymbol ID="21" Type="REAL" IGroup="16448" IOffset="13260344" BitSize="32" AllocationName="PowerMeter.lb_L">MAIN.PowerMeter.lb_L</AdsSymbol>
+					<AdsSymbol ID="22" Type="REAL" IGroup="16448" IOffset="13260348" BitSize="32" AllocationName="PowerMeter.lc_L">MAIN.PowerMeter.lc_L</AdsSymbol>
+				</Symbols>
+			</AutoLogGroup>
+			<AutoLogGroup Name="GridInverter">
+				<AutoLogGrpID>9</AutoLogGrpID>
+				<StartUp>AUTOSTART</StartUp>
+				<Direction>DeviceAsSource</Direction>
+				<WriteSettings>
+					<WriteMode>APPEND</WriteMode>
+				</WriteSettings>
+				<SamplingSettings>
+					<SamplingMode>cyclic</SamplingMode>
+					<SamplingRate>100</SamplingRate>
+				</SamplingSettings>
+				<Database>
+					<DBId>1</DBId>
+					<DBTable Name="gridigbt">
+						<ID>9</ID>
+						<TableMode>CUSTOM</TableMode>
+						<FailoverTableName>
+						</FailoverTableName>
+						<Columns>
+							<Column Type="0" Mode="AUTOID" SymbolID="0">ID</Column>
+							<Column Type="8" Mode="TIMESTAMP" SymbolID="0">Timestamp</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="2">AC_Power_W</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="1">AC_Current_A</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="8">AC_Voltage_V</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="6">DC_Power_W</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="4">DC_Current_A</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="5">DC_Voltage_V</Column>
+						</Columns>
+					</DBTable>
+				</Database>
+				<Device>
+					<DeviceId>1</DeviceId>
+					<Timeout>2000</Timeout>
+				</Device>
+				<Symbols>
+					<AdsSymbol ID="4" Type="REAL" IGroup="16448" IOffset="541868" BitSize="32" AllocationName="IGBT_I_dc">GVL.IGBT_I_dc</AdsSymbol>
+					<AdsSymbol ID="5" Type="REAL" IGroup="16448" IOffset="541780" BitSize="32" AllocationName="IGBT_V_dc">GVL.IGBT_V_dc</AdsSymbol>
+					<AdsSymbol ID="6" Type="REAL" IGroup="16448" IOffset="541876" BitSize="32" AllocationName="IGBT_W_dc">GVL.IGBT_W_dc</AdsSymbol>
+					<AdsSymbol ID="1" Type="REAL" IGroup="16448" IOffset="13451012" BitSize="32" AllocationName="IGBT_I_AC">GVL.IGBT_I_AC</AdsSymbol>
+					<AdsSymbol ID="8" Type="REAL" IGroup="16448" IOffset="13451008" BitSize="32" AllocationName="IGBT_V_AC">GVL.IGBT_V_AC</AdsSymbol>
+					<AdsSymbol ID="2" Type="REAL" IGroup="16448" IOffset="13451160" BitSize="32" AllocationName="TotalGenIGBT">GVL.TotalGenIGBT</AdsSymbol>
+				</Symbols>
+			</AutoLogGroup>
+			<AutoLogGroup Name="Watthour">
+				<AutoLogGrpID>11</AutoLogGrpID>
+				<StartUp>AUTOSTART</StartUp>
+				<Direction>DeviceAsSource</Direction>
+				<WriteSettings>
+					<WriteMode>APPEND</WriteMode>
+				</WriteSettings>
+				<SamplingSettings>
+					<SamplingMode>onChange</SamplingMode>
+					<SamplingRate>3600000</SamplingRate>
+				</SamplingSettings>
+				<Database>
+					<DBId>1</DBId>
+					<DBTable Name="wh_hour">
+						<ID>11</ID>
+						<TableMode>STANDARD</TableMode>
+						<FailoverTableName>
+						</FailoverTableName>
+					</DBTable>
+				</Database>
+				<Device>
+					<DeviceId>1</DeviceId>
+					<Timeout>2000</Timeout>
+				</Device>
+				<Symbols>
+					<AdsSymbol ID="6" Type="REAL" IGroup="16448" IOffset="13388796" BitSize="32" AllocationName="SCADAdata.Power_hour[1]">MAIN.SCADAdata.Power_hour[1]</AdsSymbol>
+					<AdsSymbol ID="7" Type="REAL" IGroup="16448" IOffset="13388800" BitSize="32" AllocationName="SCADAdata.Power_hour[2]">MAIN.SCADAdata.Power_hour[2]</AdsSymbol>
+					<AdsSymbol ID="8" Type="REAL" IGroup="16448" IOffset="13388804" BitSize="32" AllocationName="SCADAdata.Power_hour[3]">MAIN.SCADAdata.Power_hour[3]</AdsSymbol>
+					<AdsSymbol ID="9" Type="REAL" IGroup="16448" IOffset="13388808" BitSize="32" AllocationName="SCADAdata.Power_hour[4]">MAIN.SCADAdata.Power_hour[4]</AdsSymbol>
+					<AdsSymbol ID="10" Type="REAL" IGroup="16448" IOffset="13388812" BitSize="32" AllocationName="SCADAdata.Power_hour[5]">MAIN.SCADAdata.Power_hour[5]</AdsSymbol>
+					<AdsSymbol ID="11" Type="REAL" IGroup="16448" IOffset="13388816" BitSize="32" AllocationName="SCADAdata.Power_hour[6]">MAIN.SCADAdata.Power_hour[6]</AdsSymbol>
+					<AdsSymbol ID="12" Type="REAL" IGroup="16448" IOffset="13388820" BitSize="32" AllocationName="SCADAdata.Power_hour[7]">MAIN.SCADAdata.Power_hour[7]</AdsSymbol>
+					<AdsSymbol ID="13" Type="REAL" IGroup="16448" IOffset="13388824" BitSize="32" AllocationName="SCADAdata.Power_hour[8]">MAIN.SCADAdata.Power_hour[8]</AdsSymbol>
+					<AdsSymbol ID="14" Type="REAL" IGroup="16448" IOffset="13388828" BitSize="32" AllocationName="SCADAdata.Power_hour[9]">MAIN.SCADAdata.Power_hour[9]</AdsSymbol>
+					<AdsSymbol ID="15" Type="REAL" IGroup="16448" IOffset="13388832" BitSize="32" AllocationName="SCADAdata.Power_hour[10]">MAIN.SCADAdata.Power_hour[10]</AdsSymbol>
+					<AdsSymbol ID="16" Type="REAL" IGroup="16448" IOffset="13388836" BitSize="32" AllocationName="SCADAdata.Power_hour[11]">MAIN.SCADAdata.Power_hour[11]</AdsSymbol>
+					<AdsSymbol ID="17" Type="REAL" IGroup="16448" IOffset="13388840" BitSize="32" AllocationName="SCADAdata.Power_hour[12]">MAIN.SCADAdata.Power_hour[12]</AdsSymbol>
+					<AdsSymbol ID="18" Type="REAL" IGroup="16448" IOffset="13388844" BitSize="32" AllocationName="SCADAdata.Power_hour[13]">MAIN.SCADAdata.Power_hour[13]</AdsSymbol>
+					<AdsSymbol ID="19" Type="REAL" IGroup="16448" IOffset="13388848" BitSize="32" AllocationName="SCADAdata.Power_hour[14]">MAIN.SCADAdata.Power_hour[14]</AdsSymbol>
+					<AdsSymbol ID="20" Type="REAL" IGroup="16448" IOffset="13388852" BitSize="32" AllocationName="SCADAdata.Power_hour[15]">MAIN.SCADAdata.Power_hour[15]</AdsSymbol>
+					<AdsSymbol ID="21" Type="REAL" IGroup="16448" IOffset="13388856" BitSize="32" AllocationName="SCADAdata.Power_hour[16]">MAIN.SCADAdata.Power_hour[16]</AdsSymbol>
+					<AdsSymbol ID="22" Type="REAL" IGroup="16448" IOffset="13388860" BitSize="32" AllocationName="SCADAdata.Power_hour[17]">MAIN.SCADAdata.Power_hour[17]</AdsSymbol>
+					<AdsSymbol ID="23" Type="REAL" IGroup="16448" IOffset="13388864" BitSize="32" AllocationName="SCADAdata.Power_hour[18]">MAIN.SCADAdata.Power_hour[18]</AdsSymbol>
+					<AdsSymbol ID="24" Type="REAL" IGroup="16448" IOffset="13388868" BitSize="32" AllocationName="SCADAdata.Power_hour[19]">MAIN.SCADAdata.Power_hour[19]</AdsSymbol>
+					<AdsSymbol ID="25" Type="REAL" IGroup="16448" IOffset="13388872" BitSize="32" AllocationName="SCADAdata.Power_hour[20]">MAIN.SCADAdata.Power_hour[20]</AdsSymbol>
+					<AdsSymbol ID="26" Type="REAL" IGroup="16448" IOffset="13388876" BitSize="32" AllocationName="SCADAdata.Power_hour[21]">MAIN.SCADAdata.Power_hour[21]</AdsSymbol>
+					<AdsSymbol ID="27" Type="REAL" IGroup="16448" IOffset="13388880" BitSize="32" AllocationName="SCADAdata.Power_hour[22]">MAIN.SCADAdata.Power_hour[22]</AdsSymbol>
+					<AdsSymbol ID="28" Type="REAL" IGroup="16448" IOffset="13388884" BitSize="32" AllocationName="SCADAdata.Power_hour[23]">MAIN.SCADAdata.Power_hour[23]</AdsSymbol>
+					<AdsSymbol ID="29" Type="REAL" IGroup="16448" IOffset="13388888" BitSize="32" AllocationName="SCADAdata.Power_hour[24]">MAIN.SCADAdata.Power_hour[24]</AdsSymbol>
+				</Symbols>
+			</AutoLogGroup>
+			<AutoLogGroup Name="WattDay">
+				<AutoLogGrpID>15</AutoLogGrpID>
+				<StartUp>AUTOSTART</StartUp>
+				<Direction>DeviceAsSource</Direction>
+				<WriteSettings>
+					<WriteMode>APPEND</WriteMode>
+				</WriteSettings>
+				<SamplingSettings>
+					<SamplingMode>onChange</SamplingMode>
+					<SamplingRate>43200000</SamplingRate>
+				</SamplingSettings>
+				<Database>
+					<DBId>1</DBId>
+					<DBTable Name="wh_day">
+						<ID>15</ID>
+						<TableMode>STANDARD</TableMode>
+						<FailoverTableName>
+						</FailoverTableName>
+					</DBTable>
+				</Database>
+				<Device>
+					<DeviceId>2</DeviceId>
+					<Timeout>2000</Timeout>
+				</Device>
+				<Symbols>
+					<AdsSymbol ID="2" Type="REAL" IGroup="16448" IOffset="13387412" BitSize="32" AllocationName="SCADAdata.Power_day[1]">MAIN.SCADAdata.Power_day[1]</AdsSymbol>
+					<AdsSymbol ID="3" Type="REAL" IGroup="16448" IOffset="13387416" BitSize="32" AllocationName="SCADAdata.Power_day[2]">MAIN.SCADAdata.Power_day[2]</AdsSymbol>
+					<AdsSymbol ID="4" Type="REAL" IGroup="16448" IOffset="13387420" BitSize="32" AllocationName="SCADAdata.Power_day[3]">MAIN.SCADAdata.Power_day[3]</AdsSymbol>
+					<AdsSymbol ID="5" Type="REAL" IGroup="16448" IOffset="13387424" BitSize="32" AllocationName="SCADAdata.Power_day[4]">MAIN.SCADAdata.Power_day[4]</AdsSymbol>
+					<AdsSymbol ID="6" Type="REAL" IGroup="16448" IOffset="13387428" BitSize="32" AllocationName="SCADAdata.Power_day[5]">MAIN.SCADAdata.Power_day[5]</AdsSymbol>
+					<AdsSymbol ID="7" Type="REAL" IGroup="16448" IOffset="13387432" BitSize="32" AllocationName="SCADAdata.Power_day[6]">MAIN.SCADAdata.Power_day[6]</AdsSymbol>
+					<AdsSymbol ID="8" Type="REAL" IGroup="16448" IOffset="13387436" BitSize="32" AllocationName="SCADAdata.Power_day[7]">MAIN.SCADAdata.Power_day[7]</AdsSymbol>
+					<AdsSymbol ID="9" Type="REAL" IGroup="16448" IOffset="13387440" BitSize="32" AllocationName="SCADAdata.Power_day[8]">MAIN.SCADAdata.Power_day[8]</AdsSymbol>
+					<AdsSymbol ID="10" Type="REAL" IGroup="16448" IOffset="13387444" BitSize="32" AllocationName="SCADAdata.Power_day[9]">MAIN.SCADAdata.Power_day[9]</AdsSymbol>
+					<AdsSymbol ID="11" Type="REAL" IGroup="16448" IOffset="13387448" BitSize="32" AllocationName="SCADAdata.Power_day[10]">MAIN.SCADAdata.Power_day[10]</AdsSymbol>
+					<AdsSymbol ID="12" Type="REAL" IGroup="16448" IOffset="13387452" BitSize="32" AllocationName="SCADAdata.Power_day[11]">MAIN.SCADAdata.Power_day[11]</AdsSymbol>
+					<AdsSymbol ID="13" Type="REAL" IGroup="16448" IOffset="13387456" BitSize="32" AllocationName="SCADAdata.Power_day[12]">MAIN.SCADAdata.Power_day[12]</AdsSymbol>
+					<AdsSymbol ID="14" Type="REAL" IGroup="16448" IOffset="13387460" BitSize="32" AllocationName="SCADAdata.Power_day[13]">MAIN.SCADAdata.Power_day[13]</AdsSymbol>
+					<AdsSymbol ID="15" Type="REAL" IGroup="16448" IOffset="13387464" BitSize="32" AllocationName="SCADAdata.Power_day[14]">MAIN.SCADAdata.Power_day[14]</AdsSymbol>
+					<AdsSymbol ID="16" Type="REAL" IGroup="16448" IOffset="13387468" BitSize="32" AllocationName="SCADAdata.Power_day[15]">MAIN.SCADAdata.Power_day[15]</AdsSymbol>
+					<AdsSymbol ID="17" Type="REAL" IGroup="16448" IOffset="13387472" BitSize="32" AllocationName="SCADAdata.Power_day[16]">MAIN.SCADAdata.Power_day[16]</AdsSymbol>
+					<AdsSymbol ID="18" Type="REAL" IGroup="16448" IOffset="13387476" BitSize="32" AllocationName="SCADAdata.Power_day[17]">MAIN.SCADAdata.Power_day[17]</AdsSymbol>
+					<AdsSymbol ID="19" Type="REAL" IGroup="16448" IOffset="13387480" BitSize="32" AllocationName="SCADAdata.Power_day[18]">MAIN.SCADAdata.Power_day[18]</AdsSymbol>
+					<AdsSymbol ID="20" Type="REAL" IGroup="16448" IOffset="13387484" BitSize="32" AllocationName="SCADAdata.Power_day[19]">MAIN.SCADAdata.Power_day[19]</AdsSymbol>
+					<AdsSymbol ID="21" Type="REAL" IGroup="16448" IOffset="13387488" BitSize="32" AllocationName="SCADAdata.Power_day[20]">MAIN.SCADAdata.Power_day[20]</AdsSymbol>
+					<AdsSymbol ID="22" Type="REAL" IGroup="16448" IOffset="13387492" BitSize="32" AllocationName="SCADAdata.Power_day[21]">MAIN.SCADAdata.Power_day[21]</AdsSymbol>
+					<AdsSymbol ID="23" Type="REAL" IGroup="16448" IOffset="13387496" BitSize="32" AllocationName="SCADAdata.Power_day[22]">MAIN.SCADAdata.Power_day[22]</AdsSymbol>
+					<AdsSymbol ID="24" Type="REAL" IGroup="16448" IOffset="13387500" BitSize="32" AllocationName="SCADAdata.Power_day[23]">MAIN.SCADAdata.Power_day[23]</AdsSymbol>
+					<AdsSymbol ID="25" Type="REAL" IGroup="16448" IOffset="13387504" BitSize="32" AllocationName="SCADAdata.Power_day[24]">MAIN.SCADAdata.Power_day[24]</AdsSymbol>
+					<AdsSymbol ID="26" Type="REAL" IGroup="16448" IOffset="13387508" BitSize="32" AllocationName="SCADAdata.Power_day[25]">MAIN.SCADAdata.Power_day[25]</AdsSymbol>
+					<AdsSymbol ID="27" Type="REAL" IGroup="16448" IOffset="13387512" BitSize="32" AllocationName="SCADAdata.Power_day[26]">MAIN.SCADAdata.Power_day[26]</AdsSymbol>
+					<AdsSymbol ID="28" Type="REAL" IGroup="16448" IOffset="13387516" BitSize="32" AllocationName="SCADAdata.Power_day[27]">MAIN.SCADAdata.Power_day[27]</AdsSymbol>
+					<AdsSymbol ID="29" Type="REAL" IGroup="16448" IOffset="13387520" BitSize="32" AllocationName="SCADAdata.Power_day[28]">MAIN.SCADAdata.Power_day[28]</AdsSymbol>
+					<AdsSymbol ID="30" Type="REAL" IGroup="16448" IOffset="13387524" BitSize="32" AllocationName="SCADAdata.Power_day[29]">MAIN.SCADAdata.Power_day[29]</AdsSymbol>
+					<AdsSymbol ID="31" Type="REAL" IGroup="16448" IOffset="13387528" BitSize="32" AllocationName="SCADAdata.Power_day[30]">MAIN.SCADAdata.Power_day[30]</AdsSymbol>
+					<AdsSymbol ID="32" Type="REAL" IGroup="16448" IOffset="13387532" BitSize="32" AllocationName="SCADAdata.Power_day[31]">MAIN.SCADAdata.Power_day[31]</AdsSymbol>
+					<AdsSymbol ID="33" Type="REAL" IGroup="16448" IOffset="13387536" BitSize="32" AllocationName="SCADAdata.Power_day[32]">MAIN.SCADAdata.Power_day[32]</AdsSymbol>
+					<AdsSymbol ID="34" Type="REAL" IGroup="16448" IOffset="13387540" BitSize="32" AllocationName="SCADAdata.Power_day[33]">MAIN.SCADAdata.Power_day[33]</AdsSymbol>
+					<AdsSymbol ID="35" Type="REAL" IGroup="16448" IOffset="13387544" BitSize="32" AllocationName="SCADAdata.Power_day[34]">MAIN.SCADAdata.Power_day[34]</AdsSymbol>
+					<AdsSymbol ID="36" Type="REAL" IGroup="16448" IOffset="13387548" BitSize="32" AllocationName="SCADAdata.Power_day[35]">MAIN.SCADAdata.Power_day[35]</AdsSymbol>
+					<AdsSymbol ID="37" Type="REAL" IGroup="16448" IOffset="13387552" BitSize="32" AllocationName="SCADAdata.Power_day[36]">MAIN.SCADAdata.Power_day[36]</AdsSymbol>
+					<AdsSymbol ID="38" Type="REAL" IGroup="16448" IOffset="13387556" BitSize="32" AllocationName="SCADAdata.Power_day[37]">MAIN.SCADAdata.Power_day[37]</AdsSymbol>
+					<AdsSymbol ID="39" Type="REAL" IGroup="16448" IOffset="13387560" BitSize="32" AllocationName="SCADAdata.Power_day[38]">MAIN.SCADAdata.Power_day[38]</AdsSymbol>
+					<AdsSymbol ID="40" Type="REAL" IGroup="16448" IOffset="13387564" BitSize="32" AllocationName="SCADAdata.Power_day[39]">MAIN.SCADAdata.Power_day[39]</AdsSymbol>
+					<AdsSymbol ID="41" Type="REAL" IGroup="16448" IOffset="13387568" BitSize="32" AllocationName="SCADAdata.Power_day[40]">MAIN.SCADAdata.Power_day[40]</AdsSymbol>
+					<AdsSymbol ID="42" Type="REAL" IGroup="16448" IOffset="13387572" BitSize="32" AllocationName="SCADAdata.Power_day[41]">MAIN.SCADAdata.Power_day[41]</AdsSymbol>
+					<AdsSymbol ID="43" Type="REAL" IGroup="16448" IOffset="13387576" BitSize="32" AllocationName="SCADAdata.Power_day[42]">MAIN.SCADAdata.Power_day[42]</AdsSymbol>
+					<AdsSymbol ID="44" Type="REAL" IGroup="16448" IOffset="13387580" BitSize="32" AllocationName="SCADAdata.Power_day[43]">MAIN.SCADAdata.Power_day[43]</AdsSymbol>
+					<AdsSymbol ID="45" Type="REAL" IGroup="16448" IOffset="13387584" BitSize="32" AllocationName="SCADAdata.Power_day[44]">MAIN.SCADAdata.Power_day[44]</AdsSymbol>
+					<AdsSymbol ID="46" Type="REAL" IGroup="16448" IOffset="13387588" BitSize="32" AllocationName="SCADAdata.Power_day[45]">MAIN.SCADAdata.Power_day[45]</AdsSymbol>
+					<AdsSymbol ID="47" Type="REAL" IGroup="16448" IOffset="13387592" BitSize="32" AllocationName="SCADAdata.Power_day[46]">MAIN.SCADAdata.Power_day[46]</AdsSymbol>
+					<AdsSymbol ID="48" Type="REAL" IGroup="16448" IOffset="13387596" BitSize="32" AllocationName="SCADAdata.Power_day[47]">MAIN.SCADAdata.Power_day[47]</AdsSymbol>
+					<AdsSymbol ID="49" Type="REAL" IGroup="16448" IOffset="13387600" BitSize="32" AllocationName="SCADAdata.Power_day[48]">MAIN.SCADAdata.Power_day[48]</AdsSymbol>
+					<AdsSymbol ID="50" Type="REAL" IGroup="16448" IOffset="13387604" BitSize="32" AllocationName="SCADAdata.Power_day[49]">MAIN.SCADAdata.Power_day[49]</AdsSymbol>
+					<AdsSymbol ID="51" Type="REAL" IGroup="16448" IOffset="13387608" BitSize="32" AllocationName="SCADAdata.Power_day[50]">MAIN.SCADAdata.Power_day[50]</AdsSymbol>
+					<AdsSymbol ID="52" Type="REAL" IGroup="16448" IOffset="13387612" BitSize="32" AllocationName="SCADAdata.Power_day[51]">MAIN.SCADAdata.Power_day[51]</AdsSymbol>
+					<AdsSymbol ID="53" Type="REAL" IGroup="16448" IOffset="13387616" BitSize="32" AllocationName="SCADAdata.Power_day[52]">MAIN.SCADAdata.Power_day[52]</AdsSymbol>
+					<AdsSymbol ID="54" Type="REAL" IGroup="16448" IOffset="13387620" BitSize="32" AllocationName="SCADAdata.Power_day[53]">MAIN.SCADAdata.Power_day[53]</AdsSymbol>
+					<AdsSymbol ID="55" Type="REAL" IGroup="16448" IOffset="13387624" BitSize="32" AllocationName="SCADAdata.Power_day[54]">MAIN.SCADAdata.Power_day[54]</AdsSymbol>
+					<AdsSymbol ID="56" Type="REAL" IGroup="16448" IOffset="13387628" BitSize="32" AllocationName="SCADAdata.Power_day[55]">MAIN.SCADAdata.Power_day[55]</AdsSymbol>
+					<AdsSymbol ID="57" Type="REAL" IGroup="16448" IOffset="13387632" BitSize="32" AllocationName="SCADAdata.Power_day[56]">MAIN.SCADAdata.Power_day[56]</AdsSymbol>
+					<AdsSymbol ID="58" Type="REAL" IGroup="16448" IOffset="13387636" BitSize="32" AllocationName="SCADAdata.Power_day[57]">MAIN.SCADAdata.Power_day[57]</AdsSymbol>
+					<AdsSymbol ID="59" Type="REAL" IGroup="16448" IOffset="13387640" BitSize="32" AllocationName="SCADAdata.Power_day[58]">MAIN.SCADAdata.Power_day[58]</AdsSymbol>
+					<AdsSymbol ID="60" Type="REAL" IGroup="16448" IOffset="13387644" BitSize="32" AllocationName="SCADAdata.Power_day[59]">MAIN.SCADAdata.Power_day[59]</AdsSymbol>
+					<AdsSymbol ID="61" Type="REAL" IGroup="16448" IOffset="13387648" BitSize="32" AllocationName="SCADAdata.Power_day[60]">MAIN.SCADAdata.Power_day[60]</AdsSymbol>
+					<AdsSymbol ID="62" Type="REAL" IGroup="16448" IOffset="13387652" BitSize="32" AllocationName="SCADAdata.Power_day[61]">MAIN.SCADAdata.Power_day[61]</AdsSymbol>
+					<AdsSymbol ID="63" Type="REAL" IGroup="16448" IOffset="13387656" BitSize="32" AllocationName="SCADAdata.Power_day[62]">MAIN.SCADAdata.Power_day[62]</AdsSymbol>
+					<AdsSymbol ID="64" Type="REAL" IGroup="16448" IOffset="13387660" BitSize="32" AllocationName="SCADAdata.Power_day[63]">MAIN.SCADAdata.Power_day[63]</AdsSymbol>
+					<AdsSymbol ID="65" Type="REAL" IGroup="16448" IOffset="13387664" BitSize="32" AllocationName="SCADAdata.Power_day[64]">MAIN.SCADAdata.Power_day[64]</AdsSymbol>
+					<AdsSymbol ID="66" Type="REAL" IGroup="16448" IOffset="13387668" BitSize="32" AllocationName="SCADAdata.Power_day[65]">MAIN.SCADAdata.Power_day[65]</AdsSymbol>
+					<AdsSymbol ID="67" Type="REAL" IGroup="16448" IOffset="13387672" BitSize="32" AllocationName="SCADAdata.Power_day[66]">MAIN.SCADAdata.Power_day[66]</AdsSymbol>
+					<AdsSymbol ID="68" Type="REAL" IGroup="16448" IOffset="13387676" BitSize="32" AllocationName="SCADAdata.Power_day[67]">MAIN.SCADAdata.Power_day[67]</AdsSymbol>
+					<AdsSymbol ID="69" Type="REAL" IGroup="16448" IOffset="13387680" BitSize="32" AllocationName="SCADAdata.Power_day[68]">MAIN.SCADAdata.Power_day[68]</AdsSymbol>
+					<AdsSymbol ID="70" Type="REAL" IGroup="16448" IOffset="13387684" BitSize="32" AllocationName="SCADAdata.Power_day[69]">MAIN.SCADAdata.Power_day[69]</AdsSymbol>
+					<AdsSymbol ID="71" Type="REAL" IGroup="16448" IOffset="13387688" BitSize="32" AllocationName="SCADAdata.Power_day[70]">MAIN.SCADAdata.Power_day[70]</AdsSymbol>
+					<AdsSymbol ID="72" Type="REAL" IGroup="16448" IOffset="13387692" BitSize="32" AllocationName="SCADAdata.Power_day[71]">MAIN.SCADAdata.Power_day[71]</AdsSymbol>
+					<AdsSymbol ID="73" Type="REAL" IGroup="16448" IOffset="13387696" BitSize="32" AllocationName="SCADAdata.Power_day[72]">MAIN.SCADAdata.Power_day[72]</AdsSymbol>
+					<AdsSymbol ID="74" Type="REAL" IGroup="16448" IOffset="13387700" BitSize="32" AllocationName="SCADAdata.Power_day[73]">MAIN.SCADAdata.Power_day[73]</AdsSymbol>
+					<AdsSymbol ID="75" Type="REAL" IGroup="16448" IOffset="13387704" BitSize="32" AllocationName="SCADAdata.Power_day[74]">MAIN.SCADAdata.Power_day[74]</AdsSymbol>
+					<AdsSymbol ID="76" Type="REAL" IGroup="16448" IOffset="13387708" BitSize="32" AllocationName="SCADAdata.Power_day[75]">MAIN.SCADAdata.Power_day[75]</AdsSymbol>
+					<AdsSymbol ID="77" Type="REAL" IGroup="16448" IOffset="13387712" BitSize="32" AllocationName="SCADAdata.Power_day[76]">MAIN.SCADAdata.Power_day[76]</AdsSymbol>
+					<AdsSymbol ID="78" Type="REAL" IGroup="16448" IOffset="13387716" BitSize="32" AllocationName="SCADAdata.Power_day[77]">MAIN.SCADAdata.Power_day[77]</AdsSymbol>
+					<AdsSymbol ID="79" Type="REAL" IGroup="16448" IOffset="13387720" BitSize="32" AllocationName="SCADAdata.Power_day[78]">MAIN.SCADAdata.Power_day[78]</AdsSymbol>
+					<AdsSymbol ID="80" Type="REAL" IGroup="16448" IOffset="13387724" BitSize="32" AllocationName="SCADAdata.Power_day[79]">MAIN.SCADAdata.Power_day[79]</AdsSymbol>
+					<AdsSymbol ID="81" Type="REAL" IGroup="16448" IOffset="13387728" BitSize="32" AllocationName="SCADAdata.Power_day[80]">MAIN.SCADAdata.Power_day[80]</AdsSymbol>
+					<AdsSymbol ID="82" Type="REAL" IGroup="16448" IOffset="13387732" BitSize="32" AllocationName="SCADAdata.Power_day[81]">MAIN.SCADAdata.Power_day[81]</AdsSymbol>
+					<AdsSymbol ID="83" Type="REAL" IGroup="16448" IOffset="13387736" BitSize="32" AllocationName="SCADAdata.Power_day[82]">MAIN.SCADAdata.Power_day[82]</AdsSymbol>
+					<AdsSymbol ID="84" Type="REAL" IGroup="16448" IOffset="13387740" BitSize="32" AllocationName="SCADAdata.Power_day[83]">MAIN.SCADAdata.Power_day[83]</AdsSymbol>
+					<AdsSymbol ID="85" Type="REAL" IGroup="16448" IOffset="13387744" BitSize="32" AllocationName="SCADAdata.Power_day[84]">MAIN.SCADAdata.Power_day[84]</AdsSymbol>
+					<AdsSymbol ID="86" Type="REAL" IGroup="16448" IOffset="13387748" BitSize="32" AllocationName="SCADAdata.Power_day[85]">MAIN.SCADAdata.Power_day[85]</AdsSymbol>
+					<AdsSymbol ID="87" Type="REAL" IGroup="16448" IOffset="13387752" BitSize="32" AllocationName="SCADAdata.Power_day[86]">MAIN.SCADAdata.Power_day[86]</AdsSymbol>
+					<AdsSymbol ID="88" Type="REAL" IGroup="16448" IOffset="13387756" BitSize="32" AllocationName="SCADAdata.Power_day[87]">MAIN.SCADAdata.Power_day[87]</AdsSymbol>
+					<AdsSymbol ID="89" Type="REAL" IGroup="16448" IOffset="13387760" BitSize="32" AllocationName="SCADAdata.Power_day[88]">MAIN.SCADAdata.Power_day[88]</AdsSymbol>
+					<AdsSymbol ID="90" Type="REAL" IGroup="16448" IOffset="13387764" BitSize="32" AllocationName="SCADAdata.Power_day[89]">MAIN.SCADAdata.Power_day[89]</AdsSymbol>
+					<AdsSymbol ID="91" Type="REAL" IGroup="16448" IOffset="13387768" BitSize="32" AllocationName="SCADAdata.Power_day[90]">MAIN.SCADAdata.Power_day[90]</AdsSymbol>
+					<AdsSymbol ID="92" Type="REAL" IGroup="16448" IOffset="13387772" BitSize="32" AllocationName="SCADAdata.Power_day[91]">MAIN.SCADAdata.Power_day[91]</AdsSymbol>
+					<AdsSymbol ID="93" Type="REAL" IGroup="16448" IOffset="13387776" BitSize="32" AllocationName="SCADAdata.Power_day[92]">MAIN.SCADAdata.Power_day[92]</AdsSymbol>
+					<AdsSymbol ID="94" Type="REAL" IGroup="16448" IOffset="13387780" BitSize="32" AllocationName="SCADAdata.Power_day[93]">MAIN.SCADAdata.Power_day[93]</AdsSymbol>
+					<AdsSymbol ID="95" Type="REAL" IGroup="16448" IOffset="13387784" BitSize="32" AllocationName="SCADAdata.Power_day[94]">MAIN.SCADAdata.Power_day[94]</AdsSymbol>
+					<AdsSymbol ID="96" Type="REAL" IGroup="16448" IOffset="13387788" BitSize="32" AllocationName="SCADAdata.Power_day[95]">MAIN.SCADAdata.Power_day[95]</AdsSymbol>
+					<AdsSymbol ID="97" Type="REAL" IGroup="16448" IOffset="13387792" BitSize="32" AllocationName="SCADAdata.Power_day[96]">MAIN.SCADAdata.Power_day[96]</AdsSymbol>
+					<AdsSymbol ID="98" Type="REAL" IGroup="16448" IOffset="13387796" BitSize="32" AllocationName="SCADAdata.Power_day[97]">MAIN.SCADAdata.Power_day[97]</AdsSymbol>
+					<AdsSymbol ID="99" Type="REAL" IGroup="16448" IOffset="13387800" BitSize="32" AllocationName="SCADAdata.Power_day[98]">MAIN.SCADAdata.Power_day[98]</AdsSymbol>
+					<AdsSymbol ID="100" Type="REAL" IGroup="16448" IOffset="13387804" BitSize="32" AllocationName="SCADAdata.Power_day[99]">MAIN.SCADAdata.Power_day[99]</AdsSymbol>
+					<AdsSymbol ID="101" Type="REAL" IGroup="16448" IOffset="13387808" BitSize="32" AllocationName="SCADAdata.Power_day[100]">MAIN.SCADAdata.Power_day[100]</AdsSymbol>
+					<AdsSymbol ID="102" Type="REAL" IGroup="16448" IOffset="13387812" BitSize="32" AllocationName="SCADAdata.Power_day[101]">MAIN.SCADAdata.Power_day[101]</AdsSymbol>
+					<AdsSymbol ID="103" Type="REAL" IGroup="16448" IOffset="13387816" BitSize="32" AllocationName="SCADAdata.Power_day[102]">MAIN.SCADAdata.Power_day[102]</AdsSymbol>
+					<AdsSymbol ID="104" Type="REAL" IGroup="16448" IOffset="13387820" BitSize="32" AllocationName="SCADAdata.Power_day[103]">MAIN.SCADAdata.Power_day[103]</AdsSymbol>
+					<AdsSymbol ID="105" Type="REAL" IGroup="16448" IOffset="13387824" BitSize="32" AllocationName="SCADAdata.Power_day[104]">MAIN.SCADAdata.Power_day[104]</AdsSymbol>
+					<AdsSymbol ID="106" Type="REAL" IGroup="16448" IOffset="13387828" BitSize="32" AllocationName="SCADAdata.Power_day[105]">MAIN.SCADAdata.Power_day[105]</AdsSymbol>
+					<AdsSymbol ID="107" Type="REAL" IGroup="16448" IOffset="13387832" BitSize="32" AllocationName="SCADAdata.Power_day[106]">MAIN.SCADAdata.Power_day[106]</AdsSymbol>
+					<AdsSymbol ID="108" Type="REAL" IGroup="16448" IOffset="13387836" BitSize="32" AllocationName="SCADAdata.Power_day[107]">MAIN.SCADAdata.Power_day[107]</AdsSymbol>
+					<AdsSymbol ID="109" Type="REAL" IGroup="16448" IOffset="13387840" BitSize="32" AllocationName="SCADAdata.Power_day[108]">MAIN.SCADAdata.Power_day[108]</AdsSymbol>
+					<AdsSymbol ID="110" Type="REAL" IGroup="16448" IOffset="13387844" BitSize="32" AllocationName="SCADAdata.Power_day[109]">MAIN.SCADAdata.Power_day[109]</AdsSymbol>
+					<AdsSymbol ID="111" Type="REAL" IGroup="16448" IOffset="13387848" BitSize="32" AllocationName="SCADAdata.Power_day[110]">MAIN.SCADAdata.Power_day[110]</AdsSymbol>
+					<AdsSymbol ID="112" Type="REAL" IGroup="16448" IOffset="13387852" BitSize="32" AllocationName="SCADAdata.Power_day[111]">MAIN.SCADAdata.Power_day[111]</AdsSymbol>
+					<AdsSymbol ID="113" Type="REAL" IGroup="16448" IOffset="13387856" BitSize="32" AllocationName="SCADAdata.Power_day[112]">MAIN.SCADAdata.Power_day[112]</AdsSymbol>
+					<AdsSymbol ID="114" Type="REAL" IGroup="16448" IOffset="13387860" BitSize="32" AllocationName="SCADAdata.Power_day[113]">MAIN.SCADAdata.Power_day[113]</AdsSymbol>
+					<AdsSymbol ID="115" Type="REAL" IGroup="16448" IOffset="13387864" BitSize="32" AllocationName="SCADAdata.Power_day[114]">MAIN.SCADAdata.Power_day[114]</AdsSymbol>
+					<AdsSymbol ID="116" Type="REAL" IGroup="16448" IOffset="13387868" BitSize="32" AllocationName="SCADAdata.Power_day[115]">MAIN.SCADAdata.Power_day[115]</AdsSymbol>
+					<AdsSymbol ID="117" Type="REAL" IGroup="16448" IOffset="13387872" BitSize="32" AllocationName="SCADAdata.Power_day[116]">MAIN.SCADAdata.Power_day[116]</AdsSymbol>
+					<AdsSymbol ID="118" Type="REAL" IGroup="16448" IOffset="13387876" BitSize="32" AllocationName="SCADAdata.Power_day[117]">MAIN.SCADAdata.Power_day[117]</AdsSymbol>
+					<AdsSymbol ID="119" Type="REAL" IGroup="16448" IOffset="13387880" BitSize="32" AllocationName="SCADAdata.Power_day[118]">MAIN.SCADAdata.Power_day[118]</AdsSymbol>
+					<AdsSymbol ID="120" Type="REAL" IGroup="16448" IOffset="13387884" BitSize="32" AllocationName="SCADAdata.Power_day[119]">MAIN.SCADAdata.Power_day[119]</AdsSymbol>
+					<AdsSymbol ID="121" Type="REAL" IGroup="16448" IOffset="13387888" BitSize="32" AllocationName="SCADAdata.Power_day[120]">MAIN.SCADAdata.Power_day[120]</AdsSymbol>
+					<AdsSymbol ID="122" Type="REAL" IGroup="16448" IOffset="13387892" BitSize="32" AllocationName="SCADAdata.Power_day[121]">MAIN.SCADAdata.Power_day[121]</AdsSymbol>
+					<AdsSymbol ID="123" Type="REAL" IGroup="16448" IOffset="13387896" BitSize="32" AllocationName="SCADAdata.Power_day[122]">MAIN.SCADAdata.Power_day[122]</AdsSymbol>
+					<AdsSymbol ID="124" Type="REAL" IGroup="16448" IOffset="13387900" BitSize="32" AllocationName="SCADAdata.Power_day[123]">MAIN.SCADAdata.Power_day[123]</AdsSymbol>
+					<AdsSymbol ID="125" Type="REAL" IGroup="16448" IOffset="13387904" BitSize="32" AllocationName="SCADAdata.Power_day[124]">MAIN.SCADAdata.Power_day[124]</AdsSymbol>
+					<AdsSymbol ID="126" Type="REAL" IGroup="16448" IOffset="13387908" BitSize="32" AllocationName="SCADAdata.Power_day[125]">MAIN.SCADAdata.Power_day[125]</AdsSymbol>
+					<AdsSymbol ID="127" Type="REAL" IGroup="16448" IOffset="13387912" BitSize="32" AllocationName="SCADAdata.Power_day[126]">MAIN.SCADAdata.Power_day[126]</AdsSymbol>
+					<AdsSymbol ID="128" Type="REAL" IGroup="16448" IOffset="13387916" BitSize="32" AllocationName="SCADAdata.Power_day[127]">MAIN.SCADAdata.Power_day[127]</AdsSymbol>
+					<AdsSymbol ID="129" Type="REAL" IGroup="16448" IOffset="13387920" BitSize="32" AllocationName="SCADAdata.Power_day[128]">MAIN.SCADAdata.Power_day[128]</AdsSymbol>
+					<AdsSymbol ID="130" Type="REAL" IGroup="16448" IOffset="13387924" BitSize="32" AllocationName="SCADAdata.Power_day[129]">MAIN.SCADAdata.Power_day[129]</AdsSymbol>
+					<AdsSymbol ID="131" Type="REAL" IGroup="16448" IOffset="13387928" BitSize="32" AllocationName="SCADAdata.Power_day[130]">MAIN.SCADAdata.Power_day[130]</AdsSymbol>
+					<AdsSymbol ID="132" Type="REAL" IGroup="16448" IOffset="13387932" BitSize="32" AllocationName="SCADAdata.Power_day[131]">MAIN.SCADAdata.Power_day[131]</AdsSymbol>
+					<AdsSymbol ID="133" Type="REAL" IGroup="16448" IOffset="13387936" BitSize="32" AllocationName="SCADAdata.Power_day[132]">MAIN.SCADAdata.Power_day[132]</AdsSymbol>
+					<AdsSymbol ID="134" Type="REAL" IGroup="16448" IOffset="13387940" BitSize="32" AllocationName="SCADAdata.Power_day[133]">MAIN.SCADAdata.Power_day[133]</AdsSymbol>
+					<AdsSymbol ID="135" Type="REAL" IGroup="16448" IOffset="13387944" BitSize="32" AllocationName="SCADAdata.Power_day[134]">MAIN.SCADAdata.Power_day[134]</AdsSymbol>
+					<AdsSymbol ID="136" Type="REAL" IGroup="16448" IOffset="13387948" BitSize="32" AllocationName="SCADAdata.Power_day[135]">MAIN.SCADAdata.Power_day[135]</AdsSymbol>
+					<AdsSymbol ID="137" Type="REAL" IGroup="16448" IOffset="13387952" BitSize="32" AllocationName="SCADAdata.Power_day[136]">MAIN.SCADAdata.Power_day[136]</AdsSymbol>
+					<AdsSymbol ID="138" Type="REAL" IGroup="16448" IOffset="13387956" BitSize="32" AllocationName="SCADAdata.Power_day[137]">MAIN.SCADAdata.Power_day[137]</AdsSymbol>
+					<AdsSymbol ID="139" Type="REAL" IGroup="16448" IOffset="13387960" BitSize="32" AllocationName="SCADAdata.Power_day[138]">MAIN.SCADAdata.Power_day[138]</AdsSymbol>
+					<AdsSymbol ID="140" Type="REAL" IGroup="16448" IOffset="13387964" BitSize="32" AllocationName="SCADAdata.Power_day[139]">MAIN.SCADAdata.Power_day[139]</AdsSymbol>
+					<AdsSymbol ID="141" Type="REAL" IGroup="16448" IOffset="13387968" BitSize="32" AllocationName="SCADAdata.Power_day[140]">MAIN.SCADAdata.Power_day[140]</AdsSymbol>
+					<AdsSymbol ID="142" Type="REAL" IGroup="16448" IOffset="13387972" BitSize="32" AllocationName="SCADAdata.Power_day[141]">MAIN.SCADAdata.Power_day[141]</AdsSymbol>
+					<AdsSymbol ID="143" Type="REAL" IGroup="16448" IOffset="13387976" BitSize="32" AllocationName="SCADAdata.Power_day[142]">MAIN.SCADAdata.Power_day[142]</AdsSymbol>
+					<AdsSymbol ID="144" Type="REAL" IGroup="16448" IOffset="13387980" BitSize="32" AllocationName="SCADAdata.Power_day[143]">MAIN.SCADAdata.Power_day[143]</AdsSymbol>
+					<AdsSymbol ID="145" Type="REAL" IGroup="16448" IOffset="13387984" BitSize="32" AllocationName="SCADAdata.Power_day[144]">MAIN.SCADAdata.Power_day[144]</AdsSymbol>
+					<AdsSymbol ID="146" Type="REAL" IGroup="16448" IOffset="13387988" BitSize="32" AllocationName="SCADAdata.Power_day[145]">MAIN.SCADAdata.Power_day[145]</AdsSymbol>
+					<AdsSymbol ID="147" Type="REAL" IGroup="16448" IOffset="13387992" BitSize="32" AllocationName="SCADAdata.Power_day[146]">MAIN.SCADAdata.Power_day[146]</AdsSymbol>
+					<AdsSymbol ID="148" Type="REAL" IGroup="16448" IOffset="13387996" BitSize="32" AllocationName="SCADAdata.Power_day[147]">MAIN.SCADAdata.Power_day[147]</AdsSymbol>
+					<AdsSymbol ID="149" Type="REAL" IGroup="16448" IOffset="13388000" BitSize="32" AllocationName="SCADAdata.Power_day[148]">MAIN.SCADAdata.Power_day[148]</AdsSymbol>
+					<AdsSymbol ID="150" Type="REAL" IGroup="16448" IOffset="13388004" BitSize="32" AllocationName="SCADAdata.Power_day[149]">MAIN.SCADAdata.Power_day[149]</AdsSymbol>
+					<AdsSymbol ID="151" Type="REAL" IGroup="16448" IOffset="13388008" BitSize="32" AllocationName="SCADAdata.Power_day[150]">MAIN.SCADAdata.Power_day[150]</AdsSymbol>
+					<AdsSymbol ID="152" Type="REAL" IGroup="16448" IOffset="13388012" BitSize="32" AllocationName="SCADAdata.Power_day[151]">MAIN.SCADAdata.Power_day[151]</AdsSymbol>
+					<AdsSymbol ID="153" Type="REAL" IGroup="16448" IOffset="13388016" BitSize="32" AllocationName="SCADAdata.Power_day[152]">MAIN.SCADAdata.Power_day[152]</AdsSymbol>
+					<AdsSymbol ID="154" Type="REAL" IGroup="16448" IOffset="13388020" BitSize="32" AllocationName="SCADAdata.Power_day[153]">MAIN.SCADAdata.Power_day[153]</AdsSymbol>
+					<AdsSymbol ID="155" Type="REAL" IGroup="16448" IOffset="13388024" BitSize="32" AllocationName="SCADAdata.Power_day[154]">MAIN.SCADAdata.Power_day[154]</AdsSymbol>
+					<AdsSymbol ID="156" Type="REAL" IGroup="16448" IOffset="13388028" BitSize="32" AllocationName="SCADAdata.Power_day[155]">MAIN.SCADAdata.Power_day[155]</AdsSymbol>
+					<AdsSymbol ID="157" Type="REAL" IGroup="16448" IOffset="13388032" BitSize="32" AllocationName="SCADAdata.Power_day[156]">MAIN.SCADAdata.Power_day[156]</AdsSymbol>
+					<AdsSymbol ID="158" Type="REAL" IGroup="16448" IOffset="13388036" BitSize="32" AllocationName="SCADAdata.Power_day[157]">MAIN.SCADAdata.Power_day[157]</AdsSymbol>
+					<AdsSymbol ID="159" Type="REAL" IGroup="16448" IOffset="13388040" BitSize="32" AllocationName="SCADAdata.Power_day[158]">MAIN.SCADAdata.Power_day[158]</AdsSymbol>
+					<AdsSymbol ID="160" Type="REAL" IGroup="16448" IOffset="13388044" BitSize="32" AllocationName="SCADAdata.Power_day[159]">MAIN.SCADAdata.Power_day[159]</AdsSymbol>
+					<AdsSymbol ID="161" Type="REAL" IGroup="16448" IOffset="13388048" BitSize="32" AllocationName="SCADAdata.Power_day[160]">MAIN.SCADAdata.Power_day[160]</AdsSymbol>
+					<AdsSymbol ID="162" Type="REAL" IGroup="16448" IOffset="13388052" BitSize="32" AllocationName="SCADAdata.Power_day[161]">MAIN.SCADAdata.Power_day[161]</AdsSymbol>
+					<AdsSymbol ID="163" Type="REAL" IGroup="16448" IOffset="13388056" BitSize="32" AllocationName="SCADAdata.Power_day[162]">MAIN.SCADAdata.Power_day[162]</AdsSymbol>
+					<AdsSymbol ID="164" Type="REAL" IGroup="16448" IOffset="13388060" BitSize="32" AllocationName="SCADAdata.Power_day[163]">MAIN.SCADAdata.Power_day[163]</AdsSymbol>
+					<AdsSymbol ID="165" Type="REAL" IGroup="16448" IOffset="13388064" BitSize="32" AllocationName="SCADAdata.Power_day[164]">MAIN.SCADAdata.Power_day[164]</AdsSymbol>
+					<AdsSymbol ID="166" Type="REAL" IGroup="16448" IOffset="13388068" BitSize="32" AllocationName="SCADAdata.Power_day[165]">MAIN.SCADAdata.Power_day[165]</AdsSymbol>
+					<AdsSymbol ID="167" Type="REAL" IGroup="16448" IOffset="13388072" BitSize="32" AllocationName="SCADAdata.Power_day[166]">MAIN.SCADAdata.Power_day[166]</AdsSymbol>
+					<AdsSymbol ID="168" Type="REAL" IGroup="16448" IOffset="13388076" BitSize="32" AllocationName="SCADAdata.Power_day[167]">MAIN.SCADAdata.Power_day[167]</AdsSymbol>
+					<AdsSymbol ID="169" Type="REAL" IGroup="16448" IOffset="13388080" BitSize="32" AllocationName="SCADAdata.Power_day[168]">MAIN.SCADAdata.Power_day[168]</AdsSymbol>
+					<AdsSymbol ID="170" Type="REAL" IGroup="16448" IOffset="13388084" BitSize="32" AllocationName="SCADAdata.Power_day[169]">MAIN.SCADAdata.Power_day[169]</AdsSymbol>
+					<AdsSymbol ID="171" Type="REAL" IGroup="16448" IOffset="13388088" BitSize="32" AllocationName="SCADAdata.Power_day[170]">MAIN.SCADAdata.Power_day[170]</AdsSymbol>
+					<AdsSymbol ID="172" Type="REAL" IGroup="16448" IOffset="13388092" BitSize="32" AllocationName="SCADAdata.Power_day[171]">MAIN.SCADAdata.Power_day[171]</AdsSymbol>
+					<AdsSymbol ID="173" Type="REAL" IGroup="16448" IOffset="13388096" BitSize="32" AllocationName="SCADAdata.Power_day[172]">MAIN.SCADAdata.Power_day[172]</AdsSymbol>
+					<AdsSymbol ID="174" Type="REAL" IGroup="16448" IOffset="13388100" BitSize="32" AllocationName="SCADAdata.Power_day[173]">MAIN.SCADAdata.Power_day[173]</AdsSymbol>
+					<AdsSymbol ID="175" Type="REAL" IGroup="16448" IOffset="13388104" BitSize="32" AllocationName="SCADAdata.Power_day[174]">MAIN.SCADAdata.Power_day[174]</AdsSymbol>
+					<AdsSymbol ID="176" Type="REAL" IGroup="16448" IOffset="13388108" BitSize="32" AllocationName="SCADAdata.Power_day[175]">MAIN.SCADAdata.Power_day[175]</AdsSymbol>
+					<AdsSymbol ID="177" Type="REAL" IGroup="16448" IOffset="13388112" BitSize="32" AllocationName="SCADAdata.Power_day[176]">MAIN.SCADAdata.Power_day[176]</AdsSymbol>
+					<AdsSymbol ID="178" Type="REAL" IGroup="16448" IOffset="13388116" BitSize="32" AllocationName="SCADAdata.Power_day[177]">MAIN.SCADAdata.Power_day[177]</AdsSymbol>
+					<AdsSymbol ID="179" Type="REAL" IGroup="16448" IOffset="13388120" BitSize="32" AllocationName="SCADAdata.Power_day[178]">MAIN.SCADAdata.Power_day[178]</AdsSymbol>
+					<AdsSymbol ID="180" Type="REAL" IGroup="16448" IOffset="13388124" BitSize="32" AllocationName="SCADAdata.Power_day[179]">MAIN.SCADAdata.Power_day[179]</AdsSymbol>
+					<AdsSymbol ID="181" Type="REAL" IGroup="16448" IOffset="13388128" BitSize="32" AllocationName="SCADAdata.Power_day[180]">MAIN.SCADAdata.Power_day[180]</AdsSymbol>
+					<AdsSymbol ID="182" Type="REAL" IGroup="16448" IOffset="13388132" BitSize="32" AllocationName="SCADAdata.Power_day[181]">MAIN.SCADAdata.Power_day[181]</AdsSymbol>
+					<AdsSymbol ID="183" Type="REAL" IGroup="16448" IOffset="13388136" BitSize="32" AllocationName="SCADAdata.Power_day[182]">MAIN.SCADAdata.Power_day[182]</AdsSymbol>
+					<AdsSymbol ID="184" Type="REAL" IGroup="16448" IOffset="13388140" BitSize="32" AllocationName="SCADAdata.Power_day[183]">MAIN.SCADAdata.Power_day[183]</AdsSymbol>
+					<AdsSymbol ID="185" Type="REAL" IGroup="16448" IOffset="13388144" BitSize="32" AllocationName="SCADAdata.Power_day[184]">MAIN.SCADAdata.Power_day[184]</AdsSymbol>
+					<AdsSymbol ID="186" Type="REAL" IGroup="16448" IOffset="13388148" BitSize="32" AllocationName="SCADAdata.Power_day[185]">MAIN.SCADAdata.Power_day[185]</AdsSymbol>
+					<AdsSymbol ID="187" Type="REAL" IGroup="16448" IOffset="13388152" BitSize="32" AllocationName="SCADAdata.Power_day[186]">MAIN.SCADAdata.Power_day[186]</AdsSymbol>
+					<AdsSymbol ID="188" Type="REAL" IGroup="16448" IOffset="13388156" BitSize="32" AllocationName="SCADAdata.Power_day[187]">MAIN.SCADAdata.Power_day[187]</AdsSymbol>
+					<AdsSymbol ID="189" Type="REAL" IGroup="16448" IOffset="13388160" BitSize="32" AllocationName="SCADAdata.Power_day[188]">MAIN.SCADAdata.Power_day[188]</AdsSymbol>
+					<AdsSymbol ID="190" Type="REAL" IGroup="16448" IOffset="13388164" BitSize="32" AllocationName="SCADAdata.Power_day[189]">MAIN.SCADAdata.Power_day[189]</AdsSymbol>
+					<AdsSymbol ID="191" Type="REAL" IGroup="16448" IOffset="13388168" BitSize="32" AllocationName="SCADAdata.Power_day[190]">MAIN.SCADAdata.Power_day[190]</AdsSymbol>
+					<AdsSymbol ID="192" Type="REAL" IGroup="16448" IOffset="13388172" BitSize="32" AllocationName="SCADAdata.Power_day[191]">MAIN.SCADAdata.Power_day[191]</AdsSymbol>
+					<AdsSymbol ID="193" Type="REAL" IGroup="16448" IOffset="13388176" BitSize="32" AllocationName="SCADAdata.Power_day[192]">MAIN.SCADAdata.Power_day[192]</AdsSymbol>
+					<AdsSymbol ID="194" Type="REAL" IGroup="16448" IOffset="13388180" BitSize="32" AllocationName="SCADAdata.Power_day[193]">MAIN.SCADAdata.Power_day[193]</AdsSymbol>
+					<AdsSymbol ID="195" Type="REAL" IGroup="16448" IOffset="13388184" BitSize="32" AllocationName="SCADAdata.Power_day[194]">MAIN.SCADAdata.Power_day[194]</AdsSymbol>
+					<AdsSymbol ID="196" Type="REAL" IGroup="16448" IOffset="13388188" BitSize="32" AllocationName="SCADAdata.Power_day[195]">MAIN.SCADAdata.Power_day[195]</AdsSymbol>
+					<AdsSymbol ID="197" Type="REAL" IGroup="16448" IOffset="13388192" BitSize="32" AllocationName="SCADAdata.Power_day[196]">MAIN.SCADAdata.Power_day[196]</AdsSymbol>
+					<AdsSymbol ID="198" Type="REAL" IGroup="16448" IOffset="13388196" BitSize="32" AllocationName="SCADAdata.Power_day[197]">MAIN.SCADAdata.Power_day[197]</AdsSymbol>
+					<AdsSymbol ID="199" Type="REAL" IGroup="16448" IOffset="13388200" BitSize="32" AllocationName="SCADAdata.Power_day[198]">MAIN.SCADAdata.Power_day[198]</AdsSymbol>
+					<AdsSymbol ID="200" Type="REAL" IGroup="16448" IOffset="13388204" BitSize="32" AllocationName="SCADAdata.Power_day[199]">MAIN.SCADAdata.Power_day[199]</AdsSymbol>
+					<AdsSymbol ID="201" Type="REAL" IGroup="16448" IOffset="13388208" BitSize="32" AllocationName="SCADAdata.Power_day[200]">MAIN.SCADAdata.Power_day[200]</AdsSymbol>
+					<AdsSymbol ID="202" Type="REAL" IGroup="16448" IOffset="13388212" BitSize="32" AllocationName="SCADAdata.Power_day[201]">MAIN.SCADAdata.Power_day[201]</AdsSymbol>
+					<AdsSymbol ID="203" Type="REAL" IGroup="16448" IOffset="13388216" BitSize="32" AllocationName="SCADAdata.Power_day[202]">MAIN.SCADAdata.Power_day[202]</AdsSymbol>
+					<AdsSymbol ID="204" Type="REAL" IGroup="16448" IOffset="13388220" BitSize="32" AllocationName="SCADAdata.Power_day[203]">MAIN.SCADAdata.Power_day[203]</AdsSymbol>
+					<AdsSymbol ID="205" Type="REAL" IGroup="16448" IOffset="13388224" BitSize="32" AllocationName="SCADAdata.Power_day[204]">MAIN.SCADAdata.Power_day[204]</AdsSymbol>
+					<AdsSymbol ID="206" Type="REAL" IGroup="16448" IOffset="13388228" BitSize="32" AllocationName="SCADAdata.Power_day[205]">MAIN.SCADAdata.Power_day[205]</AdsSymbol>
+					<AdsSymbol ID="207" Type="REAL" IGroup="16448" IOffset="13388232" BitSize="32" AllocationName="SCADAdata.Power_day[206]">MAIN.SCADAdata.Power_day[206]</AdsSymbol>
+					<AdsSymbol ID="208" Type="REAL" IGroup="16448" IOffset="13388236" BitSize="32" AllocationName="SCADAdata.Power_day[207]">MAIN.SCADAdata.Power_day[207]</AdsSymbol>
+					<AdsSymbol ID="209" Type="REAL" IGroup="16448" IOffset="13388240" BitSize="32" AllocationName="SCADAdata.Power_day[208]">MAIN.SCADAdata.Power_day[208]</AdsSymbol>
+					<AdsSymbol ID="210" Type="REAL" IGroup="16448" IOffset="13388244" BitSize="32" AllocationName="SCADAdata.Power_day[209]">MAIN.SCADAdata.Power_day[209]</AdsSymbol>
+					<AdsSymbol ID="211" Type="REAL" IGroup="16448" IOffset="13388248" BitSize="32" AllocationName="SCADAdata.Power_day[210]">MAIN.SCADAdata.Power_day[210]</AdsSymbol>
+					<AdsSymbol ID="212" Type="REAL" IGroup="16448" IOffset="13388252" BitSize="32" AllocationName="SCADAdata.Power_day[211]">MAIN.SCADAdata.Power_day[211]</AdsSymbol>
+					<AdsSymbol ID="213" Type="REAL" IGroup="16448" IOffset="13388256" BitSize="32" AllocationName="SCADAdata.Power_day[212]">MAIN.SCADAdata.Power_day[212]</AdsSymbol>
+					<AdsSymbol ID="214" Type="REAL" IGroup="16448" IOffset="13388260" BitSize="32" AllocationName="SCADAdata.Power_day[213]">MAIN.SCADAdata.Power_day[213]</AdsSymbol>
+					<AdsSymbol ID="215" Type="REAL" IGroup="16448" IOffset="13388264" BitSize="32" AllocationName="SCADAdata.Power_day[214]">MAIN.SCADAdata.Power_day[214]</AdsSymbol>
+					<AdsSymbol ID="216" Type="REAL" IGroup="16448" IOffset="13388268" BitSize="32" AllocationName="SCADAdata.Power_day[215]">MAIN.SCADAdata.Power_day[215]</AdsSymbol>
+					<AdsSymbol ID="217" Type="REAL" IGroup="16448" IOffset="13388272" BitSize="32" AllocationName="SCADAdata.Power_day[216]">MAIN.SCADAdata.Power_day[216]</AdsSymbol>
+					<AdsSymbol ID="218" Type="REAL" IGroup="16448" IOffset="13388276" BitSize="32" AllocationName="SCADAdata.Power_day[217]">MAIN.SCADAdata.Power_day[217]</AdsSymbol>
+					<AdsSymbol ID="219" Type="REAL" IGroup="16448" IOffset="13388280" BitSize="32" AllocationName="SCADAdata.Power_day[218]">MAIN.SCADAdata.Power_day[218]</AdsSymbol>
+					<AdsSymbol ID="220" Type="REAL" IGroup="16448" IOffset="13388284" BitSize="32" AllocationName="SCADAdata.Power_day[219]">MAIN.SCADAdata.Power_day[219]</AdsSymbol>
+					<AdsSymbol ID="221" Type="REAL" IGroup="16448" IOffset="13388288" BitSize="32" AllocationName="SCADAdata.Power_day[220]">MAIN.SCADAdata.Power_day[220]</AdsSymbol>
+					<AdsSymbol ID="222" Type="REAL" IGroup="16448" IOffset="13388292" BitSize="32" AllocationName="SCADAdata.Power_day[221]">MAIN.SCADAdata.Power_day[221]</AdsSymbol>
+					<AdsSymbol ID="223" Type="REAL" IGroup="16448" IOffset="13388296" BitSize="32" AllocationName="SCADAdata.Power_day[222]">MAIN.SCADAdata.Power_day[222]</AdsSymbol>
+					<AdsSymbol ID="224" Type="REAL" IGroup="16448" IOffset="13388300" BitSize="32" AllocationName="SCADAdata.Power_day[223]">MAIN.SCADAdata.Power_day[223]</AdsSymbol>
+					<AdsSymbol ID="225" Type="REAL" IGroup="16448" IOffset="13388304" BitSize="32" AllocationName="SCADAdata.Power_day[224]">MAIN.SCADAdata.Power_day[224]</AdsSymbol>
+					<AdsSymbol ID="226" Type="REAL" IGroup="16448" IOffset="13388308" BitSize="32" AllocationName="SCADAdata.Power_day[225]">MAIN.SCADAdata.Power_day[225]</AdsSymbol>
+					<AdsSymbol ID="227" Type="REAL" IGroup="16448" IOffset="13388312" BitSize="32" AllocationName="SCADAdata.Power_day[226]">MAIN.SCADAdata.Power_day[226]</AdsSymbol>
+					<AdsSymbol ID="228" Type="REAL" IGroup="16448" IOffset="13388316" BitSize="32" AllocationName="SCADAdata.Power_day[227]">MAIN.SCADAdata.Power_day[227]</AdsSymbol>
+					<AdsSymbol ID="229" Type="REAL" IGroup="16448" IOffset="13388320" BitSize="32" AllocationName="SCADAdata.Power_day[228]">MAIN.SCADAdata.Power_day[228]</AdsSymbol>
+					<AdsSymbol ID="230" Type="REAL" IGroup="16448" IOffset="13388324" BitSize="32" AllocationName="SCADAdata.Power_day[229]">MAIN.SCADAdata.Power_day[229]</AdsSymbol>
+					<AdsSymbol ID="231" Type="REAL" IGroup="16448" IOffset="13388328" BitSize="32" AllocationName="SCADAdata.Power_day[230]">MAIN.SCADAdata.Power_day[230]</AdsSymbol>
+					<AdsSymbol ID="232" Type="REAL" IGroup="16448" IOffset="13388332" BitSize="32" AllocationName="SCADAdata.Power_day[231]">MAIN.SCADAdata.Power_day[231]</AdsSymbol>
+					<AdsSymbol ID="233" Type="REAL" IGroup="16448" IOffset="13388336" BitSize="32" AllocationName="SCADAdata.Power_day[232]">MAIN.SCADAdata.Power_day[232]</AdsSymbol>
+					<AdsSymbol ID="234" Type="REAL" IGroup="16448" IOffset="13388340" BitSize="32" AllocationName="SCADAdata.Power_day[233]">MAIN.SCADAdata.Power_day[233]</AdsSymbol>
+					<AdsSymbol ID="235" Type="REAL" IGroup="16448" IOffset="13388344" BitSize="32" AllocationName="SCADAdata.Power_day[234]">MAIN.SCADAdata.Power_day[234]</AdsSymbol>
+					<AdsSymbol ID="236" Type="REAL" IGroup="16448" IOffset="13388348" BitSize="32" AllocationName="SCADAdata.Power_day[235]">MAIN.SCADAdata.Power_day[235]</AdsSymbol>
+					<AdsSymbol ID="237" Type="REAL" IGroup="16448" IOffset="13388352" BitSize="32" AllocationName="SCADAdata.Power_day[236]">MAIN.SCADAdata.Power_day[236]</AdsSymbol>
+					<AdsSymbol ID="238" Type="REAL" IGroup="16448" IOffset="13388356" BitSize="32" AllocationName="SCADAdata.Power_day[237]">MAIN.SCADAdata.Power_day[237]</AdsSymbol>
+					<AdsSymbol ID="239" Type="REAL" IGroup="16448" IOffset="13388360" BitSize="32" AllocationName="SCADAdata.Power_day[238]">MAIN.SCADAdata.Power_day[238]</AdsSymbol>
+					<AdsSymbol ID="240" Type="REAL" IGroup="16448" IOffset="13388364" BitSize="32" AllocationName="SCADAdata.Power_day[239]">MAIN.SCADAdata.Power_day[239]</AdsSymbol>
+					<AdsSymbol ID="241" Type="REAL" IGroup="16448" IOffset="13388368" BitSize="32" AllocationName="SCADAdata.Power_day[240]">MAIN.SCADAdata.Power_day[240]</AdsSymbol>
+					<AdsSymbol ID="242" Type="REAL" IGroup="16448" IOffset="13388372" BitSize="32" AllocationName="SCADAdata.Power_day[241]">MAIN.SCADAdata.Power_day[241]</AdsSymbol>
+					<AdsSymbol ID="243" Type="REAL" IGroup="16448" IOffset="13388376" BitSize="32" AllocationName="SCADAdata.Power_day[242]">MAIN.SCADAdata.Power_day[242]</AdsSymbol>
+					<AdsSymbol ID="244" Type="REAL" IGroup="16448" IOffset="13388380" BitSize="32" AllocationName="SCADAdata.Power_day[243]">MAIN.SCADAdata.Power_day[243]</AdsSymbol>
+					<AdsSymbol ID="245" Type="REAL" IGroup="16448" IOffset="13388384" BitSize="32" AllocationName="SCADAdata.Power_day[244]">MAIN.SCADAdata.Power_day[244]</AdsSymbol>
+					<AdsSymbol ID="246" Type="REAL" IGroup="16448" IOffset="13388388" BitSize="32" AllocationName="SCADAdata.Power_day[245]">MAIN.SCADAdata.Power_day[245]</AdsSymbol>
+					<AdsSymbol ID="247" Type="REAL" IGroup="16448" IOffset="13388392" BitSize="32" AllocationName="SCADAdata.Power_day[246]">MAIN.SCADAdata.Power_day[246]</AdsSymbol>
+					<AdsSymbol ID="248" Type="REAL" IGroup="16448" IOffset="13388396" BitSize="32" AllocationName="SCADAdata.Power_day[247]">MAIN.SCADAdata.Power_day[247]</AdsSymbol>
+					<AdsSymbol ID="249" Type="REAL" IGroup="16448" IOffset="13388400" BitSize="32" AllocationName="SCADAdata.Power_day[248]">MAIN.SCADAdata.Power_day[248]</AdsSymbol>
+					<AdsSymbol ID="250" Type="REAL" IGroup="16448" IOffset="13388404" BitSize="32" AllocationName="SCADAdata.Power_day[249]">MAIN.SCADAdata.Power_day[249]</AdsSymbol>
+					<AdsSymbol ID="251" Type="REAL" IGroup="16448" IOffset="13388408" BitSize="32" AllocationName="SCADAdata.Power_day[250]">MAIN.SCADAdata.Power_day[250]</AdsSymbol>
+					<AdsSymbol ID="252" Type="REAL" IGroup="16448" IOffset="13388412" BitSize="32" AllocationName="SCADAdata.Power_day[251]">MAIN.SCADAdata.Power_day[251]</AdsSymbol>
+					<AdsSymbol ID="253" Type="REAL" IGroup="16448" IOffset="13388416" BitSize="32" AllocationName="SCADAdata.Power_day[252]">MAIN.SCADAdata.Power_day[252]</AdsSymbol>
+					<AdsSymbol ID="254" Type="REAL" IGroup="16448" IOffset="13388420" BitSize="32" AllocationName="SCADAdata.Power_day[253]">MAIN.SCADAdata.Power_day[253]</AdsSymbol>
+					<AdsSymbol ID="255" Type="REAL" IGroup="16448" IOffset="13388424" BitSize="32" AllocationName="SCADAdata.Power_day[254]">MAIN.SCADAdata.Power_day[254]</AdsSymbol>
+					<AdsSymbol ID="256" Type="REAL" IGroup="16448" IOffset="13388428" BitSize="32" AllocationName="SCADAdata.Power_day[255]">MAIN.SCADAdata.Power_day[255]</AdsSymbol>
+					<AdsSymbol ID="257" Type="REAL" IGroup="16448" IOffset="13388432" BitSize="32" AllocationName="SCADAdata.Power_day[256]">MAIN.SCADAdata.Power_day[256]</AdsSymbol>
+					<AdsSymbol ID="258" Type="REAL" IGroup="16448" IOffset="13388436" BitSize="32" AllocationName="SCADAdata.Power_day[257]">MAIN.SCADAdata.Power_day[257]</AdsSymbol>
+					<AdsSymbol ID="259" Type="REAL" IGroup="16448" IOffset="13388440" BitSize="32" AllocationName="SCADAdata.Power_day[258]">MAIN.SCADAdata.Power_day[258]</AdsSymbol>
+					<AdsSymbol ID="260" Type="REAL" IGroup="16448" IOffset="13388444" BitSize="32" AllocationName="SCADAdata.Power_day[259]">MAIN.SCADAdata.Power_day[259]</AdsSymbol>
+					<AdsSymbol ID="261" Type="REAL" IGroup="16448" IOffset="13388448" BitSize="32" AllocationName="SCADAdata.Power_day[260]">MAIN.SCADAdata.Power_day[260]</AdsSymbol>
+					<AdsSymbol ID="262" Type="REAL" IGroup="16448" IOffset="13388452" BitSize="32" AllocationName="SCADAdata.Power_day[261]">MAIN.SCADAdata.Power_day[261]</AdsSymbol>
+					<AdsSymbol ID="263" Type="REAL" IGroup="16448" IOffset="13388456" BitSize="32" AllocationName="SCADAdata.Power_day[262]">MAIN.SCADAdata.Power_day[262]</AdsSymbol>
+					<AdsSymbol ID="264" Type="REAL" IGroup="16448" IOffset="13388460" BitSize="32" AllocationName="SCADAdata.Power_day[263]">MAIN.SCADAdata.Power_day[263]</AdsSymbol>
+					<AdsSymbol ID="265" Type="REAL" IGroup="16448" IOffset="13388464" BitSize="32" AllocationName="SCADAdata.Power_day[264]">MAIN.SCADAdata.Power_day[264]</AdsSymbol>
+					<AdsSymbol ID="266" Type="REAL" IGroup="16448" IOffset="13388468" BitSize="32" AllocationName="SCADAdata.Power_day[265]">MAIN.SCADAdata.Power_day[265]</AdsSymbol>
+					<AdsSymbol ID="267" Type="REAL" IGroup="16448" IOffset="13388472" BitSize="32" AllocationName="SCADAdata.Power_day[266]">MAIN.SCADAdata.Power_day[266]</AdsSymbol>
+					<AdsSymbol ID="268" Type="REAL" IGroup="16448" IOffset="13388476" BitSize="32" AllocationName="SCADAdata.Power_day[267]">MAIN.SCADAdata.Power_day[267]</AdsSymbol>
+					<AdsSymbol ID="269" Type="REAL" IGroup="16448" IOffset="13388480" BitSize="32" AllocationName="SCADAdata.Power_day[268]">MAIN.SCADAdata.Power_day[268]</AdsSymbol>
+					<AdsSymbol ID="270" Type="REAL" IGroup="16448" IOffset="13388484" BitSize="32" AllocationName="SCADAdata.Power_day[269]">MAIN.SCADAdata.Power_day[269]</AdsSymbol>
+					<AdsSymbol ID="271" Type="REAL" IGroup="16448" IOffset="13388488" BitSize="32" AllocationName="SCADAdata.Power_day[270]">MAIN.SCADAdata.Power_day[270]</AdsSymbol>
+					<AdsSymbol ID="272" Type="REAL" IGroup="16448" IOffset="13388492" BitSize="32" AllocationName="SCADAdata.Power_day[271]">MAIN.SCADAdata.Power_day[271]</AdsSymbol>
+					<AdsSymbol ID="273" Type="REAL" IGroup="16448" IOffset="13388496" BitSize="32" AllocationName="SCADAdata.Power_day[272]">MAIN.SCADAdata.Power_day[272]</AdsSymbol>
+					<AdsSymbol ID="274" Type="REAL" IGroup="16448" IOffset="13388500" BitSize="32" AllocationName="SCADAdata.Power_day[273]">MAIN.SCADAdata.Power_day[273]</AdsSymbol>
+					<AdsSymbol ID="275" Type="REAL" IGroup="16448" IOffset="13388504" BitSize="32" AllocationName="SCADAdata.Power_day[274]">MAIN.SCADAdata.Power_day[274]</AdsSymbol>
+					<AdsSymbol ID="276" Type="REAL" IGroup="16448" IOffset="13388508" BitSize="32" AllocationName="SCADAdata.Power_day[275]">MAIN.SCADAdata.Power_day[275]</AdsSymbol>
+					<AdsSymbol ID="277" Type="REAL" IGroup="16448" IOffset="13388512" BitSize="32" AllocationName="SCADAdata.Power_day[276]">MAIN.SCADAdata.Power_day[276]</AdsSymbol>
+					<AdsSymbol ID="278" Type="REAL" IGroup="16448" IOffset="13388516" BitSize="32" AllocationName="SCADAdata.Power_day[277]">MAIN.SCADAdata.Power_day[277]</AdsSymbol>
+					<AdsSymbol ID="279" Type="REAL" IGroup="16448" IOffset="13388520" BitSize="32" AllocationName="SCADAdata.Power_day[278]">MAIN.SCADAdata.Power_day[278]</AdsSymbol>
+					<AdsSymbol ID="280" Type="REAL" IGroup="16448" IOffset="13388524" BitSize="32" AllocationName="SCADAdata.Power_day[279]">MAIN.SCADAdata.Power_day[279]</AdsSymbol>
+					<AdsSymbol ID="281" Type="REAL" IGroup="16448" IOffset="13388528" BitSize="32" AllocationName="SCADAdata.Power_day[280]">MAIN.SCADAdata.Power_day[280]</AdsSymbol>
+					<AdsSymbol ID="282" Type="REAL" IGroup="16448" IOffset="13388532" BitSize="32" AllocationName="SCADAdata.Power_day[281]">MAIN.SCADAdata.Power_day[281]</AdsSymbol>
+					<AdsSymbol ID="283" Type="REAL" IGroup="16448" IOffset="13388536" BitSize="32" AllocationName="SCADAdata.Power_day[282]">MAIN.SCADAdata.Power_day[282]</AdsSymbol>
+					<AdsSymbol ID="284" Type="REAL" IGroup="16448" IOffset="13388540" BitSize="32" AllocationName="SCADAdata.Power_day[283]">MAIN.SCADAdata.Power_day[283]</AdsSymbol>
+					<AdsSymbol ID="285" Type="REAL" IGroup="16448" IOffset="13388544" BitSize="32" AllocationName="SCADAdata.Power_day[284]">MAIN.SCADAdata.Power_day[284]</AdsSymbol>
+					<AdsSymbol ID="286" Type="REAL" IGroup="16448" IOffset="13388548" BitSize="32" AllocationName="SCADAdata.Power_day[285]">MAIN.SCADAdata.Power_day[285]</AdsSymbol>
+					<AdsSymbol ID="287" Type="REAL" IGroup="16448" IOffset="13388552" BitSize="32" AllocationName="SCADAdata.Power_day[286]">MAIN.SCADAdata.Power_day[286]</AdsSymbol>
+					<AdsSymbol ID="288" Type="REAL" IGroup="16448" IOffset="13388556" BitSize="32" AllocationName="SCADAdata.Power_day[287]">MAIN.SCADAdata.Power_day[287]</AdsSymbol>
+					<AdsSymbol ID="289" Type="REAL" IGroup="16448" IOffset="13388560" BitSize="32" AllocationName="SCADAdata.Power_day[288]">MAIN.SCADAdata.Power_day[288]</AdsSymbol>
+					<AdsSymbol ID="290" Type="REAL" IGroup="16448" IOffset="13388564" BitSize="32" AllocationName="SCADAdata.Power_day[289]">MAIN.SCADAdata.Power_day[289]</AdsSymbol>
+					<AdsSymbol ID="291" Type="REAL" IGroup="16448" IOffset="13388568" BitSize="32" AllocationName="SCADAdata.Power_day[290]">MAIN.SCADAdata.Power_day[290]</AdsSymbol>
+					<AdsSymbol ID="292" Type="REAL" IGroup="16448" IOffset="13388572" BitSize="32" AllocationName="SCADAdata.Power_day[291]">MAIN.SCADAdata.Power_day[291]</AdsSymbol>
+					<AdsSymbol ID="293" Type="REAL" IGroup="16448" IOffset="13388576" BitSize="32" AllocationName="SCADAdata.Power_day[292]">MAIN.SCADAdata.Power_day[292]</AdsSymbol>
+					<AdsSymbol ID="294" Type="REAL" IGroup="16448" IOffset="13388580" BitSize="32" AllocationName="SCADAdata.Power_day[293]">MAIN.SCADAdata.Power_day[293]</AdsSymbol>
+					<AdsSymbol ID="295" Type="REAL" IGroup="16448" IOffset="13388584" BitSize="32" AllocationName="SCADAdata.Power_day[294]">MAIN.SCADAdata.Power_day[294]</AdsSymbol>
+					<AdsSymbol ID="296" Type="REAL" IGroup="16448" IOffset="13388588" BitSize="32" AllocationName="SCADAdata.Power_day[295]">MAIN.SCADAdata.Power_day[295]</AdsSymbol>
+					<AdsSymbol ID="297" Type="REAL" IGroup="16448" IOffset="13388592" BitSize="32" AllocationName="SCADAdata.Power_day[296]">MAIN.SCADAdata.Power_day[296]</AdsSymbol>
+					<AdsSymbol ID="298" Type="REAL" IGroup="16448" IOffset="13388596" BitSize="32" AllocationName="SCADAdata.Power_day[297]">MAIN.SCADAdata.Power_day[297]</AdsSymbol>
+					<AdsSymbol ID="299" Type="REAL" IGroup="16448" IOffset="13388600" BitSize="32" AllocationName="SCADAdata.Power_day[298]">MAIN.SCADAdata.Power_day[298]</AdsSymbol>
+					<AdsSymbol ID="300" Type="REAL" IGroup="16448" IOffset="13388604" BitSize="32" AllocationName="SCADAdata.Power_day[299]">MAIN.SCADAdata.Power_day[299]</AdsSymbol>
+					<AdsSymbol ID="301" Type="REAL" IGroup="16448" IOffset="13388608" BitSize="32" AllocationName="SCADAdata.Power_day[300]">MAIN.SCADAdata.Power_day[300]</AdsSymbol>
+					<AdsSymbol ID="302" Type="REAL" IGroup="16448" IOffset="13388612" BitSize="32" AllocationName="SCADAdata.Power_day[301]">MAIN.SCADAdata.Power_day[301]</AdsSymbol>
+					<AdsSymbol ID="303" Type="REAL" IGroup="16448" IOffset="13388616" BitSize="32" AllocationName="SCADAdata.Power_day[302]">MAIN.SCADAdata.Power_day[302]</AdsSymbol>
+					<AdsSymbol ID="304" Type="REAL" IGroup="16448" IOffset="13388620" BitSize="32" AllocationName="SCADAdata.Power_day[303]">MAIN.SCADAdata.Power_day[303]</AdsSymbol>
+					<AdsSymbol ID="305" Type="REAL" IGroup="16448" IOffset="13388624" BitSize="32" AllocationName="SCADAdata.Power_day[304]">MAIN.SCADAdata.Power_day[304]</AdsSymbol>
+					<AdsSymbol ID="306" Type="REAL" IGroup="16448" IOffset="13388628" BitSize="32" AllocationName="SCADAdata.Power_day[305]">MAIN.SCADAdata.Power_day[305]</AdsSymbol>
+					<AdsSymbol ID="307" Type="REAL" IGroup="16448" IOffset="13388632" BitSize="32" AllocationName="SCADAdata.Power_day[306]">MAIN.SCADAdata.Power_day[306]</AdsSymbol>
+					<AdsSymbol ID="308" Type="REAL" IGroup="16448" IOffset="13388636" BitSize="32" AllocationName="SCADAdata.Power_day[307]">MAIN.SCADAdata.Power_day[307]</AdsSymbol>
+					<AdsSymbol ID="309" Type="REAL" IGroup="16448" IOffset="13388640" BitSize="32" AllocationName="SCADAdata.Power_day[308]">MAIN.SCADAdata.Power_day[308]</AdsSymbol>
+					<AdsSymbol ID="310" Type="REAL" IGroup="16448" IOffset="13388644" BitSize="32" AllocationName="SCADAdata.Power_day[309]">MAIN.SCADAdata.Power_day[309]</AdsSymbol>
+					<AdsSymbol ID="311" Type="REAL" IGroup="16448" IOffset="13388648" BitSize="32" AllocationName="SCADAdata.Power_day[310]">MAIN.SCADAdata.Power_day[310]</AdsSymbol>
+					<AdsSymbol ID="312" Type="REAL" IGroup="16448" IOffset="13388652" BitSize="32" AllocationName="SCADAdata.Power_day[311]">MAIN.SCADAdata.Power_day[311]</AdsSymbol>
+					<AdsSymbol ID="313" Type="REAL" IGroup="16448" IOffset="13388656" BitSize="32" AllocationName="SCADAdata.Power_day[312]">MAIN.SCADAdata.Power_day[312]</AdsSymbol>
+					<AdsSymbol ID="314" Type="REAL" IGroup="16448" IOffset="13388660" BitSize="32" AllocationName="SCADAdata.Power_day[313]">MAIN.SCADAdata.Power_day[313]</AdsSymbol>
+					<AdsSymbol ID="315" Type="REAL" IGroup="16448" IOffset="13388664" BitSize="32" AllocationName="SCADAdata.Power_day[314]">MAIN.SCADAdata.Power_day[314]</AdsSymbol>
+					<AdsSymbol ID="316" Type="REAL" IGroup="16448" IOffset="13388668" BitSize="32" AllocationName="SCADAdata.Power_day[315]">MAIN.SCADAdata.Power_day[315]</AdsSymbol>
+					<AdsSymbol ID="317" Type="REAL" IGroup="16448" IOffset="13388672" BitSize="32" AllocationName="SCADAdata.Power_day[316]">MAIN.SCADAdata.Power_day[316]</AdsSymbol>
+					<AdsSymbol ID="318" Type="REAL" IGroup="16448" IOffset="13388676" BitSize="32" AllocationName="SCADAdata.Power_day[317]">MAIN.SCADAdata.Power_day[317]</AdsSymbol>
+					<AdsSymbol ID="319" Type="REAL" IGroup="16448" IOffset="13388680" BitSize="32" AllocationName="SCADAdata.Power_day[318]">MAIN.SCADAdata.Power_day[318]</AdsSymbol>
+					<AdsSymbol ID="320" Type="REAL" IGroup="16448" IOffset="13388684" BitSize="32" AllocationName="SCADAdata.Power_day[319]">MAIN.SCADAdata.Power_day[319]</AdsSymbol>
+					<AdsSymbol ID="321" Type="REAL" IGroup="16448" IOffset="13388688" BitSize="32" AllocationName="SCADAdata.Power_day[320]">MAIN.SCADAdata.Power_day[320]</AdsSymbol>
+					<AdsSymbol ID="322" Type="REAL" IGroup="16448" IOffset="13388692" BitSize="32" AllocationName="SCADAdata.Power_day[321]">MAIN.SCADAdata.Power_day[321]</AdsSymbol>
+					<AdsSymbol ID="323" Type="REAL" IGroup="16448" IOffset="13388696" BitSize="32" AllocationName="SCADAdata.Power_day[322]">MAIN.SCADAdata.Power_day[322]</AdsSymbol>
+					<AdsSymbol ID="324" Type="REAL" IGroup="16448" IOffset="13388700" BitSize="32" AllocationName="SCADAdata.Power_day[323]">MAIN.SCADAdata.Power_day[323]</AdsSymbol>
+					<AdsSymbol ID="325" Type="REAL" IGroup="16448" IOffset="13388704" BitSize="32" AllocationName="SCADAdata.Power_day[324]">MAIN.SCADAdata.Power_day[324]</AdsSymbol>
+					<AdsSymbol ID="326" Type="REAL" IGroup="16448" IOffset="13388708" BitSize="32" AllocationName="SCADAdata.Power_day[325]">MAIN.SCADAdata.Power_day[325]</AdsSymbol>
+					<AdsSymbol ID="327" Type="REAL" IGroup="16448" IOffset="13388712" BitSize="32" AllocationName="SCADAdata.Power_day[326]">MAIN.SCADAdata.Power_day[326]</AdsSymbol>
+					<AdsSymbol ID="328" Type="REAL" IGroup="16448" IOffset="13388716" BitSize="32" AllocationName="SCADAdata.Power_day[327]">MAIN.SCADAdata.Power_day[327]</AdsSymbol>
+					<AdsSymbol ID="329" Type="REAL" IGroup="16448" IOffset="13388720" BitSize="32" AllocationName="SCADAdata.Power_day[328]">MAIN.SCADAdata.Power_day[328]</AdsSymbol>
+					<AdsSymbol ID="330" Type="REAL" IGroup="16448" IOffset="13388724" BitSize="32" AllocationName="SCADAdata.Power_day[329]">MAIN.SCADAdata.Power_day[329]</AdsSymbol>
+					<AdsSymbol ID="331" Type="REAL" IGroup="16448" IOffset="13388728" BitSize="32" AllocationName="SCADAdata.Power_day[330]">MAIN.SCADAdata.Power_day[330]</AdsSymbol>
+					<AdsSymbol ID="332" Type="REAL" IGroup="16448" IOffset="13388732" BitSize="32" AllocationName="SCADAdata.Power_day[331]">MAIN.SCADAdata.Power_day[331]</AdsSymbol>
+					<AdsSymbol ID="333" Type="REAL" IGroup="16448" IOffset="13388736" BitSize="32" AllocationName="SCADAdata.Power_day[332]">MAIN.SCADAdata.Power_day[332]</AdsSymbol>
+					<AdsSymbol ID="334" Type="REAL" IGroup="16448" IOffset="13388740" BitSize="32" AllocationName="SCADAdata.Power_day[333]">MAIN.SCADAdata.Power_day[333]</AdsSymbol>
+					<AdsSymbol ID="335" Type="REAL" IGroup="16448" IOffset="13388744" BitSize="32" AllocationName="SCADAdata.Power_day[334]">MAIN.SCADAdata.Power_day[334]</AdsSymbol>
+					<AdsSymbol ID="336" Type="REAL" IGroup="16448" IOffset="13388748" BitSize="32" AllocationName="SCADAdata.Power_day[335]">MAIN.SCADAdata.Power_day[335]</AdsSymbol>
+					<AdsSymbol ID="337" Type="REAL" IGroup="16448" IOffset="13388752" BitSize="32" AllocationName="SCADAdata.Power_day[336]">MAIN.SCADAdata.Power_day[336]</AdsSymbol>
+					<AdsSymbol ID="338" Type="REAL" IGroup="16448" IOffset="13388756" BitSize="32" AllocationName="SCADAdata.Power_day[337]">MAIN.SCADAdata.Power_day[337]</AdsSymbol>
+					<AdsSymbol ID="339" Type="REAL" IGroup="16448" IOffset="13388760" BitSize="32" AllocationName="SCADAdata.Power_day[338]">MAIN.SCADAdata.Power_day[338]</AdsSymbol>
+					<AdsSymbol ID="340" Type="REAL" IGroup="16448" IOffset="13388764" BitSize="32" AllocationName="SCADAdata.Power_day[339]">MAIN.SCADAdata.Power_day[339]</AdsSymbol>
+					<AdsSymbol ID="341" Type="REAL" IGroup="16448" IOffset="13388768" BitSize="32" AllocationName="SCADAdata.Power_day[340]">MAIN.SCADAdata.Power_day[340]</AdsSymbol>
+					<AdsSymbol ID="342" Type="REAL" IGroup="16448" IOffset="13388772" BitSize="32" AllocationName="SCADAdata.Power_day[341]">MAIN.SCADAdata.Power_day[341]</AdsSymbol>
+					<AdsSymbol ID="343" Type="REAL" IGroup="16448" IOffset="13388776" BitSize="32" AllocationName="SCADAdata.Power_day[342]">MAIN.SCADAdata.Power_day[342]</AdsSymbol>
+					<AdsSymbol ID="344" Type="REAL" IGroup="16448" IOffset="13388780" BitSize="32" AllocationName="SCADAdata.Power_day[343]">MAIN.SCADAdata.Power_day[343]</AdsSymbol>
+					<AdsSymbol ID="345" Type="REAL" IGroup="16448" IOffset="13388784" BitSize="32" AllocationName="SCADAdata.Power_day[344]">MAIN.SCADAdata.Power_day[344]</AdsSymbol>
+					<AdsSymbol ID="346" Type="REAL" IGroup="16448" IOffset="13388788" BitSize="32" AllocationName="SCADAdata.Power_day[345]">MAIN.SCADAdata.Power_day[345]</AdsSymbol>
+					<AdsSymbol ID="347" Type="REAL" IGroup="16448" IOffset="13388792" BitSize="32" AllocationName="SCADAdata.Power_day[346]">MAIN.SCADAdata.Power_day[346]</AdsSymbol>
+					<AdsSymbol ID="348" Type="REAL" IGroup="16448" IOffset="13388796" BitSize="32" AllocationName="SCADAdata.Power_day[347]">MAIN.SCADAdata.Power_day[347]</AdsSymbol>
+					<AdsSymbol ID="349" Type="REAL" IGroup="16448" IOffset="13388800" BitSize="32" AllocationName="SCADAdata.Power_day[348]">MAIN.SCADAdata.Power_day[348]</AdsSymbol>
+					<AdsSymbol ID="350" Type="REAL" IGroup="16448" IOffset="13388804" BitSize="32" AllocationName="SCADAdata.Power_day[349]">MAIN.SCADAdata.Power_day[349]</AdsSymbol>
+					<AdsSymbol ID="351" Type="REAL" IGroup="16448" IOffset="13388808" BitSize="32" AllocationName="SCADAdata.Power_day[350]">MAIN.SCADAdata.Power_day[350]</AdsSymbol>
+					<AdsSymbol ID="352" Type="REAL" IGroup="16448" IOffset="13388812" BitSize="32" AllocationName="SCADAdata.Power_day[351]">MAIN.SCADAdata.Power_day[351]</AdsSymbol>
+					<AdsSymbol ID="353" Type="REAL" IGroup="16448" IOffset="13388816" BitSize="32" AllocationName="SCADAdata.Power_day[352]">MAIN.SCADAdata.Power_day[352]</AdsSymbol>
+					<AdsSymbol ID="354" Type="REAL" IGroup="16448" IOffset="13388820" BitSize="32" AllocationName="SCADAdata.Power_day[353]">MAIN.SCADAdata.Power_day[353]</AdsSymbol>
+					<AdsSymbol ID="355" Type="REAL" IGroup="16448" IOffset="13388824" BitSize="32" AllocationName="SCADAdata.Power_day[354]">MAIN.SCADAdata.Power_day[354]</AdsSymbol>
+					<AdsSymbol ID="356" Type="REAL" IGroup="16448" IOffset="13388828" BitSize="32" AllocationName="SCADAdata.Power_day[355]">MAIN.SCADAdata.Power_day[355]</AdsSymbol>
+					<AdsSymbol ID="357" Type="REAL" IGroup="16448" IOffset="13388832" BitSize="32" AllocationName="SCADAdata.Power_day[356]">MAIN.SCADAdata.Power_day[356]</AdsSymbol>
+					<AdsSymbol ID="358" Type="REAL" IGroup="16448" IOffset="13388836" BitSize="32" AllocationName="SCADAdata.Power_day[357]">MAIN.SCADAdata.Power_day[357]</AdsSymbol>
+					<AdsSymbol ID="359" Type="REAL" IGroup="16448" IOffset="13388840" BitSize="32" AllocationName="SCADAdata.Power_day[358]">MAIN.SCADAdata.Power_day[358]</AdsSymbol>
+					<AdsSymbol ID="360" Type="REAL" IGroup="16448" IOffset="13388844" BitSize="32" AllocationName="SCADAdata.Power_day[359]">MAIN.SCADAdata.Power_day[359]</AdsSymbol>
+					<AdsSymbol ID="361" Type="REAL" IGroup="16448" IOffset="13388848" BitSize="32" AllocationName="SCADAdata.Power_day[360]">MAIN.SCADAdata.Power_day[360]</AdsSymbol>
+					<AdsSymbol ID="362" Type="REAL" IGroup="16448" IOffset="13388852" BitSize="32" AllocationName="SCADAdata.Power_day[361]">MAIN.SCADAdata.Power_day[361]</AdsSymbol>
+					<AdsSymbol ID="363" Type="REAL" IGroup="16448" IOffset="13388856" BitSize="32" AllocationName="SCADAdata.Power_day[362]">MAIN.SCADAdata.Power_day[362]</AdsSymbol>
+					<AdsSymbol ID="364" Type="REAL" IGroup="16448" IOffset="13388860" BitSize="32" AllocationName="SCADAdata.Power_day[363]">MAIN.SCADAdata.Power_day[363]</AdsSymbol>
+					<AdsSymbol ID="365" Type="REAL" IGroup="16448" IOffset="13388864" BitSize="32" AllocationName="SCADAdata.Power_day[364]">MAIN.SCADAdata.Power_day[364]</AdsSymbol>
+					<AdsSymbol ID="366" Type="REAL" IGroup="16448" IOffset="13388868" BitSize="32" AllocationName="SCADAdata.Power_day[365]">MAIN.SCADAdata.Power_day[365]</AdsSymbol>
+				</Symbols>
+			</AutoLogGroup>
+			<AutoLogGroup Name="Generator">
+				<AutoLogGrpID>3</AutoLogGrpID>
+				<StartUp>AUTOSTART</StartUp>
+				<Direction>DeviceAsSource</Direction>
+				<WriteSettings>
+					<WriteMode>APPEND</WriteMode>
+				</WriteSettings>
+				<SamplingSettings>
+					<SamplingMode>cyclic</SamplingMode>
+					<SamplingRate>100</SamplingRate>
+				</SamplingSettings>
+				<Database>
+					<DBId>2</DBId>
+					<DBTable Name="generator">
+						<ID>3</ID>
+						<TableMode>CUSTOM</TableMode>
+						<FailoverTableName>
+						</FailoverTableName>
+						<Columns>
+							<Column Type="0" Mode="AUTOID" SymbolID="0">ID</Column>
+							<Column Type="8" Mode="TIMESTAMP" SymbolID="0">Timestamp</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="4">GenSpeed1</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="5">GenSpeed2</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="6">GenSpeed3</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="7">GenTorque1</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="8">GenTorque2</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="9">GenTorque3</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="10">GenVoltage1</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="11">GenVoltage2</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="12">GenVoltage3</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="1">GenCurrent1</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="2">GenCurrent2</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="3">GenCurrent3</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="13">GenWatt1</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="14">GenWatt2</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="15">GenWatt3</Column>
+						</Columns>
+					</DBTable>
+				</Database>
+				<Device>
+					<DeviceId>2</DeviceId>
+					<Timeout>2000</Timeout>
+				</Device>
+				<Symbols>
+					<AdsSymbol ID="1" Type="REAL" IGroup="16448" IOffset="13450872" BitSize="32" AllocationName="GenAmp[1]">GVL.GenAmp[1]</AdsSymbol>
+					<AdsSymbol ID="2" Type="REAL" IGroup="16448" IOffset="13450876" BitSize="32" AllocationName="GenAmp[2]">GVL.GenAmp[2]</AdsSymbol>
+					<AdsSymbol ID="3" Type="REAL" IGroup="16448" IOffset="13450880" BitSize="32" AllocationName="GenAmp[3]">GVL.GenAmp[3]</AdsSymbol>
+					<AdsSymbol ID="4" Type="REAL" IGroup="16448" IOffset="13450824" BitSize="32" AllocationName="GenSpeed[1]">GVL.GenSpeed[1]</AdsSymbol>
+					<AdsSymbol ID="5" Type="REAL" IGroup="16448" IOffset="13450828" BitSize="32" AllocationName="GenSpeed[2]">GVL.GenSpeed[2]</AdsSymbol>
+					<AdsSymbol ID="6" Type="REAL" IGroup="16448" IOffset="13450832" BitSize="32" AllocationName="GenSpeed[3]">GVL.GenSpeed[3]</AdsSymbol>
+					<AdsSymbol ID="7" Type="REAL" IGroup="16448" IOffset="13450836" BitSize="32" AllocationName="GenTorque[1]">GVL.GenTorque[1]</AdsSymbol>
+					<AdsSymbol ID="8" Type="REAL" IGroup="16448" IOffset="13450840" BitSize="32" AllocationName="GenTorque[2]">GVL.GenTorque[2]</AdsSymbol>
+					<AdsSymbol ID="9" Type="REAL" IGroup="16448" IOffset="13450844" BitSize="32" AllocationName="GenTorque[3]">GVL.GenTorque[3]</AdsSymbol>
+					<AdsSymbol ID="10" Type="REAL" IGroup="16448" IOffset="13450860" BitSize="32" AllocationName="GenVoltage[1]">GVL.GenVoltage[1]</AdsSymbol>
+					<AdsSymbol ID="11" Type="REAL" IGroup="16448" IOffset="13450864" BitSize="32" AllocationName="GenVoltage[2]">GVL.GenVoltage[2]</AdsSymbol>
+					<AdsSymbol ID="12" Type="REAL" IGroup="16448" IOffset="13450868" BitSize="32" AllocationName="GenVoltage[3]">GVL.GenVoltage[3]</AdsSymbol>
+					<AdsSymbol ID="13" Type="REAL" IGroup="16448" IOffset="13450848" BitSize="32" AllocationName="GenWatt[1]">GVL.GenWatt[1]</AdsSymbol>
+					<AdsSymbol ID="14" Type="REAL" IGroup="16448" IOffset="13450852" BitSize="32" AllocationName="GenWatt[2]">GVL.GenWatt[2]</AdsSymbol>
+					<AdsSymbol ID="15" Type="REAL" IGroup="16448" IOffset="13450856" BitSize="32" AllocationName="GenWatt[3]">GVL.GenWatt[3]</AdsSymbol>
+				</Symbols>
+			</AutoLogGroup>
+			<AutoLogGroup Name="Grid">
+				<AutoLogGrpID>4</AutoLogGrpID>
+				<StartUp>AUTOSTART</StartUp>
+				<Direction>DeviceAsSource</Direction>
+				<WriteSettings>
+					<WriteMode>APPEND</WriteMode>
+				</WriteSettings>
+				<SamplingSettings>
+					<SamplingMode>cyclic</SamplingMode>
+					<SamplingRate>100</SamplingRate>
+				</SamplingSettings>
+				<Database>
+					<DBId>2</DBId>
+					<DBTable Name="powergrid">
+						<ID>4</ID>
+						<TableMode>CUSTOM</TableMode>
+						<FailoverTableName>
+						</FailoverTableName>
+						<Columns>
+							<Column Type="0" Mode="AUTOID" SymbolID="0">ID</Column>
+							<Column Type="8" Mode="TIMESTAMP" SymbolID="0">Timestamp</Column>
+							<Column Type="12" Mode="UNMAPPED" SymbolID="0">Name</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="1">AVG_V</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="2">AVG_I</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="3">pf</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="4">Total_W</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="5">Total_VAR</Column>
+							<Column Type="7" Mode="MAPPED" SymbolID="6">Total_VA</Column>
+						</Columns>
+					</DBTable>
+				</Database>
+				<Device>
+					<DeviceId>2</DeviceId>
+					<Timeout>2000</Timeout>
+				</Device>
+				<Symbols>
+					<AdsSymbol ID="1" Type="REAL" IGroup="16448" IOffset="13267828" BitSize="32" AllocationName="PowerMeter.Avg_V">MAIN.PowerMeter.Avg_V</AdsSymbol>
+					<AdsSymbol ID="2" Type="REAL" IGroup="16448" IOffset="13267832" BitSize="32" AllocationName="PowerMeter.Avg_I">MAIN.PowerMeter.Avg_I</AdsSymbol>
+					<AdsSymbol ID="3" Type="REAL" IGroup="16448" IOffset="13267872" BitSize="32" AllocationName="PowerMeter.pf">MAIN.PowerMeter.pf</AdsSymbol>
+					<AdsSymbol ID="4" Type="REAL" IGroup="16448" IOffset="13267876" BitSize="32" AllocationName="PowerMeter.Total_W">MAIN.PowerMeter.Total_W</AdsSymbol>
+					<AdsSymbol ID="5" Type="REAL" IGroup="16448" IOffset="13267880" BitSize="32" AllocationName="PowerMeter.Total_VAR">MAIN.PowerMeter.Total_VAR</AdsSymbol>
+					<AdsSymbol ID="6" Type="REAL" IGroup="16448" IOffset="13267884" BitSize="32" AllocationName="PowerMeter.Total_VA">MAIN.PowerMeter.Total_VA</AdsSymbol>
+				</Symbols>
+			</AutoLogGroup>
+			<AutoLogGroup Name="Watthour">
+				<AutoLogGrpID>10</AutoLogGrpID>
+				<StartUp>AUTOSTART</StartUp>
+				<Direction>DeviceAsSource</Direction>
+				<WriteSettings>
+					<WriteMode>UPDATE</WriteMode>
+				</WriteSettings>
+				<SamplingSettings>
+					<SamplingMode>cyclic</SamplingMode>
+					<SamplingRate>3600000</SamplingRate>
+				</SamplingSettings>
+				<Database>
+					<DBId>2</DBId>
+					<DBTable Name="wh_hour">
+						<ID>10</ID>
+						<TableMode>STANDARD</TableMode>
+						<FailoverTableName>
+						</FailoverTableName>
+					</DBTable>
+				</Database>
+				<Device>
+					<DeviceId>1</DeviceId>
+					<Timeout>2000</Timeout>
+				</Device>
+				<Symbols>
+					<AdsSymbol ID="6" Type="REAL" IGroup="16448" IOffset="13388796" BitSize="32" AllocationName="SCADAdata.Power_hour[1]">MAIN.SCADAdata.Power_hour[1]</AdsSymbol>
+					<AdsSymbol ID="7" Type="REAL" IGroup="16448" IOffset="13388800" BitSize="32" AllocationName="SCADAdata.Power_hour[2]">MAIN.SCADAdata.Power_hour[2]</AdsSymbol>
+					<AdsSymbol ID="8" Type="REAL" IGroup="16448" IOffset="13388804" BitSize="32" AllocationName="SCADAdata.Power_hour[3]">MAIN.SCADAdata.Power_hour[3]</AdsSymbol>
+					<AdsSymbol ID="9" Type="REAL" IGroup="16448" IOffset="13388808" BitSize="32" AllocationName="SCADAdata.Power_hour[4]">MAIN.SCADAdata.Power_hour[4]</AdsSymbol>
+					<AdsSymbol ID="10" Type="REAL" IGroup="16448" IOffset="13388812" BitSize="32" AllocationName="SCADAdata.Power_hour[5]">MAIN.SCADAdata.Power_hour[5]</AdsSymbol>
+					<AdsSymbol ID="11" Type="REAL" IGroup="16448" IOffset="13388816" BitSize="32" AllocationName="SCADAdata.Power_hour[6]">MAIN.SCADAdata.Power_hour[6]</AdsSymbol>
+					<AdsSymbol ID="12" Type="REAL" IGroup="16448" IOffset="13388820" BitSize="32" AllocationName="SCADAdata.Power_hour[7]">MAIN.SCADAdata.Power_hour[7]</AdsSymbol>
+					<AdsSymbol ID="13" Type="REAL" IGroup="16448" IOffset="13388824" BitSize="32" AllocationName="SCADAdata.Power_hour[8]">MAIN.SCADAdata.Power_hour[8]</AdsSymbol>
+					<AdsSymbol ID="14" Type="REAL" IGroup="16448" IOffset="13388828" BitSize="32" AllocationName="SCADAdata.Power_hour[9]">MAIN.SCADAdata.Power_hour[9]</AdsSymbol>
+					<AdsSymbol ID="15" Type="REAL" IGroup="16448" IOffset="13388832" BitSize="32" AllocationName="SCADAdata.Power_hour[10]">MAIN.SCADAdata.Power_hour[10]</AdsSymbol>
+					<AdsSymbol ID="16" Type="REAL" IGroup="16448" IOffset="13388836" BitSize="32" AllocationName="SCADAdata.Power_hour[11]">MAIN.SCADAdata.Power_hour[11]</AdsSymbol>
+					<AdsSymbol ID="17" Type="REAL" IGroup="16448" IOffset="13388840" BitSize="32" AllocationName="SCADAdata.Power_hour[12]">MAIN.SCADAdata.Power_hour[12]</AdsSymbol>
+					<AdsSymbol ID="18" Type="REAL" IGroup="16448" IOffset="13388844" BitSize="32" AllocationName="SCADAdata.Power_hour[13]">MAIN.SCADAdata.Power_hour[13]</AdsSymbol>
+					<AdsSymbol ID="19" Type="REAL" IGroup="16448" IOffset="13388848" BitSize="32" AllocationName="SCADAdata.Power_hour[14]">MAIN.SCADAdata.Power_hour[14]</AdsSymbol>
+					<AdsSymbol ID="20" Type="REAL" IGroup="16448" IOffset="13388852" BitSize="32" AllocationName="SCADAdata.Power_hour[15]">MAIN.SCADAdata.Power_hour[15]</AdsSymbol>
+					<AdsSymbol ID="21" Type="REAL" IGroup="16448" IOffset="13388856" BitSize="32" AllocationName="SCADAdata.Power_hour[16]">MAIN.SCADAdata.Power_hour[16]</AdsSymbol>
+					<AdsSymbol ID="22" Type="REAL" IGroup="16448" IOffset="13388860" BitSize="32" AllocationName="SCADAdata.Power_hour[17]">MAIN.SCADAdata.Power_hour[17]</AdsSymbol>
+					<AdsSymbol ID="23" Type="REAL" IGroup="16448" IOffset="13388864" BitSize="32" AllocationName="SCADAdata.Power_hour[18]">MAIN.SCADAdata.Power_hour[18]</AdsSymbol>
+					<AdsSymbol ID="24" Type="REAL" IGroup="16448" IOffset="13388868" BitSize="32" AllocationName="SCADAdata.Power_hour[19]">MAIN.SCADAdata.Power_hour[19]</AdsSymbol>
+					<AdsSymbol ID="25" Type="REAL" IGroup="16448" IOffset="13388872" BitSize="32" AllocationName="SCADAdata.Power_hour[20]">MAIN.SCADAdata.Power_hour[20]</AdsSymbol>
+					<AdsSymbol ID="26" Type="REAL" IGroup="16448" IOffset="13388876" BitSize="32" AllocationName="SCADAdata.Power_hour[21]">MAIN.SCADAdata.Power_hour[21]</AdsSymbol>
+					<AdsSymbol ID="27" Type="REAL" IGroup="16448" IOffset="13388880" BitSize="32" AllocationName="SCADAdata.Power_hour[22]">MAIN.SCADAdata.Power_hour[22]</AdsSymbol>
+					<AdsSymbol ID="28" Type="REAL" IGroup="16448" IOffset="13388884" BitSize="32" AllocationName="SCADAdata.Power_hour[23]">MAIN.SCADAdata.Power_hour[23]</AdsSymbol>
+					<AdsSymbol ID="29" Type="REAL" IGroup="16448" IOffset="13388888" BitSize="32" AllocationName="SCADAdata.Power_hour[24]">MAIN.SCADAdata.Power_hour[24]</AdsSymbol>
+				</Symbols>
+			</AutoLogGroup>
+			<AutoLogGroup Name="Nowdata">
+				<AutoLogGrpID>12</AutoLogGrpID>
+				<StartUp>AUTOSTART</StartUp>
+				<Direction>DeviceAsSource</Direction>
+				<WriteSettings>
+					<WriteMode>UPDATE</WriteMode>
+				</WriteSettings>
+				<SamplingSettings>
+					<SamplingMode>cyclic</SamplingMode>
+					<SamplingRate>100</SamplingRate>
+				</SamplingSettings>
+				<Database>
+					<DBId>2</DBId>
+					<DBTable Name="nowdata">
+						<ID>12</ID>
+						<TableMode>STANDARD</TableMode>
+						<FailoverTableName>
+						</FailoverTableName>
+					</DBTable>
+				</Database>
+				<Device>
+					<DeviceId>2</DeviceId>
+					<Timeout>2000</Timeout>
+				</Device>
+				<Symbols>
+					<AdsSymbol ID="1" Type="REAL" IGroup="16448" IOffset="13302028" BitSize="32" AllocationName="SCADAdata.Power_real">MAIN.SCADAdata.Power_real</AdsSymbol>
+					<AdsSymbol ID="2" Type="REAL" IGroup="16448" IOffset="13302116" BitSize="32" AllocationName="SCADAdata.Power_hour[0]">MAIN.SCADAdata.Power_hour[0]</AdsSymbol>
+					<AdsSymbol ID="3" Type="REAL" IGroup="16448" IOffset="13302212" BitSize="32" AllocationName="SCADAdata.Power_day[0]">MAIN.SCADAdata.Power_day[0]</AdsSymbol>
+					<AdsSymbol ID="4" Type="REAL" IGroup="16448" IOffset="13302240" BitSize="32" AllocationName="SCADAdata.Power_week[0]">MAIN.SCADAdata.Power_week[0]</AdsSymbol>
+					<AdsSymbol ID="5" Type="REAL" IGroup="16448" IOffset="13302448" BitSize="32" AllocationName="SCADAdata.Power_month[0]">MAIN.SCADAdata.Power_month[0]</AdsSymbol>
+					<AdsSymbol ID="6" Type="REAL" IGroup="16448" IOffset="13302216" BitSize="32" AllocationName="SCADAdata.Power_day[1]">MAIN.SCADAdata.Power_day[1]</AdsSymbol>
+					<AdsSymbol ID="7" Type="REAL" IGroup="16448" IOffset="13302244" BitSize="32" AllocationName="SCADAdata.Power_week[1]">MAIN.SCADAdata.Power_week[1]</AdsSymbol>
+					<AdsSymbol ID="8" Type="REAL" IGroup="16448" IOffset="13302452" BitSize="32" AllocationName="SCADAdata.Power_month[1]">MAIN.SCADAdata.Power_month[1]</AdsSymbol>
+					<AdsSymbol ID="9" Type="REAL" IGroup="16448" IOffset="13303456" BitSize="32" AllocationName="IGBT_I_dc">GVL.IGBT_I_dc</AdsSymbol>
+					<AdsSymbol ID="10" Type="REAL" IGroup="16448" IOffset="13303452" BitSize="32" AllocationName="IGBT_V_dc">GVL.IGBT_V_dc</AdsSymbol>
+					<AdsSymbol ID="11" Type="REAL" IGroup="16448" IOffset="13303460" BitSize="32" AllocationName="IGBT_W_dc">GVL.IGBT_W_dc</AdsSymbol>
+					<AdsSymbol ID="12" Type="REAL" IGroup="16448" IOffset="13262516" BitSize="32" AllocationName="PowerMeter.Total_W">MAIN.PowerMeter.Total_W</AdsSymbol>
+					<AdsSymbol ID="13" Type="REAL" IGroup="16448" IOffset="13262520" BitSize="32" AllocationName="PowerMeter.Total_VAR">MAIN.PowerMeter.Total_VAR</AdsSymbol>
+					<AdsSymbol ID="14" Type="REAL" IGroup="16448" IOffset="13262524" BitSize="32" AllocationName="PowerMeter.Total_VA">MAIN.PowerMeter.Total_VA</AdsSymbol>
+					<AdsSymbol ID="16" Type="REAL" IGroup="16448" IOffset="13353044" BitSize="32" AllocationName="Wavehight">GVL.Wavehight</AdsSymbol>
+					<AdsSymbol ID="17" Type="REAL" IGroup="16448" IOffset="13353052" BitSize="32" AllocationName="WaveFrq">GVL.WaveFrq</AdsSymbol>
+					<AdsSymbol ID="18" Type="REAL" IGroup="16448" IOffset="13353032" BitSize="32" AllocationName="Wavedirection">GVL.Wavedirection</AdsSymbol>
+					<AdsSymbol ID="15" Type="REAL" IGroup="16448" IOffset="13353036" BitSize="32" AllocationName="Wavepeakdir">GVL.Wavepeakdir</AdsSymbol>
+					<AdsSymbol ID="19" Type="BOOL" IGroup="16448" IOffset="13352831" BitSize="8" AllocationName="Wavemeteronoff">GVL.Wavemeteronoff</AdsSymbol>
+					<AdsSymbol ID="20" Type="BOOL" IGroup="16448" IOffset="13443839" BitSize="8" AllocationName="bGen[1]">GVL.bGen[1]</AdsSymbol>
+					<AdsSymbol ID="21" Type="BOOL" IGroup="16448" IOffset="13443840" BitSize="8" AllocationName="bGen[2]">GVL.bGen[2]</AdsSymbol>
+					<AdsSymbol ID="22" Type="BOOL" IGroup="16448" IOffset="13443841" BitSize="8" AllocationName="bGen[3]">GVL.bGen[3]</AdsSymbol>
+					<AdsSymbol ID="23" Type="BOOL" IGroup="16448" IOffset="13443769" BitSize="8" AllocationName="bbrake[1]">GVL.bbrake[1]</AdsSymbol>
+					<AdsSymbol ID="24" Type="BOOL" IGroup="16448" IOffset="13443770" BitSize="8" AllocationName="bbrake[2]">GVL.bbrake[2]</AdsSymbol>
+					<AdsSymbol ID="25" Type="BOOL" IGroup="16448" IOffset="13443771" BitSize="8" AllocationName="bbrake[3]">GVL.bbrake[3]</AdsSymbol>
+					<AdsSymbol ID="27" Type="BOOL" IGroup="16448" IOffset="13385666" BitSize="8" AllocationName="bmode">GVL.bmode</AdsSymbol>
+					<AdsSymbol ID="28" Type="REAL" IGroup="16448" IOffset="13443844" BitSize="32" AllocationName="GenTemp[1]">GVL.GenTemp[1]</AdsSymbol>
+					<AdsSymbol ID="29" Type="REAL" IGroup="16448" IOffset="13443848" BitSize="32" AllocationName="GenTemp[2]">GVL.GenTemp[2]</AdsSymbol>
+					<AdsSymbol ID="30" Type="REAL" IGroup="16448" IOffset="13443852" BitSize="32" AllocationName="GenTemp[3]">GVL.GenTemp[3]</AdsSymbol>
+					<AdsSymbol ID="31" Type="REAL" IGroup="16448" IOffset="13444088" BitSize="32" AllocationName="WaveEnEst">GVL.WaveEnEst</AdsSymbol>
+					<AdsSymbol ID="26" Type="REAL" IGroup="16448" IOffset="13443932" BitSize="32" AllocationName="InvTemp[1]">GVL.InvTemp[1]</AdsSymbol>
+					<AdsSymbol ID="32" Type="REAL" IGroup="16448" IOffset="13443936" BitSize="32" AllocationName="InvTemp[2]">GVL.InvTemp[2]</AdsSymbol>
+					<AdsSymbol ID="33" Type="REAL" IGroup="16448" IOffset="13443940" BitSize="32" AllocationName="InvTemp[3]">GVL.InvTemp[3]</AdsSymbol>
+					<AdsSymbol ID="34" Type="REAL" IGroup="16448" IOffset="13443512" BitSize="32" AllocationName="RoomTemp[1]">GVL.RoomTemp[1]</AdsSymbol>
+					<AdsSymbol ID="35" Type="REAL" IGroup="16448" IOffset="13443516" BitSize="32" AllocationName="RoomTemp[2]">GVL.RoomTemp[2]</AdsSymbol>
+					<AdsSymbol ID="36" Type="REAL" IGroup="16448" IOffset="13443788" BitSize="32" AllocationName="GenTorque[1]">GVL.GenTorque[1]</AdsSymbol>
+					<AdsSymbol ID="37" Type="REAL" IGroup="16448" IOffset="13443792" BitSize="32" AllocationName="GenTorque[2]">GVL.GenTorque[2]</AdsSymbol>
+					<AdsSymbol ID="38" Type="REAL" IGroup="16448" IOffset="13443796" BitSize="32" AllocationName="GenTorque[3]">GVL.GenTorque[3]</AdsSymbol>
+					<AdsSymbol ID="39" Type="REAL" IGroup="16448" IOffset="13443776" BitSize="32" AllocationName="GenSpeed[1]">GVL.GenSpeed[1]</AdsSymbol>
+					<AdsSymbol ID="40" Type="REAL" IGroup="16448" IOffset="13443780" BitSize="32" AllocationName="GenSpeed[2]">GVL.GenSpeed[2]</AdsSymbol>
+					<AdsSymbol ID="41" Type="REAL" IGroup="16448" IOffset="13443784" BitSize="32" AllocationName="GenSpeed[3]">GVL.GenSpeed[3]</AdsSymbol>
+					<AdsSymbol ID="42" Type="BOOL" IGroup="16448" IOffset="13395038" BitSize="8" AllocationName="Estop">GVL.Estop</AdsSymbol>
+				</Symbols>
+			</AutoLogGroup>
+			<AutoLogGroup Name="TotalPower">
+				<AutoLogGrpID>13</AutoLogGrpID>
+				<StartUp>AUTOSTART</StartUp>
+				<Direction>DeviceAsSource</Direction>
+				<WriteSettings>
+					<WriteMode>APPEND</WriteMode>
+				</WriteSettings>
+				<SamplingSettings>
+					<SamplingMode>onChange</SamplingMode>
+					<SamplingRate>100</SamplingRate>
+				</SamplingSettings>
+				<Database>
+					<DBId>2</DBId>
+					<DBTable Name="totalpower">
+						<ID>13</ID>
+						<TableMode>CUSTOM</TableMode>
+						<FailoverTableName>
+						</FailoverTableName>
+						<Columns>
+							<Column Type="0" Mode="AUTOID" SymbolID="0">ID</Column>
+							<Column Type="8" Mode="TIMESTAMP" SymbolID="0">Timestamp</Column>
+							<Column Type="12" Mode="UNMAPPED" SymbolID="0">Name</Column>
+							<Column Type="6" Mode="MAPPED" SymbolID="1">Value</Column>
+						</Columns>
+					</DBTable>
+				</Database>
+				<Device>
+					<DeviceId>2</DeviceId>
+					<Timeout>2000</Timeout>
+				</Device>
+				<Symbols>
+					<AdsSymbol ID="1" Type="REAL" IGroup="16448" IOffset="13444096" BitSize="32" AllocationName="TotalGenIGBT">GVL.TotalGenIGBT</AdsSymbol>
+				</Symbols>
+			</AutoLogGroup>
+			<AutoLogGroup Name="Alarm">
+				<AutoLogGrpID>14</AutoLogGrpID>
+				<StartUp>AUTOSTART</StartUp>
+				<Direction>DeviceAsSource</Direction>
+				<WriteSettings>
+					<WriteMode>APPEND</WriteMode>
+				</WriteSettings>
+				<SamplingSettings>
+					<SamplingMode>onChange</SamplingMode>
+					<SamplingRate>100</SamplingRate>
+				</SamplingSettings>
+				<Database>
+					<DBId>2</DBId>
+					<DBTable Name="alarm">
+						<ID>14</ID>
+						<TableMode>CUSTOM</TableMode>
+						<FailoverTableName>
+						</FailoverTableName>
+						<Columns>
+							<Column Type="0" Mode="AUTOID" SymbolID="0">ID</Column>
+							<Column Type="8" Mode="TIMESTAMP" SymbolID="0">Timestamp</Column>
+							<Column Type="12" Mode="MAPPED" SymbolID="1">Name</Column>
+							<Column Type="6" Mode="UNMAPPED" SymbolID="0">Value</Column>
+						</Columns>
+					</DBTable>
+				</Database>
+				<Device>
+					<DeviceId>2</DeviceId>
+					<Timeout>2000</Timeout>
+				</Device>
+				<Symbols>
+					<AdsSymbol ID="1" Type="STRING" IGroup="16448" IOffset="13443268" BitSize="0" AllocationName="Alarm_msg">GVL.Alarm_msg</AdsSymbol>
+				</Symbols>
+			</AutoLogGroup>
+			<AutoLogGroup Name="WattDay">
+				<AutoLogGrpID>16</AutoLogGrpID>
+				<StartUp>AUTOSTART</StartUp>
+				<Direction>DeviceAsSource</Direction>
+				<WriteSettings>
+					<WriteMode>APPEND</WriteMode>
+				</WriteSettings>
+				<SamplingSettings>
+					<SamplingMode>onChange</SamplingMode>
+					<SamplingRate>3600000</SamplingRate>
+				</SamplingSettings>
+				<Database>
+					<DBId>2</DBId>
+					<DBTable Name="wh_day">
+						<ID>16</ID>
+						<TableMode>STANDARD</TableMode>
+						<FailoverTableName>
+						</FailoverTableName>
+					</DBTable>
+				</Database>
+				<Device>
+					<DeviceId>2</DeviceId>
+					<Timeout>2000</Timeout>
+				</Device>
+				<Symbols>
+					<AdsSymbol ID="1" Type="REAL" IGroup="16448" IOffset="13387412" BitSize="32" AllocationName="SCADAdata.Power_day[1]">MAIN.SCADAdata.Power_day[1]</AdsSymbol>
+					<AdsSymbol ID="2" Type="REAL" IGroup="16448" IOffset="13387416" BitSize="32" AllocationName="SCADAdata.Power_day[2]">MAIN.SCADAdata.Power_day[2]</AdsSymbol>
+					<AdsSymbol ID="3" Type="REAL" IGroup="16448" IOffset="13387420" BitSize="32" AllocationName="SCADAdata.Power_day[3]">MAIN.SCADAdata.Power_day[3]</AdsSymbol>
+					<AdsSymbol ID="4" Type="REAL" IGroup="16448" IOffset="13387424" BitSize="32" AllocationName="SCADAdata.Power_day[4]">MAIN.SCADAdata.Power_day[4]</AdsSymbol>
+					<AdsSymbol ID="5" Type="REAL" IGroup="16448" IOffset="13387428" BitSize="32" AllocationName="SCADAdata.Power_day[5]">MAIN.SCADAdata.Power_day[5]</AdsSymbol>
+					<AdsSymbol ID="6" Type="REAL" IGroup="16448" IOffset="13387432" BitSize="32" AllocationName="SCADAdata.Power_day[6]">MAIN.SCADAdata.Power_day[6]</AdsSymbol>
+					<AdsSymbol ID="7" Type="REAL" IGroup="16448" IOffset="13387436" BitSize="32" AllocationName="SCADAdata.Power_day[7]">MAIN.SCADAdata.Power_day[7]</AdsSymbol>
+					<AdsSymbol ID="8" Type="REAL" IGroup="16448" IOffset="13387440" BitSize="32" AllocationName="SCADAdata.Power_day[8]">MAIN.SCADAdata.Power_day[8]</AdsSymbol>
+					<AdsSymbol ID="9" Type="REAL" IGroup="16448" IOffset="13387444" BitSize="32" AllocationName="SCADAdata.Power_day[9]">MAIN.SCADAdata.Power_day[9]</AdsSymbol>
+					<AdsSymbol ID="10" Type="REAL" IGroup="16448" IOffset="13387448" BitSize="32" AllocationName="SCADAdata.Power_day[10]">MAIN.SCADAdata.Power_day[10]</AdsSymbol>
+					<AdsSymbol ID="11" Type="REAL" IGroup="16448" IOffset="13387452" BitSize="32" AllocationName="SCADAdata.Power_day[11]">MAIN.SCADAdata.Power_day[11]</AdsSymbol>
+					<AdsSymbol ID="12" Type="REAL" IGroup="16448" IOffset="13387456" BitSize="32" AllocationName="SCADAdata.Power_day[12]">MAIN.SCADAdata.Power_day[12]</AdsSymbol>
+					<AdsSymbol ID="13" Type="REAL" IGroup="16448" IOffset="13387460" BitSize="32" AllocationName="SCADAdata.Power_day[13]">MAIN.SCADAdata.Power_day[13]</AdsSymbol>
+					<AdsSymbol ID="14" Type="REAL" IGroup="16448" IOffset="13387464" BitSize="32" AllocationName="SCADAdata.Power_day[14]">MAIN.SCADAdata.Power_day[14]</AdsSymbol>
+					<AdsSymbol ID="15" Type="REAL" IGroup="16448" IOffset="13387468" BitSize="32" AllocationName="SCADAdata.Power_day[15]">MAIN.SCADAdata.Power_day[15]</AdsSymbol>
+					<AdsSymbol ID="16" Type="REAL" IGroup="16448" IOffset="13387472" BitSize="32" AllocationName="SCADAdata.Power_day[16]">MAIN.SCADAdata.Power_day[16]</AdsSymbol>
+					<AdsSymbol ID="17" Type="REAL" IGroup="16448" IOffset="13387476" BitSize="32" AllocationName="SCADAdata.Power_day[17]">MAIN.SCADAdata.Power_day[17]</AdsSymbol>
+					<AdsSymbol ID="18" Type="REAL" IGroup="16448" IOffset="13387480" BitSize="32" AllocationName="SCADAdata.Power_day[18]">MAIN.SCADAdata.Power_day[18]</AdsSymbol>
+					<AdsSymbol ID="19" Type="REAL" IGroup="16448" IOffset="13387484" BitSize="32" AllocationName="SCADAdata.Power_day[19]">MAIN.SCADAdata.Power_day[19]</AdsSymbol>
+					<AdsSymbol ID="20" Type="REAL" IGroup="16448" IOffset="13387488" BitSize="32" AllocationName="SCADAdata.Power_day[20]">MAIN.SCADAdata.Power_day[20]</AdsSymbol>
+					<AdsSymbol ID="21" Type="REAL" IGroup="16448" IOffset="13387492" BitSize="32" AllocationName="SCADAdata.Power_day[21]">MAIN.SCADAdata.Power_day[21]</AdsSymbol>
+					<AdsSymbol ID="22" Type="REAL" IGroup="16448" IOffset="13387496" BitSize="32" AllocationName="SCADAdata.Power_day[22]">MAIN.SCADAdata.Power_day[22]</AdsSymbol>
+					<AdsSymbol ID="23" Type="REAL" IGroup="16448" IOffset="13387500" BitSize="32" AllocationName="SCADAdata.Power_day[23]">MAIN.SCADAdata.Power_day[23]</AdsSymbol>
+					<AdsSymbol ID="24" Type="REAL" IGroup="16448" IOffset="13387504" BitSize="32" AllocationName="SCADAdata.Power_day[24]">MAIN.SCADAdata.Power_day[24]</AdsSymbol>
+					<AdsSymbol ID="25" Type="REAL" IGroup="16448" IOffset="13387508" BitSize="32" AllocationName="SCADAdata.Power_day[25]">MAIN.SCADAdata.Power_day[25]</AdsSymbol>
+					<AdsSymbol ID="26" Type="REAL" IGroup="16448" IOffset="13387512" BitSize="32" AllocationName="SCADAdata.Power_day[26]">MAIN.SCADAdata.Power_day[26]</AdsSymbol>
+					<AdsSymbol ID="27" Type="REAL" IGroup="16448" IOffset="13387516" BitSize="32" AllocationName="SCADAdata.Power_day[27]">MAIN.SCADAdata.Power_day[27]</AdsSymbol>
+					<AdsSymbol ID="28" Type="REAL" IGroup="16448" IOffset="13387520" BitSize="32" AllocationName="SCADAdata.Power_day[28]">MAIN.SCADAdata.Power_day[28]</AdsSymbol>
+					<AdsSymbol ID="29" Type="REAL" IGroup="16448" IOffset="13387524" BitSize="32" AllocationName="SCADAdata.Power_day[29]">MAIN.SCADAdata.Power_day[29]</AdsSymbol>
+					<AdsSymbol ID="30" Type="REAL" IGroup="16448" IOffset="13387528" BitSize="32" AllocationName="SCADAdata.Power_day[30]">MAIN.SCADAdata.Power_day[30]</AdsSymbol>
+					<AdsSymbol ID="31" Type="REAL" IGroup="16448" IOffset="13387532" BitSize="32" AllocationName="SCADAdata.Power_day[31]">MAIN.SCADAdata.Power_day[31]</AdsSymbol>
+					<AdsSymbol ID="32" Type="REAL" IGroup="16448" IOffset="13387536" BitSize="32" AllocationName="SCADAdata.Power_day[32]">MAIN.SCADAdata.Power_day[32]</AdsSymbol>
+					<AdsSymbol ID="33" Type="REAL" IGroup="16448" IOffset="13387540" BitSize="32" AllocationName="SCADAdata.Power_day[33]">MAIN.SCADAdata.Power_day[33]</AdsSymbol>
+					<AdsSymbol ID="34" Type="REAL" IGroup="16448" IOffset="13387544" BitSize="32" AllocationName="SCADAdata.Power_day[34]">MAIN.SCADAdata.Power_day[34]</AdsSymbol>
+					<AdsSymbol ID="35" Type="REAL" IGroup="16448" IOffset="13387548" BitSize="32" AllocationName="SCADAdata.Power_day[35]">MAIN.SCADAdata.Power_day[35]</AdsSymbol>
+					<AdsSymbol ID="36" Type="REAL" IGroup="16448" IOffset="13387552" BitSize="32" AllocationName="SCADAdata.Power_day[36]">MAIN.SCADAdata.Power_day[36]</AdsSymbol>
+					<AdsSymbol ID="37" Type="REAL" IGroup="16448" IOffset="13387556" BitSize="32" AllocationName="SCADAdata.Power_day[37]">MAIN.SCADAdata.Power_day[37]</AdsSymbol>
+					<AdsSymbol ID="38" Type="REAL" IGroup="16448" IOffset="13387560" BitSize="32" AllocationName="SCADAdata.Power_day[38]">MAIN.SCADAdata.Power_day[38]</AdsSymbol>
+					<AdsSymbol ID="39" Type="REAL" IGroup="16448" IOffset="13387564" BitSize="32" AllocationName="SCADAdata.Power_day[39]">MAIN.SCADAdata.Power_day[39]</AdsSymbol>
+					<AdsSymbol ID="40" Type="REAL" IGroup="16448" IOffset="13387568" BitSize="32" AllocationName="SCADAdata.Power_day[40]">MAIN.SCADAdata.Power_day[40]</AdsSymbol>
+					<AdsSymbol ID="41" Type="REAL" IGroup="16448" IOffset="13387572" BitSize="32" AllocationName="SCADAdata.Power_day[41]">MAIN.SCADAdata.Power_day[41]</AdsSymbol>
+					<AdsSymbol ID="42" Type="REAL" IGroup="16448" IOffset="13387576" BitSize="32" AllocationName="SCADAdata.Power_day[42]">MAIN.SCADAdata.Power_day[42]</AdsSymbol>
+					<AdsSymbol ID="43" Type="REAL" IGroup="16448" IOffset="13387580" BitSize="32" AllocationName="SCADAdata.Power_day[43]">MAIN.SCADAdata.Power_day[43]</AdsSymbol>
+					<AdsSymbol ID="44" Type="REAL" IGroup="16448" IOffset="13387584" BitSize="32" AllocationName="SCADAdata.Power_day[44]">MAIN.SCADAdata.Power_day[44]</AdsSymbol>
+					<AdsSymbol ID="45" Type="REAL" IGroup="16448" IOffset="13387588" BitSize="32" AllocationName="SCADAdata.Power_day[45]">MAIN.SCADAdata.Power_day[45]</AdsSymbol>
+					<AdsSymbol ID="46" Type="REAL" IGroup="16448" IOffset="13387592" BitSize="32" AllocationName="SCADAdata.Power_day[46]">MAIN.SCADAdata.Power_day[46]</AdsSymbol>
+					<AdsSymbol ID="47" Type="REAL" IGroup="16448" IOffset="13387596" BitSize="32" AllocationName="SCADAdata.Power_day[47]">MAIN.SCADAdata.Power_day[47]</AdsSymbol>
+					<AdsSymbol ID="48" Type="REAL" IGroup="16448" IOffset="13387600" BitSize="32" AllocationName="SCADAdata.Power_day[48]">MAIN.SCADAdata.Power_day[48]</AdsSymbol>
+					<AdsSymbol ID="49" Type="REAL" IGroup="16448" IOffset="13387604" BitSize="32" AllocationName="SCADAdata.Power_day[49]">MAIN.SCADAdata.Power_day[49]</AdsSymbol>
+					<AdsSymbol ID="50" Type="REAL" IGroup="16448" IOffset="13387608" BitSize="32" AllocationName="SCADAdata.Power_day[50]">MAIN.SCADAdata.Power_day[50]</AdsSymbol>
+					<AdsSymbol ID="51" Type="REAL" IGroup="16448" IOffset="13387612" BitSize="32" AllocationName="SCADAdata.Power_day[51]">MAIN.SCADAdata.Power_day[51]</AdsSymbol>
+					<AdsSymbol ID="52" Type="REAL" IGroup="16448" IOffset="13387616" BitSize="32" AllocationName="SCADAdata.Power_day[52]">MAIN.SCADAdata.Power_day[52]</AdsSymbol>
+					<AdsSymbol ID="53" Type="REAL" IGroup="16448" IOffset="13387620" BitSize="32" AllocationName="SCADAdata.Power_day[53]">MAIN.SCADAdata.Power_day[53]</AdsSymbol>
+					<AdsSymbol ID="54" Type="REAL" IGroup="16448" IOffset="13387624" BitSize="32" AllocationName="SCADAdata.Power_day[54]">MAIN.SCADAdata.Power_day[54]</AdsSymbol>
+					<AdsSymbol ID="55" Type="REAL" IGroup="16448" IOffset="13387628" BitSize="32" AllocationName="SCADAdata.Power_day[55]">MAIN.SCADAdata.Power_day[55]</AdsSymbol>
+					<AdsSymbol ID="56" Type="REAL" IGroup="16448" IOffset="13387632" BitSize="32" AllocationName="SCADAdata.Power_day[56]">MAIN.SCADAdata.Power_day[56]</AdsSymbol>
+					<AdsSymbol ID="57" Type="REAL" IGroup="16448" IOffset="13387636" BitSize="32" AllocationName="SCADAdata.Power_day[57]">MAIN.SCADAdata.Power_day[57]</AdsSymbol>
+					<AdsSymbol ID="58" Type="REAL" IGroup="16448" IOffset="13387640" BitSize="32" AllocationName="SCADAdata.Power_day[58]">MAIN.SCADAdata.Power_day[58]</AdsSymbol>
+					<AdsSymbol ID="59" Type="REAL" IGroup="16448" IOffset="13387644" BitSize="32" AllocationName="SCADAdata.Power_day[59]">MAIN.SCADAdata.Power_day[59]</AdsSymbol>
+					<AdsSymbol ID="60" Type="REAL" IGroup="16448" IOffset="13387648" BitSize="32" AllocationName="SCADAdata.Power_day[60]">MAIN.SCADAdata.Power_day[60]</AdsSymbol>
+					<AdsSymbol ID="61" Type="REAL" IGroup="16448" IOffset="13387652" BitSize="32" AllocationName="SCADAdata.Power_day[61]">MAIN.SCADAdata.Power_day[61]</AdsSymbol>
+					<AdsSymbol ID="62" Type="REAL" IGroup="16448" IOffset="13387656" BitSize="32" AllocationName="SCADAdata.Power_day[62]">MAIN.SCADAdata.Power_day[62]</AdsSymbol>
+					<AdsSymbol ID="63" Type="REAL" IGroup="16448" IOffset="13387660" BitSize="32" AllocationName="SCADAdata.Power_day[63]">MAIN.SCADAdata.Power_day[63]</AdsSymbol>
+					<AdsSymbol ID="64" Type="REAL" IGroup="16448" IOffset="13387664" BitSize="32" AllocationName="SCADAdata.Power_day[64]">MAIN.SCADAdata.Power_day[64]</AdsSymbol>
+					<AdsSymbol ID="65" Type="REAL" IGroup="16448" IOffset="13387668" BitSize="32" AllocationName="SCADAdata.Power_day[65]">MAIN.SCADAdata.Power_day[65]</AdsSymbol>
+					<AdsSymbol ID="66" Type="REAL" IGroup="16448" IOffset="13387672" BitSize="32" AllocationName="SCADAdata.Power_day[66]">MAIN.SCADAdata.Power_day[66]</AdsSymbol>
+					<AdsSymbol ID="67" Type="REAL" IGroup="16448" IOffset="13387676" BitSize="32" AllocationName="SCADAdata.Power_day[67]">MAIN.SCADAdata.Power_day[67]</AdsSymbol>
+					<AdsSymbol ID="68" Type="REAL" IGroup="16448" IOffset="13387680" BitSize="32" AllocationName="SCADAdata.Power_day[68]">MAIN.SCADAdata.Power_day[68]</AdsSymbol>
+					<AdsSymbol ID="69" Type="REAL" IGroup="16448" IOffset="13387684" BitSize="32" AllocationName="SCADAdata.Power_day[69]">MAIN.SCADAdata.Power_day[69]</AdsSymbol>
+					<AdsSymbol ID="70" Type="REAL" IGroup="16448" IOffset="13387688" BitSize="32" AllocationName="SCADAdata.Power_day[70]">MAIN.SCADAdata.Power_day[70]</AdsSymbol>
+					<AdsSymbol ID="71" Type="REAL" IGroup="16448" IOffset="13387692" BitSize="32" AllocationName="SCADAdata.Power_day[71]">MAIN.SCADAdata.Power_day[71]</AdsSymbol>
+					<AdsSymbol ID="72" Type="REAL" IGroup="16448" IOffset="13387696" BitSize="32" AllocationName="SCADAdata.Power_day[72]">MAIN.SCADAdata.Power_day[72]</AdsSymbol>
+					<AdsSymbol ID="73" Type="REAL" IGroup="16448" IOffset="13387700" BitSize="32" AllocationName="SCADAdata.Power_day[73]">MAIN.SCADAdata.Power_day[73]</AdsSymbol>
+					<AdsSymbol ID="74" Type="REAL" IGroup="16448" IOffset="13387704" BitSize="32" AllocationName="SCADAdata.Power_day[74]">MAIN.SCADAdata.Power_day[74]</AdsSymbol>
+					<AdsSymbol ID="75" Type="REAL" IGroup="16448" IOffset="13387708" BitSize="32" AllocationName="SCADAdata.Power_day[75]">MAIN.SCADAdata.Power_day[75]</AdsSymbol>
+					<AdsSymbol ID="76" Type="REAL" IGroup="16448" IOffset="13387712" BitSize="32" AllocationName="SCADAdata.Power_day[76]">MAIN.SCADAdata.Power_day[76]</AdsSymbol>
+					<AdsSymbol ID="77" Type="REAL" IGroup="16448" IOffset="13387716" BitSize="32" AllocationName="SCADAdata.Power_day[77]">MAIN.SCADAdata.Power_day[77]</AdsSymbol>
+					<AdsSymbol ID="78" Type="REAL" IGroup="16448" IOffset="13387720" BitSize="32" AllocationName="SCADAdata.Power_day[78]">MAIN.SCADAdata.Power_day[78]</AdsSymbol>
+					<AdsSymbol ID="79" Type="REAL" IGroup="16448" IOffset="13387724" BitSize="32" AllocationName="SCADAdata.Power_day[79]">MAIN.SCADAdata.Power_day[79]</AdsSymbol>
+					<AdsSymbol ID="80" Type="REAL" IGroup="16448" IOffset="13387728" BitSize="32" AllocationName="SCADAdata.Power_day[80]">MAIN.SCADAdata.Power_day[80]</AdsSymbol>
+					<AdsSymbol ID="81" Type="REAL" IGroup="16448" IOffset="13387732" BitSize="32" AllocationName="SCADAdata.Power_day[81]">MAIN.SCADAdata.Power_day[81]</AdsSymbol>
+					<AdsSymbol ID="82" Type="REAL" IGroup="16448" IOffset="13387736" BitSize="32" AllocationName="SCADAdata.Power_day[82]">MAIN.SCADAdata.Power_day[82]</AdsSymbol>
+					<AdsSymbol ID="83" Type="REAL" IGroup="16448" IOffset="13387740" BitSize="32" AllocationName="SCADAdata.Power_day[83]">MAIN.SCADAdata.Power_day[83]</AdsSymbol>
+					<AdsSymbol ID="84" Type="REAL" IGroup="16448" IOffset="13387744" BitSize="32" AllocationName="SCADAdata.Power_day[84]">MAIN.SCADAdata.Power_day[84]</AdsSymbol>
+					<AdsSymbol ID="85" Type="REAL" IGroup="16448" IOffset="13387748" BitSize="32" AllocationName="SCADAdata.Power_day[85]">MAIN.SCADAdata.Power_day[85]</AdsSymbol>
+					<AdsSymbol ID="86" Type="REAL" IGroup="16448" IOffset="13387752" BitSize="32" AllocationName="SCADAdata.Power_day[86]">MAIN.SCADAdata.Power_day[86]</AdsSymbol>
+					<AdsSymbol ID="87" Type="REAL" IGroup="16448" IOffset="13387756" BitSize="32" AllocationName="SCADAdata.Power_day[87]">MAIN.SCADAdata.Power_day[87]</AdsSymbol>
+					<AdsSymbol ID="88" Type="REAL" IGroup="16448" IOffset="13387760" BitSize="32" AllocationName="SCADAdata.Power_day[88]">MAIN.SCADAdata.Power_day[88]</AdsSymbol>
+					<AdsSymbol ID="89" Type="REAL" IGroup="16448" IOffset="13387764" BitSize="32" AllocationName="SCADAdata.Power_day[89]">MAIN.SCADAdata.Power_day[89]</AdsSymbol>
+					<AdsSymbol ID="90" Type="REAL" IGroup="16448" IOffset="13387768" BitSize="32" AllocationName="SCADAdata.Power_day[90]">MAIN.SCADAdata.Power_day[90]</AdsSymbol>
+					<AdsSymbol ID="91" Type="REAL" IGroup="16448" IOffset="13387772" BitSize="32" AllocationName="SCADAdata.Power_day[91]">MAIN.SCADAdata.Power_day[91]</AdsSymbol>
+					<AdsSymbol ID="92" Type="REAL" IGroup="16448" IOffset="13387776" BitSize="32" AllocationName="SCADAdata.Power_day[92]">MAIN.SCADAdata.Power_day[92]</AdsSymbol>
+					<AdsSymbol ID="93" Type="REAL" IGroup="16448" IOffset="13387780" BitSize="32" AllocationName="SCADAdata.Power_day[93]">MAIN.SCADAdata.Power_day[93]</AdsSymbol>
+					<AdsSymbol ID="94" Type="REAL" IGroup="16448" IOffset="13387784" BitSize="32" AllocationName="SCADAdata.Power_day[94]">MAIN.SCADAdata.Power_day[94]</AdsSymbol>
+					<AdsSymbol ID="95" Type="REAL" IGroup="16448" IOffset="13387788" BitSize="32" AllocationName="SCADAdata.Power_day[95]">MAIN.SCADAdata.Power_day[95]</AdsSymbol>
+					<AdsSymbol ID="96" Type="REAL" IGroup="16448" IOffset="13387792" BitSize="32" AllocationName="SCADAdata.Power_day[96]">MAIN.SCADAdata.Power_day[96]</AdsSymbol>
+					<AdsSymbol ID="97" Type="REAL" IGroup="16448" IOffset="13387796" BitSize="32" AllocationName="SCADAdata.Power_day[97]">MAIN.SCADAdata.Power_day[97]</AdsSymbol>
+					<AdsSymbol ID="98" Type="REAL" IGroup="16448" IOffset="13387800" BitSize="32" AllocationName="SCADAdata.Power_day[98]">MAIN.SCADAdata.Power_day[98]</AdsSymbol>
+					<AdsSymbol ID="99" Type="REAL" IGroup="16448" IOffset="13387804" BitSize="32" AllocationName="SCADAdata.Power_day[99]">MAIN.SCADAdata.Power_day[99]</AdsSymbol>
+					<AdsSymbol ID="100" Type="REAL" IGroup="16448" IOffset="13387808" BitSize="32" AllocationName="SCADAdata.Power_day[100]">MAIN.SCADAdata.Power_day[100]</AdsSymbol>
+					<AdsSymbol ID="101" Type="REAL" IGroup="16448" IOffset="13387812" BitSize="32" AllocationName="SCADAdata.Power_day[101]">MAIN.SCADAdata.Power_day[101]</AdsSymbol>
+					<AdsSymbol ID="102" Type="REAL" IGroup="16448" IOffset="13387816" BitSize="32" AllocationName="SCADAdata.Power_day[102]">MAIN.SCADAdata.Power_day[102]</AdsSymbol>
+					<AdsSymbol ID="103" Type="REAL" IGroup="16448" IOffset="13387820" BitSize="32" AllocationName="SCADAdata.Power_day[103]">MAIN.SCADAdata.Power_day[103]</AdsSymbol>
+					<AdsSymbol ID="104" Type="REAL" IGroup="16448" IOffset="13387824" BitSize="32" AllocationName="SCADAdata.Power_day[104]">MAIN.SCADAdata.Power_day[104]</AdsSymbol>
+					<AdsSymbol ID="105" Type="REAL" IGroup="16448" IOffset="13387828" BitSize="32" AllocationName="SCADAdata.Power_day[105]">MAIN.SCADAdata.Power_day[105]</AdsSymbol>
+					<AdsSymbol ID="106" Type="REAL" IGroup="16448" IOffset="13387832" BitSize="32" AllocationName="SCADAdata.Power_day[106]">MAIN.SCADAdata.Power_day[106]</AdsSymbol>
+					<AdsSymbol ID="107" Type="REAL" IGroup="16448" IOffset="13387836" BitSize="32" AllocationName="SCADAdata.Power_day[107]">MAIN.SCADAdata.Power_day[107]</AdsSymbol>
+					<AdsSymbol ID="108" Type="REAL" IGroup="16448" IOffset="13387840" BitSize="32" AllocationName="SCADAdata.Power_day[108]">MAIN.SCADAdata.Power_day[108]</AdsSymbol>
+					<AdsSymbol ID="109" Type="REAL" IGroup="16448" IOffset="13387844" BitSize="32" AllocationName="SCADAdata.Power_day[109]">MAIN.SCADAdata.Power_day[109]</AdsSymbol>
+					<AdsSymbol ID="110" Type="REAL" IGroup="16448" IOffset="13387848" BitSize="32" AllocationName="SCADAdata.Power_day[110]">MAIN.SCADAdata.Power_day[110]</AdsSymbol>
+					<AdsSymbol ID="111" Type="REAL" IGroup="16448" IOffset="13387852" BitSize="32" AllocationName="SCADAdata.Power_day[111]">MAIN.SCADAdata.Power_day[111]</AdsSymbol>
+					<AdsSymbol ID="112" Type="REAL" IGroup="16448" IOffset="13387856" BitSize="32" AllocationName="SCADAdata.Power_day[112]">MAIN.SCADAdata.Power_day[112]</AdsSymbol>
+					<AdsSymbol ID="113" Type="REAL" IGroup="16448" IOffset="13387860" BitSize="32" AllocationName="SCADAdata.Power_day[113]">MAIN.SCADAdata.Power_day[113]</AdsSymbol>
+					<AdsSymbol ID="114" Type="REAL" IGroup="16448" IOffset="13387864" BitSize="32" AllocationName="SCADAdata.Power_day[114]">MAIN.SCADAdata.Power_day[114]</AdsSymbol>
+					<AdsSymbol ID="115" Type="REAL" IGroup="16448" IOffset="13387868" BitSize="32" AllocationName="SCADAdata.Power_day[115]">MAIN.SCADAdata.Power_day[115]</AdsSymbol>
+					<AdsSymbol ID="116" Type="REAL" IGroup="16448" IOffset="13387872" BitSize="32" AllocationName="SCADAdata.Power_day[116]">MAIN.SCADAdata.Power_day[116]</AdsSymbol>
+					<AdsSymbol ID="117" Type="REAL" IGroup="16448" IOffset="13387876" BitSize="32" AllocationName="SCADAdata.Power_day[117]">MAIN.SCADAdata.Power_day[117]</AdsSymbol>
+					<AdsSymbol ID="118" Type="REAL" IGroup="16448" IOffset="13387880" BitSize="32" AllocationName="SCADAdata.Power_day[118]">MAIN.SCADAdata.Power_day[118]</AdsSymbol>
+					<AdsSymbol ID="119" Type="REAL" IGroup="16448" IOffset="13387884" BitSize="32" AllocationName="SCADAdata.Power_day[119]">MAIN.SCADAdata.Power_day[119]</AdsSymbol>
+					<AdsSymbol ID="120" Type="REAL" IGroup="16448" IOffset="13387888" BitSize="32" AllocationName="SCADAdata.Power_day[120]">MAIN.SCADAdata.Power_day[120]</AdsSymbol>
+					<AdsSymbol ID="121" Type="REAL" IGroup="16448" IOffset="13387892" BitSize="32" AllocationName="SCADAdata.Power_day[121]">MAIN.SCADAdata.Power_day[121]</AdsSymbol>
+					<AdsSymbol ID="122" Type="REAL" IGroup="16448" IOffset="13387896" BitSize="32" AllocationName="SCADAdata.Power_day[122]">MAIN.SCADAdata.Power_day[122]</AdsSymbol>
+					<AdsSymbol ID="123" Type="REAL" IGroup="16448" IOffset="13387900" BitSize="32" AllocationName="SCADAdata.Power_day[123]">MAIN.SCADAdata.Power_day[123]</AdsSymbol>
+					<AdsSymbol ID="124" Type="REAL" IGroup="16448" IOffset="13387904" BitSize="32" AllocationName="SCADAdata.Power_day[124]">MAIN.SCADAdata.Power_day[124]</AdsSymbol>
+					<AdsSymbol ID="125" Type="REAL" IGroup="16448" IOffset="13387908" BitSize="32" AllocationName="SCADAdata.Power_day[125]">MAIN.SCADAdata.Power_day[125]</AdsSymbol>
+					<AdsSymbol ID="126" Type="REAL" IGroup="16448" IOffset="13387912" BitSize="32" AllocationName="SCADAdata.Power_day[126]">MAIN.SCADAdata.Power_day[126]</AdsSymbol>
+					<AdsSymbol ID="127" Type="REAL" IGroup="16448" IOffset="13387916" BitSize="32" AllocationName="SCADAdata.Power_day[127]">MAIN.SCADAdata.Power_day[127]</AdsSymbol>
+					<AdsSymbol ID="128" Type="REAL" IGroup="16448" IOffset="13387920" BitSize="32" AllocationName="SCADAdata.Power_day[128]">MAIN.SCADAdata.Power_day[128]</AdsSymbol>
+					<AdsSymbol ID="129" Type="REAL" IGroup="16448" IOffset="13387924" BitSize="32" AllocationName="SCADAdata.Power_day[129]">MAIN.SCADAdata.Power_day[129]</AdsSymbol>
+					<AdsSymbol ID="130" Type="REAL" IGroup="16448" IOffset="13387928" BitSize="32" AllocationName="SCADAdata.Power_day[130]">MAIN.SCADAdata.Power_day[130]</AdsSymbol>
+					<AdsSymbol ID="131" Type="REAL" IGroup="16448" IOffset="13387932" BitSize="32" AllocationName="SCADAdata.Power_day[131]">MAIN.SCADAdata.Power_day[131]</AdsSymbol>
+					<AdsSymbol ID="132" Type="REAL" IGroup="16448" IOffset="13387936" BitSize="32" AllocationName="SCADAdata.Power_day[132]">MAIN.SCADAdata.Power_day[132]</AdsSymbol>
+					<AdsSymbol ID="133" Type="REAL" IGroup="16448" IOffset="13387940" BitSize="32" AllocationName="SCADAdata.Power_day[133]">MAIN.SCADAdata.Power_day[133]</AdsSymbol>
+					<AdsSymbol ID="134" Type="REAL" IGroup="16448" IOffset="13387944" BitSize="32" AllocationName="SCADAdata.Power_day[134]">MAIN.SCADAdata.Power_day[134]</AdsSymbol>
+					<AdsSymbol ID="135" Type="REAL" IGroup="16448" IOffset="13387948" BitSize="32" AllocationName="SCADAdata.Power_day[135]">MAIN.SCADAdata.Power_day[135]</AdsSymbol>
+					<AdsSymbol ID="136" Type="REAL" IGroup="16448" IOffset="13387952" BitSize="32" AllocationName="SCADAdata.Power_day[136]">MAIN.SCADAdata.Power_day[136]</AdsSymbol>
+					<AdsSymbol ID="137" Type="REAL" IGroup="16448" IOffset="13387956" BitSize="32" AllocationName="SCADAdata.Power_day[137]">MAIN.SCADAdata.Power_day[137]</AdsSymbol>
+					<AdsSymbol ID="138" Type="REAL" IGroup="16448" IOffset="13387960" BitSize="32" AllocationName="SCADAdata.Power_day[138]">MAIN.SCADAdata.Power_day[138]</AdsSymbol>
+					<AdsSymbol ID="139" Type="REAL" IGroup="16448" IOffset="13387964" BitSize="32" AllocationName="SCADAdata.Power_day[139]">MAIN.SCADAdata.Power_day[139]</AdsSymbol>
+					<AdsSymbol ID="140" Type="REAL" IGroup="16448" IOffset="13387968" BitSize="32" AllocationName="SCADAdata.Power_day[140]">MAIN.SCADAdata.Power_day[140]</AdsSymbol>
+					<AdsSymbol ID="141" Type="REAL" IGroup="16448" IOffset="13387972" BitSize="32" AllocationName="SCADAdata.Power_day[141]">MAIN.SCADAdata.Power_day[141]</AdsSymbol>
+					<AdsSymbol ID="142" Type="REAL" IGroup="16448" IOffset="13387976" BitSize="32" AllocationName="SCADAdata.Power_day[142]">MAIN.SCADAdata.Power_day[142]</AdsSymbol>
+					<AdsSymbol ID="143" Type="REAL" IGroup="16448" IOffset="13387980" BitSize="32" AllocationName="SCADAdata.Power_day[143]">MAIN.SCADAdata.Power_day[143]</AdsSymbol>
+					<AdsSymbol ID="144" Type="REAL" IGroup="16448" IOffset="13387984" BitSize="32" AllocationName="SCADAdata.Power_day[144]">MAIN.SCADAdata.Power_day[144]</AdsSymbol>
+					<AdsSymbol ID="145" Type="REAL" IGroup="16448" IOffset="13387988" BitSize="32" AllocationName="SCADAdata.Power_day[145]">MAIN.SCADAdata.Power_day[145]</AdsSymbol>
+					<AdsSymbol ID="146" Type="REAL" IGroup="16448" IOffset="13387992" BitSize="32" AllocationName="SCADAdata.Power_day[146]">MAIN.SCADAdata.Power_day[146]</AdsSymbol>
+					<AdsSymbol ID="147" Type="REAL" IGroup="16448" IOffset="13387996" BitSize="32" AllocationName="SCADAdata.Power_day[147]">MAIN.SCADAdata.Power_day[147]</AdsSymbol>
+					<AdsSymbol ID="148" Type="REAL" IGroup="16448" IOffset="13388000" BitSize="32" AllocationName="SCADAdata.Power_day[148]">MAIN.SCADAdata.Power_day[148]</AdsSymbol>
+					<AdsSymbol ID="149" Type="REAL" IGroup="16448" IOffset="13388004" BitSize="32" AllocationName="SCADAdata.Power_day[149]">MAIN.SCADAdata.Power_day[149]</AdsSymbol>
+					<AdsSymbol ID="150" Type="REAL" IGroup="16448" IOffset="13388008" BitSize="32" AllocationName="SCADAdata.Power_day[150]">MAIN.SCADAdata.Power_day[150]</AdsSymbol>
+					<AdsSymbol ID="151" Type="REAL" IGroup="16448" IOffset="13388012" BitSize="32" AllocationName="SCADAdata.Power_day[151]">MAIN.SCADAdata.Power_day[151]</AdsSymbol>
+					<AdsSymbol ID="152" Type="REAL" IGroup="16448" IOffset="13388016" BitSize="32" AllocationName="SCADAdata.Power_day[152]">MAIN.SCADAdata.Power_day[152]</AdsSymbol>
+					<AdsSymbol ID="153" Type="REAL" IGroup="16448" IOffset="13388020" BitSize="32" AllocationName="SCADAdata.Power_day[153]">MAIN.SCADAdata.Power_day[153]</AdsSymbol>
+					<AdsSymbol ID="154" Type="REAL" IGroup="16448" IOffset="13388024" BitSize="32" AllocationName="SCADAdata.Power_day[154]">MAIN.SCADAdata.Power_day[154]</AdsSymbol>
+					<AdsSymbol ID="155" Type="REAL" IGroup="16448" IOffset="13388028" BitSize="32" AllocationName="SCADAdata.Power_day[155]">MAIN.SCADAdata.Power_day[155]</AdsSymbol>
+					<AdsSymbol ID="156" Type="REAL" IGroup="16448" IOffset="13388032" BitSize="32" AllocationName="SCADAdata.Power_day[156]">MAIN.SCADAdata.Power_day[156]</AdsSymbol>
+					<AdsSymbol ID="157" Type="REAL" IGroup="16448" IOffset="13388036" BitSize="32" AllocationName="SCADAdata.Power_day[157]">MAIN.SCADAdata.Power_day[157]</AdsSymbol>
+					<AdsSymbol ID="158" Type="REAL" IGroup="16448" IOffset="13388040" BitSize="32" AllocationName="SCADAdata.Power_day[158]">MAIN.SCADAdata.Power_day[158]</AdsSymbol>
+					<AdsSymbol ID="159" Type="REAL" IGroup="16448" IOffset="13388044" BitSize="32" AllocationName="SCADAdata.Power_day[159]">MAIN.SCADAdata.Power_day[159]</AdsSymbol>
+					<AdsSymbol ID="160" Type="REAL" IGroup="16448" IOffset="13388048" BitSize="32" AllocationName="SCADAdata.Power_day[160]">MAIN.SCADAdata.Power_day[160]</AdsSymbol>
+					<AdsSymbol ID="161" Type="REAL" IGroup="16448" IOffset="13388052" BitSize="32" AllocationName="SCADAdata.Power_day[161]">MAIN.SCADAdata.Power_day[161]</AdsSymbol>
+					<AdsSymbol ID="162" Type="REAL" IGroup="16448" IOffset="13388056" BitSize="32" AllocationName="SCADAdata.Power_day[162]">MAIN.SCADAdata.Power_day[162]</AdsSymbol>
+					<AdsSymbol ID="163" Type="REAL" IGroup="16448" IOffset="13388060" BitSize="32" AllocationName="SCADAdata.Power_day[163]">MAIN.SCADAdata.Power_day[163]</AdsSymbol>
+					<AdsSymbol ID="164" Type="REAL" IGroup="16448" IOffset="13388064" BitSize="32" AllocationName="SCADAdata.Power_day[164]">MAIN.SCADAdata.Power_day[164]</AdsSymbol>
+					<AdsSymbol ID="165" Type="REAL" IGroup="16448" IOffset="13388068" BitSize="32" AllocationName="SCADAdata.Power_day[165]">MAIN.SCADAdata.Power_day[165]</AdsSymbol>
+					<AdsSymbol ID="166" Type="REAL" IGroup="16448" IOffset="13388072" BitSize="32" AllocationName="SCADAdata.Power_day[166]">MAIN.SCADAdata.Power_day[166]</AdsSymbol>
+					<AdsSymbol ID="167" Type="REAL" IGroup="16448" IOffset="13388076" BitSize="32" AllocationName="SCADAdata.Power_day[167]">MAIN.SCADAdata.Power_day[167]</AdsSymbol>
+					<AdsSymbol ID="168" Type="REAL" IGroup="16448" IOffset="13388080" BitSize="32" AllocationName="SCADAdata.Power_day[168]">MAIN.SCADAdata.Power_day[168]</AdsSymbol>
+					<AdsSymbol ID="169" Type="REAL" IGroup="16448" IOffset="13388084" BitSize="32" AllocationName="SCADAdata.Power_day[169]">MAIN.SCADAdata.Power_day[169]</AdsSymbol>
+					<AdsSymbol ID="170" Type="REAL" IGroup="16448" IOffset="13388088" BitSize="32" AllocationName="SCADAdata.Power_day[170]">MAIN.SCADAdata.Power_day[170]</AdsSymbol>
+					<AdsSymbol ID="171" Type="REAL" IGroup="16448" IOffset="13388092" BitSize="32" AllocationName="SCADAdata.Power_day[171]">MAIN.SCADAdata.Power_day[171]</AdsSymbol>
+					<AdsSymbol ID="172" Type="REAL" IGroup="16448" IOffset="13388096" BitSize="32" AllocationName="SCADAdata.Power_day[172]">MAIN.SCADAdata.Power_day[172]</AdsSymbol>
+					<AdsSymbol ID="173" Type="REAL" IGroup="16448" IOffset="13388100" BitSize="32" AllocationName="SCADAdata.Power_day[173]">MAIN.SCADAdata.Power_day[173]</AdsSymbol>
+					<AdsSymbol ID="174" Type="REAL" IGroup="16448" IOffset="13388104" BitSize="32" AllocationName="SCADAdata.Power_day[174]">MAIN.SCADAdata.Power_day[174]</AdsSymbol>
+					<AdsSymbol ID="175" Type="REAL" IGroup="16448" IOffset="13388108" BitSize="32" AllocationName="SCADAdata.Power_day[175]">MAIN.SCADAdata.Power_day[175]</AdsSymbol>
+					<AdsSymbol ID="176" Type="REAL" IGroup="16448" IOffset="13388112" BitSize="32" AllocationName="SCADAdata.Power_day[176]">MAIN.SCADAdata.Power_day[176]</AdsSymbol>
+					<AdsSymbol ID="177" Type="REAL" IGroup="16448" IOffset="13388116" BitSize="32" AllocationName="SCADAdata.Power_day[177]">MAIN.SCADAdata.Power_day[177]</AdsSymbol>
+					<AdsSymbol ID="178" Type="REAL" IGroup="16448" IOffset="13388120" BitSize="32" AllocationName="SCADAdata.Power_day[178]">MAIN.SCADAdata.Power_day[178]</AdsSymbol>
+					<AdsSymbol ID="179" Type="REAL" IGroup="16448" IOffset="13388124" BitSize="32" AllocationName="SCADAdata.Power_day[179]">MAIN.SCADAdata.Power_day[179]</AdsSymbol>
+					<AdsSymbol ID="180" Type="REAL" IGroup="16448" IOffset="13388128" BitSize="32" AllocationName="SCADAdata.Power_day[180]">MAIN.SCADAdata.Power_day[180]</AdsSymbol>
+					<AdsSymbol ID="181" Type="REAL" IGroup="16448" IOffset="13388132" BitSize="32" AllocationName="SCADAdata.Power_day[181]">MAIN.SCADAdata.Power_day[181]</AdsSymbol>
+					<AdsSymbol ID="182" Type="REAL" IGroup="16448" IOffset="13388136" BitSize="32" AllocationName="SCADAdata.Power_day[182]">MAIN.SCADAdata.Power_day[182]</AdsSymbol>
+					<AdsSymbol ID="183" Type="REAL" IGroup="16448" IOffset="13388140" BitSize="32" AllocationName="SCADAdata.Power_day[183]">MAIN.SCADAdata.Power_day[183]</AdsSymbol>
+					<AdsSymbol ID="184" Type="REAL" IGroup="16448" IOffset="13388144" BitSize="32" AllocationName="SCADAdata.Power_day[184]">MAIN.SCADAdata.Power_day[184]</AdsSymbol>
+					<AdsSymbol ID="185" Type="REAL" IGroup="16448" IOffset="13388148" BitSize="32" AllocationName="SCADAdata.Power_day[185]">MAIN.SCADAdata.Power_day[185]</AdsSymbol>
+					<AdsSymbol ID="186" Type="REAL" IGroup="16448" IOffset="13388152" BitSize="32" AllocationName="SCADAdata.Power_day[186]">MAIN.SCADAdata.Power_day[186]</AdsSymbol>
+					<AdsSymbol ID="187" Type="REAL" IGroup="16448" IOffset="13388156" BitSize="32" AllocationName="SCADAdata.Power_day[187]">MAIN.SCADAdata.Power_day[187]</AdsSymbol>
+					<AdsSymbol ID="188" Type="REAL" IGroup="16448" IOffset="13388160" BitSize="32" AllocationName="SCADAdata.Power_day[188]">MAIN.SCADAdata.Power_day[188]</AdsSymbol>
+					<AdsSymbol ID="189" Type="REAL" IGroup="16448" IOffset="13388164" BitSize="32" AllocationName="SCADAdata.Power_day[189]">MAIN.SCADAdata.Power_day[189]</AdsSymbol>
+					<AdsSymbol ID="190" Type="REAL" IGroup="16448" IOffset="13388168" BitSize="32" AllocationName="SCADAdata.Power_day[190]">MAIN.SCADAdata.Power_day[190]</AdsSymbol>
+					<AdsSymbol ID="191" Type="REAL" IGroup="16448" IOffset="13388172" BitSize="32" AllocationName="SCADAdata.Power_day[191]">MAIN.SCADAdata.Power_day[191]</AdsSymbol>
+					<AdsSymbol ID="192" Type="REAL" IGroup="16448" IOffset="13388176" BitSize="32" AllocationName="SCADAdata.Power_day[192]">MAIN.SCADAdata.Power_day[192]</AdsSymbol>
+					<AdsSymbol ID="193" Type="REAL" IGroup="16448" IOffset="13388180" BitSize="32" AllocationName="SCADAdata.Power_day[193]">MAIN.SCADAdata.Power_day[193]</AdsSymbol>
+					<AdsSymbol ID="194" Type="REAL" IGroup="16448" IOffset="13388184" BitSize="32" AllocationName="SCADAdata.Power_day[194]">MAIN.SCADAdata.Power_day[194]</AdsSymbol>
+					<AdsSymbol ID="195" Type="REAL" IGroup="16448" IOffset="13388188" BitSize="32" AllocationName="SCADAdata.Power_day[195]">MAIN.SCADAdata.Power_day[195]</AdsSymbol>
+					<AdsSymbol ID="196" Type="REAL" IGroup="16448" IOffset="13388192" BitSize="32" AllocationName="SCADAdata.Power_day[196]">MAIN.SCADAdata.Power_day[196]</AdsSymbol>
+					<AdsSymbol ID="197" Type="REAL" IGroup="16448" IOffset="13388196" BitSize="32" AllocationName="SCADAdata.Power_day[197]">MAIN.SCADAdata.Power_day[197]</AdsSymbol>
+					<AdsSymbol ID="198" Type="REAL" IGroup="16448" IOffset="13388200" BitSize="32" AllocationName="SCADAdata.Power_day[198]">MAIN.SCADAdata.Power_day[198]</AdsSymbol>
+					<AdsSymbol ID="199" Type="REAL" IGroup="16448" IOffset="13388204" BitSize="32" AllocationName="SCADAdata.Power_day[199]">MAIN.SCADAdata.Power_day[199]</AdsSymbol>
+					<AdsSymbol ID="200" Type="REAL" IGroup="16448" IOffset="13388208" BitSize="32" AllocationName="SCADAdata.Power_day[200]">MAIN.SCADAdata.Power_day[200]</AdsSymbol>
+					<AdsSymbol ID="201" Type="REAL" IGroup="16448" IOffset="13388212" BitSize="32" AllocationName="SCADAdata.Power_day[201]">MAIN.SCADAdata.Power_day[201]</AdsSymbol>
+					<AdsSymbol ID="202" Type="REAL" IGroup="16448" IOffset="13388216" BitSize="32" AllocationName="SCADAdata.Power_day[202]">MAIN.SCADAdata.Power_day[202]</AdsSymbol>
+					<AdsSymbol ID="203" Type="REAL" IGroup="16448" IOffset="13388220" BitSize="32" AllocationName="SCADAdata.Power_day[203]">MAIN.SCADAdata.Power_day[203]</AdsSymbol>
+					<AdsSymbol ID="204" Type="REAL" IGroup="16448" IOffset="13388224" BitSize="32" AllocationName="SCADAdata.Power_day[204]">MAIN.SCADAdata.Power_day[204]</AdsSymbol>
+					<AdsSymbol ID="205" Type="REAL" IGroup="16448" IOffset="13388228" BitSize="32" AllocationName="SCADAdata.Power_day[205]">MAIN.SCADAdata.Power_day[205]</AdsSymbol>
+					<AdsSymbol ID="206" Type="REAL" IGroup="16448" IOffset="13388232" BitSize="32" AllocationName="SCADAdata.Power_day[206]">MAIN.SCADAdata.Power_day[206]</AdsSymbol>
+					<AdsSymbol ID="207" Type="REAL" IGroup="16448" IOffset="13388236" BitSize="32" AllocationName="SCADAdata.Power_day[207]">MAIN.SCADAdata.Power_day[207]</AdsSymbol>
+					<AdsSymbol ID="208" Type="REAL" IGroup="16448" IOffset="13388240" BitSize="32" AllocationName="SCADAdata.Power_day[208]">MAIN.SCADAdata.Power_day[208]</AdsSymbol>
+					<AdsSymbol ID="209" Type="REAL" IGroup="16448" IOffset="13388244" BitSize="32" AllocationName="SCADAdata.Power_day[209]">MAIN.SCADAdata.Power_day[209]</AdsSymbol>
+					<AdsSymbol ID="210" Type="REAL" IGroup="16448" IOffset="13388248" BitSize="32" AllocationName="SCADAdata.Power_day[210]">MAIN.SCADAdata.Power_day[210]</AdsSymbol>
+					<AdsSymbol ID="211" Type="REAL" IGroup="16448" IOffset="13388252" BitSize="32" AllocationName="SCADAdata.Power_day[211]">MAIN.SCADAdata.Power_day[211]</AdsSymbol>
+					<AdsSymbol ID="212" Type="REAL" IGroup="16448" IOffset="13388256" BitSize="32" AllocationName="SCADAdata.Power_day[212]">MAIN.SCADAdata.Power_day[212]</AdsSymbol>
+					<AdsSymbol ID="213" Type="REAL" IGroup="16448" IOffset="13388260" BitSize="32" AllocationName="SCADAdata.Power_day[213]">MAIN.SCADAdata.Power_day[213]</AdsSymbol>
+					<AdsSymbol ID="214" Type="REAL" IGroup="16448" IOffset="13388264" BitSize="32" AllocationName="SCADAdata.Power_day[214]">MAIN.SCADAdata.Power_day[214]</AdsSymbol>
+					<AdsSymbol ID="215" Type="REAL" IGroup="16448" IOffset="13388268" BitSize="32" AllocationName="SCADAdata.Power_day[215]">MAIN.SCADAdata.Power_day[215]</AdsSymbol>
+					<AdsSymbol ID="216" Type="REAL" IGroup="16448" IOffset="13388272" BitSize="32" AllocationName="SCADAdata.Power_day[216]">MAIN.SCADAdata.Power_day[216]</AdsSymbol>
+					<AdsSymbol ID="217" Type="REAL" IGroup="16448" IOffset="13388276" BitSize="32" AllocationName="SCADAdata.Power_day[217]">MAIN.SCADAdata.Power_day[217]</AdsSymbol>
+					<AdsSymbol ID="218" Type="REAL" IGroup="16448" IOffset="13388280" BitSize="32" AllocationName="SCADAdata.Power_day[218]">MAIN.SCADAdata.Power_day[218]</AdsSymbol>
+					<AdsSymbol ID="219" Type="REAL" IGroup="16448" IOffset="13388284" BitSize="32" AllocationName="SCADAdata.Power_day[219]">MAIN.SCADAdata.Power_day[219]</AdsSymbol>
+					<AdsSymbol ID="220" Type="REAL" IGroup="16448" IOffset="13388288" BitSize="32" AllocationName="SCADAdata.Power_day[220]">MAIN.SCADAdata.Power_day[220]</AdsSymbol>
+					<AdsSymbol ID="221" Type="REAL" IGroup="16448" IOffset="13388292" BitSize="32" AllocationName="SCADAdata.Power_day[221]">MAIN.SCADAdata.Power_day[221]</AdsSymbol>
+					<AdsSymbol ID="222" Type="REAL" IGroup="16448" IOffset="13388296" BitSize="32" AllocationName="SCADAdata.Power_day[222]">MAIN.SCADAdata.Power_day[222]</AdsSymbol>
+					<AdsSymbol ID="223" Type="REAL" IGroup="16448" IOffset="13388300" BitSize="32" AllocationName="SCADAdata.Power_day[223]">MAIN.SCADAdata.Power_day[223]</AdsSymbol>
+					<AdsSymbol ID="224" Type="REAL" IGroup="16448" IOffset="13388304" BitSize="32" AllocationName="SCADAdata.Power_day[224]">MAIN.SCADAdata.Power_day[224]</AdsSymbol>
+					<AdsSymbol ID="225" Type="REAL" IGroup="16448" IOffset="13388308" BitSize="32" AllocationName="SCADAdata.Power_day[225]">MAIN.SCADAdata.Power_day[225]</AdsSymbol>
+					<AdsSymbol ID="226" Type="REAL" IGroup="16448" IOffset="13388312" BitSize="32" AllocationName="SCADAdata.Power_day[226]">MAIN.SCADAdata.Power_day[226]</AdsSymbol>
+					<AdsSymbol ID="227" Type="REAL" IGroup="16448" IOffset="13388316" BitSize="32" AllocationName="SCADAdata.Power_day[227]">MAIN.SCADAdata.Power_day[227]</AdsSymbol>
+					<AdsSymbol ID="228" Type="REAL" IGroup="16448" IOffset="13388320" BitSize="32" AllocationName="SCADAdata.Power_day[228]">MAIN.SCADAdata.Power_day[228]</AdsSymbol>
+					<AdsSymbol ID="229" Type="REAL" IGroup="16448" IOffset="13388324" BitSize="32" AllocationName="SCADAdata.Power_day[229]">MAIN.SCADAdata.Power_day[229]</AdsSymbol>
+					<AdsSymbol ID="230" Type="REAL" IGroup="16448" IOffset="13388328" BitSize="32" AllocationName="SCADAdata.Power_day[230]">MAIN.SCADAdata.Power_day[230]</AdsSymbol>
+					<AdsSymbol ID="231" Type="REAL" IGroup="16448" IOffset="13388332" BitSize="32" AllocationName="SCADAdata.Power_day[231]">MAIN.SCADAdata.Power_day[231]</AdsSymbol>
+					<AdsSymbol ID="232" Type="REAL" IGroup="16448" IOffset="13388336" BitSize="32" AllocationName="SCADAdata.Power_day[232]">MAIN.SCADAdata.Power_day[232]</AdsSymbol>
+					<AdsSymbol ID="233" Type="REAL" IGroup="16448" IOffset="13388340" BitSize="32" AllocationName="SCADAdata.Power_day[233]">MAIN.SCADAdata.Power_day[233]</AdsSymbol>
+					<AdsSymbol ID="234" Type="REAL" IGroup="16448" IOffset="13388344" BitSize="32" AllocationName="SCADAdata.Power_day[234]">MAIN.SCADAdata.Power_day[234]</AdsSymbol>
+					<AdsSymbol ID="235" Type="REAL" IGroup="16448" IOffset="13388348" BitSize="32" AllocationName="SCADAdata.Power_day[235]">MAIN.SCADAdata.Power_day[235]</AdsSymbol>
+					<AdsSymbol ID="236" Type="REAL" IGroup="16448" IOffset="13388352" BitSize="32" AllocationName="SCADAdata.Power_day[236]">MAIN.SCADAdata.Power_day[236]</AdsSymbol>
+					<AdsSymbol ID="237" Type="REAL" IGroup="16448" IOffset="13388356" BitSize="32" AllocationName="SCADAdata.Power_day[237]">MAIN.SCADAdata.Power_day[237]</AdsSymbol>
+					<AdsSymbol ID="238" Type="REAL" IGroup="16448" IOffset="13388360" BitSize="32" AllocationName="SCADAdata.Power_day[238]">MAIN.SCADAdata.Power_day[238]</AdsSymbol>
+					<AdsSymbol ID="239" Type="REAL" IGroup="16448" IOffset="13388364" BitSize="32" AllocationName="SCADAdata.Power_day[239]">MAIN.SCADAdata.Power_day[239]</AdsSymbol>
+					<AdsSymbol ID="240" Type="REAL" IGroup="16448" IOffset="13388368" BitSize="32" AllocationName="SCADAdata.Power_day[240]">MAIN.SCADAdata.Power_day[240]</AdsSymbol>
+					<AdsSymbol ID="241" Type="REAL" IGroup="16448" IOffset="13388372" BitSize="32" AllocationName="SCADAdata.Power_day[241]">MAIN.SCADAdata.Power_day[241]</AdsSymbol>
+					<AdsSymbol ID="242" Type="REAL" IGroup="16448" IOffset="13388376" BitSize="32" AllocationName="SCADAdata.Power_day[242]">MAIN.SCADAdata.Power_day[242]</AdsSymbol>
+					<AdsSymbol ID="243" Type="REAL" IGroup="16448" IOffset="13388380" BitSize="32" AllocationName="SCADAdata.Power_day[243]">MAIN.SCADAdata.Power_day[243]</AdsSymbol>
+					<AdsSymbol ID="244" Type="REAL" IGroup="16448" IOffset="13388384" BitSize="32" AllocationName="SCADAdata.Power_day[244]">MAIN.SCADAdata.Power_day[244]</AdsSymbol>
+					<AdsSymbol ID="245" Type="REAL" IGroup="16448" IOffset="13388388" BitSize="32" AllocationName="SCADAdata.Power_day[245]">MAIN.SCADAdata.Power_day[245]</AdsSymbol>
+					<AdsSymbol ID="246" Type="REAL" IGroup="16448" IOffset="13388392" BitSize="32" AllocationName="SCADAdata.Power_day[246]">MAIN.SCADAdata.Power_day[246]</AdsSymbol>
+					<AdsSymbol ID="247" Type="REAL" IGroup="16448" IOffset="13388396" BitSize="32" AllocationName="SCADAdata.Power_day[247]">MAIN.SCADAdata.Power_day[247]</AdsSymbol>
+					<AdsSymbol ID="248" Type="REAL" IGroup="16448" IOffset="13388400" BitSize="32" AllocationName="SCADAdata.Power_day[248]">MAIN.SCADAdata.Power_day[248]</AdsSymbol>
+					<AdsSymbol ID="249" Type="REAL" IGroup="16448" IOffset="13388404" BitSize="32" AllocationName="SCADAdata.Power_day[249]">MAIN.SCADAdata.Power_day[249]</AdsSymbol>
+					<AdsSymbol ID="250" Type="REAL" IGroup="16448" IOffset="13388408" BitSize="32" AllocationName="SCADAdata.Power_day[250]">MAIN.SCADAdata.Power_day[250]</AdsSymbol>
+					<AdsSymbol ID="251" Type="REAL" IGroup="16448" IOffset="13388412" BitSize="32" AllocationName="SCADAdata.Power_day[251]">MAIN.SCADAdata.Power_day[251]</AdsSymbol>
+					<AdsSymbol ID="252" Type="REAL" IGroup="16448" IOffset="13388416" BitSize="32" AllocationName="SCADAdata.Power_day[252]">MAIN.SCADAdata.Power_day[252]</AdsSymbol>
+					<AdsSymbol ID="253" Type="REAL" IGroup="16448" IOffset="13388420" BitSize="32" AllocationName="SCADAdata.Power_day[253]">MAIN.SCADAdata.Power_day[253]</AdsSymbol>
+					<AdsSymbol ID="254" Type="REAL" IGroup="16448" IOffset="13388424" BitSize="32" AllocationName="SCADAdata.Power_day[254]">MAIN.SCADAdata.Power_day[254]</AdsSymbol>
+					<AdsSymbol ID="255" Type="REAL" IGroup="16448" IOffset="13388428" BitSize="32" AllocationName="SCADAdata.Power_day[255]">MAIN.SCADAdata.Power_day[255]</AdsSymbol>
+					<AdsSymbol ID="256" Type="REAL" IGroup="16448" IOffset="13388432" BitSize="32" AllocationName="SCADAdata.Power_day[256]">MAIN.SCADAdata.Power_day[256]</AdsSymbol>
+					<AdsSymbol ID="257" Type="REAL" IGroup="16448" IOffset="13388436" BitSize="32" AllocationName="SCADAdata.Power_day[257]">MAIN.SCADAdata.Power_day[257]</AdsSymbol>
+					<AdsSymbol ID="258" Type="REAL" IGroup="16448" IOffset="13388440" BitSize="32" AllocationName="SCADAdata.Power_day[258]">MAIN.SCADAdata.Power_day[258]</AdsSymbol>
+					<AdsSymbol ID="259" Type="REAL" IGroup="16448" IOffset="13388444" BitSize="32" AllocationName="SCADAdata.Power_day[259]">MAIN.SCADAdata.Power_day[259]</AdsSymbol>
+					<AdsSymbol ID="260" Type="REAL" IGroup="16448" IOffset="13388448" BitSize="32" AllocationName="SCADAdata.Power_day[260]">MAIN.SCADAdata.Power_day[260]</AdsSymbol>
+					<AdsSymbol ID="261" Type="REAL" IGroup="16448" IOffset="13388452" BitSize="32" AllocationName="SCADAdata.Power_day[261]">MAIN.SCADAdata.Power_day[261]</AdsSymbol>
+					<AdsSymbol ID="262" Type="REAL" IGroup="16448" IOffset="13388456" BitSize="32" AllocationName="SCADAdata.Power_day[262]">MAIN.SCADAdata.Power_day[262]</AdsSymbol>
+					<AdsSymbol ID="263" Type="REAL" IGroup="16448" IOffset="13388460" BitSize="32" AllocationName="SCADAdata.Power_day[263]">MAIN.SCADAdata.Power_day[263]</AdsSymbol>
+					<AdsSymbol ID="264" Type="REAL" IGroup="16448" IOffset="13388464" BitSize="32" AllocationName="SCADAdata.Power_day[264]">MAIN.SCADAdata.Power_day[264]</AdsSymbol>
+					<AdsSymbol ID="265" Type="REAL" IGroup="16448" IOffset="13388468" BitSize="32" AllocationName="SCADAdata.Power_day[265]">MAIN.SCADAdata.Power_day[265]</AdsSymbol>
+					<AdsSymbol ID="266" Type="REAL" IGroup="16448" IOffset="13388472" BitSize="32" AllocationName="SCADAdata.Power_day[266]">MAIN.SCADAdata.Power_day[266]</AdsSymbol>
+					<AdsSymbol ID="267" Type="REAL" IGroup="16448" IOffset="13388476" BitSize="32" AllocationName="SCADAdata.Power_day[267]">MAIN.SCADAdata.Power_day[267]</AdsSymbol>
+					<AdsSymbol ID="268" Type="REAL" IGroup="16448" IOffset="13388480" BitSize="32" AllocationName="SCADAdata.Power_day[268]">MAIN.SCADAdata.Power_day[268]</AdsSymbol>
+					<AdsSymbol ID="269" Type="REAL" IGroup="16448" IOffset="13388484" BitSize="32" AllocationName="SCADAdata.Power_day[269]">MAIN.SCADAdata.Power_day[269]</AdsSymbol>
+					<AdsSymbol ID="270" Type="REAL" IGroup="16448" IOffset="13388488" BitSize="32" AllocationName="SCADAdata.Power_day[270]">MAIN.SCADAdata.Power_day[270]</AdsSymbol>
+					<AdsSymbol ID="271" Type="REAL" IGroup="16448" IOffset="13388492" BitSize="32" AllocationName="SCADAdata.Power_day[271]">MAIN.SCADAdata.Power_day[271]</AdsSymbol>
+					<AdsSymbol ID="272" Type="REAL" IGroup="16448" IOffset="13388496" BitSize="32" AllocationName="SCADAdata.Power_day[272]">MAIN.SCADAdata.Power_day[272]</AdsSymbol>
+					<AdsSymbol ID="273" Type="REAL" IGroup="16448" IOffset="13388500" BitSize="32" AllocationName="SCADAdata.Power_day[273]">MAIN.SCADAdata.Power_day[273]</AdsSymbol>
+					<AdsSymbol ID="274" Type="REAL" IGroup="16448" IOffset="13388504" BitSize="32" AllocationName="SCADAdata.Power_day[274]">MAIN.SCADAdata.Power_day[274]</AdsSymbol>
+					<AdsSymbol ID="275" Type="REAL" IGroup="16448" IOffset="13388508" BitSize="32" AllocationName="SCADAdata.Power_day[275]">MAIN.SCADAdata.Power_day[275]</AdsSymbol>
+					<AdsSymbol ID="276" Type="REAL" IGroup="16448" IOffset="13388512" BitSize="32" AllocationName="SCADAdata.Power_day[276]">MAIN.SCADAdata.Power_day[276]</AdsSymbol>
+					<AdsSymbol ID="277" Type="REAL" IGroup="16448" IOffset="13388516" BitSize="32" AllocationName="SCADAdata.Power_day[277]">MAIN.SCADAdata.Power_day[277]</AdsSymbol>
+					<AdsSymbol ID="278" Type="REAL" IGroup="16448" IOffset="13388520" BitSize="32" AllocationName="SCADAdata.Power_day[278]">MAIN.SCADAdata.Power_day[278]</AdsSymbol>
+					<AdsSymbol ID="279" Type="REAL" IGroup="16448" IOffset="13388524" BitSize="32" AllocationName="SCADAdata.Power_day[279]">MAIN.SCADAdata.Power_day[279]</AdsSymbol>
+					<AdsSymbol ID="280" Type="REAL" IGroup="16448" IOffset="13388528" BitSize="32" AllocationName="SCADAdata.Power_day[280]">MAIN.SCADAdata.Power_day[280]</AdsSymbol>
+					<AdsSymbol ID="281" Type="REAL" IGroup="16448" IOffset="13388532" BitSize="32" AllocationName="SCADAdata.Power_day[281]">MAIN.SCADAdata.Power_day[281]</AdsSymbol>
+					<AdsSymbol ID="282" Type="REAL" IGroup="16448" IOffset="13388536" BitSize="32" AllocationName="SCADAdata.Power_day[282]">MAIN.SCADAdata.Power_day[282]</AdsSymbol>
+					<AdsSymbol ID="283" Type="REAL" IGroup="16448" IOffset="13388540" BitSize="32" AllocationName="SCADAdata.Power_day[283]">MAIN.SCADAdata.Power_day[283]</AdsSymbol>
+					<AdsSymbol ID="284" Type="REAL" IGroup="16448" IOffset="13388544" BitSize="32" AllocationName="SCADAdata.Power_day[284]">MAIN.SCADAdata.Power_day[284]</AdsSymbol>
+					<AdsSymbol ID="285" Type="REAL" IGroup="16448" IOffset="13388548" BitSize="32" AllocationName="SCADAdata.Power_day[285]">MAIN.SCADAdata.Power_day[285]</AdsSymbol>
+					<AdsSymbol ID="286" Type="REAL" IGroup="16448" IOffset="13388552" BitSize="32" AllocationName="SCADAdata.Power_day[286]">MAIN.SCADAdata.Power_day[286]</AdsSymbol>
+					<AdsSymbol ID="287" Type="REAL" IGroup="16448" IOffset="13388556" BitSize="32" AllocationName="SCADAdata.Power_day[287]">MAIN.SCADAdata.Power_day[287]</AdsSymbol>
+					<AdsSymbol ID="288" Type="REAL" IGroup="16448" IOffset="13388560" BitSize="32" AllocationName="SCADAdata.Power_day[288]">MAIN.SCADAdata.Power_day[288]</AdsSymbol>
+					<AdsSymbol ID="289" Type="REAL" IGroup="16448" IOffset="13388564" BitSize="32" AllocationName="SCADAdata.Power_day[289]">MAIN.SCADAdata.Power_day[289]</AdsSymbol>
+					<AdsSymbol ID="290" Type="REAL" IGroup="16448" IOffset="13388568" BitSize="32" AllocationName="SCADAdata.Power_day[290]">MAIN.SCADAdata.Power_day[290]</AdsSymbol>
+					<AdsSymbol ID="291" Type="REAL" IGroup="16448" IOffset="13388572" BitSize="32" AllocationName="SCADAdata.Power_day[291]">MAIN.SCADAdata.Power_day[291]</AdsSymbol>
+					<AdsSymbol ID="292" Type="REAL" IGroup="16448" IOffset="13388576" BitSize="32" AllocationName="SCADAdata.Power_day[292]">MAIN.SCADAdata.Power_day[292]</AdsSymbol>
+					<AdsSymbol ID="293" Type="REAL" IGroup="16448" IOffset="13388580" BitSize="32" AllocationName="SCADAdata.Power_day[293]">MAIN.SCADAdata.Power_day[293]</AdsSymbol>
+					<AdsSymbol ID="294" Type="REAL" IGroup="16448" IOffset="13388584" BitSize="32" AllocationName="SCADAdata.Power_day[294]">MAIN.SCADAdata.Power_day[294]</AdsSymbol>
+					<AdsSymbol ID="295" Type="REAL" IGroup="16448" IOffset="13388588" BitSize="32" AllocationName="SCADAdata.Power_day[295]">MAIN.SCADAdata.Power_day[295]</AdsSymbol>
+					<AdsSymbol ID="296" Type="REAL" IGroup="16448" IOffset="13388592" BitSize="32" AllocationName="SCADAdata.Power_day[296]">MAIN.SCADAdata.Power_day[296]</AdsSymbol>
+					<AdsSymbol ID="297" Type="REAL" IGroup="16448" IOffset="13388596" BitSize="32" AllocationName="SCADAdata.Power_day[297]">MAIN.SCADAdata.Power_day[297]</AdsSymbol>
+					<AdsSymbol ID="298" Type="REAL" IGroup="16448" IOffset="13388600" BitSize="32" AllocationName="SCADAdata.Power_day[298]">MAIN.SCADAdata.Power_day[298]</AdsSymbol>
+					<AdsSymbol ID="299" Type="REAL" IGroup="16448" IOffset="13388604" BitSize="32" AllocationName="SCADAdata.Power_day[299]">MAIN.SCADAdata.Power_day[299]</AdsSymbol>
+					<AdsSymbol ID="300" Type="REAL" IGroup="16448" IOffset="13388608" BitSize="32" AllocationName="SCADAdata.Power_day[300]">MAIN.SCADAdata.Power_day[300]</AdsSymbol>
+					<AdsSymbol ID="301" Type="REAL" IGroup="16448" IOffset="13388612" BitSize="32" AllocationName="SCADAdata.Power_day[301]">MAIN.SCADAdata.Power_day[301]</AdsSymbol>
+					<AdsSymbol ID="302" Type="REAL" IGroup="16448" IOffset="13388616" BitSize="32" AllocationName="SCADAdata.Power_day[302]">MAIN.SCADAdata.Power_day[302]</AdsSymbol>
+					<AdsSymbol ID="303" Type="REAL" IGroup="16448" IOffset="13388620" BitSize="32" AllocationName="SCADAdata.Power_day[303]">MAIN.SCADAdata.Power_day[303]</AdsSymbol>
+					<AdsSymbol ID="304" Type="REAL" IGroup="16448" IOffset="13388624" BitSize="32" AllocationName="SCADAdata.Power_day[304]">MAIN.SCADAdata.Power_day[304]</AdsSymbol>
+					<AdsSymbol ID="305" Type="REAL" IGroup="16448" IOffset="13388628" BitSize="32" AllocationName="SCADAdata.Power_day[305]">MAIN.SCADAdata.Power_day[305]</AdsSymbol>
+					<AdsSymbol ID="306" Type="REAL" IGroup="16448" IOffset="13388632" BitSize="32" AllocationName="SCADAdata.Power_day[306]">MAIN.SCADAdata.Power_day[306]</AdsSymbol>
+					<AdsSymbol ID="307" Type="REAL" IGroup="16448" IOffset="13388636" BitSize="32" AllocationName="SCADAdata.Power_day[307]">MAIN.SCADAdata.Power_day[307]</AdsSymbol>
+					<AdsSymbol ID="308" Type="REAL" IGroup="16448" IOffset="13388640" BitSize="32" AllocationName="SCADAdata.Power_day[308]">MAIN.SCADAdata.Power_day[308]</AdsSymbol>
+					<AdsSymbol ID="309" Type="REAL" IGroup="16448" IOffset="13388644" BitSize="32" AllocationName="SCADAdata.Power_day[309]">MAIN.SCADAdata.Power_day[309]</AdsSymbol>
+					<AdsSymbol ID="310" Type="REAL" IGroup="16448" IOffset="13388648" BitSize="32" AllocationName="SCADAdata.Power_day[310]">MAIN.SCADAdata.Power_day[310]</AdsSymbol>
+					<AdsSymbol ID="311" Type="REAL" IGroup="16448" IOffset="13388652" BitSize="32" AllocationName="SCADAdata.Power_day[311]">MAIN.SCADAdata.Power_day[311]</AdsSymbol>
+					<AdsSymbol ID="312" Type="REAL" IGroup="16448" IOffset="13388656" BitSize="32" AllocationName="SCADAdata.Power_day[312]">MAIN.SCADAdata.Power_day[312]</AdsSymbol>
+					<AdsSymbol ID="313" Type="REAL" IGroup="16448" IOffset="13388660" BitSize="32" AllocationName="SCADAdata.Power_day[313]">MAIN.SCADAdata.Power_day[313]</AdsSymbol>
+					<AdsSymbol ID="314" Type="REAL" IGroup="16448" IOffset="13388664" BitSize="32" AllocationName="SCADAdata.Power_day[314]">MAIN.SCADAdata.Power_day[314]</AdsSymbol>
+					<AdsSymbol ID="315" Type="REAL" IGroup="16448" IOffset="13388668" BitSize="32" AllocationName="SCADAdata.Power_day[315]">MAIN.SCADAdata.Power_day[315]</AdsSymbol>
+					<AdsSymbol ID="316" Type="REAL" IGroup="16448" IOffset="13388672" BitSize="32" AllocationName="SCADAdata.Power_day[316]">MAIN.SCADAdata.Power_day[316]</AdsSymbol>
+					<AdsSymbol ID="317" Type="REAL" IGroup="16448" IOffset="13388676" BitSize="32" AllocationName="SCADAdata.Power_day[317]">MAIN.SCADAdata.Power_day[317]</AdsSymbol>
+					<AdsSymbol ID="318" Type="REAL" IGroup="16448" IOffset="13388680" BitSize="32" AllocationName="SCADAdata.Power_day[318]">MAIN.SCADAdata.Power_day[318]</AdsSymbol>
+					<AdsSymbol ID="319" Type="REAL" IGroup="16448" IOffset="13388684" BitSize="32" AllocationName="SCADAdata.Power_day[319]">MAIN.SCADAdata.Power_day[319]</AdsSymbol>
+					<AdsSymbol ID="320" Type="REAL" IGroup="16448" IOffset="13388688" BitSize="32" AllocationName="SCADAdata.Power_day[320]">MAIN.SCADAdata.Power_day[320]</AdsSymbol>
+					<AdsSymbol ID="321" Type="REAL" IGroup="16448" IOffset="13388692" BitSize="32" AllocationName="SCADAdata.Power_day[321]">MAIN.SCADAdata.Power_day[321]</AdsSymbol>
+					<AdsSymbol ID="322" Type="REAL" IGroup="16448" IOffset="13388696" BitSize="32" AllocationName="SCADAdata.Power_day[322]">MAIN.SCADAdata.Power_day[322]</AdsSymbol>
+					<AdsSymbol ID="323" Type="REAL" IGroup="16448" IOffset="13388700" BitSize="32" AllocationName="SCADAdata.Power_day[323]">MAIN.SCADAdata.Power_day[323]</AdsSymbol>
+					<AdsSymbol ID="324" Type="REAL" IGroup="16448" IOffset="13388704" BitSize="32" AllocationName="SCADAdata.Power_day[324]">MAIN.SCADAdata.Power_day[324]</AdsSymbol>
+					<AdsSymbol ID="325" Type="REAL" IGroup="16448" IOffset="13388708" BitSize="32" AllocationName="SCADAdata.Power_day[325]">MAIN.SCADAdata.Power_day[325]</AdsSymbol>
+					<AdsSymbol ID="326" Type="REAL" IGroup="16448" IOffset="13388712" BitSize="32" AllocationName="SCADAdata.Power_day[326]">MAIN.SCADAdata.Power_day[326]</AdsSymbol>
+					<AdsSymbol ID="327" Type="REAL" IGroup="16448" IOffset="13388716" BitSize="32" AllocationName="SCADAdata.Power_day[327]">MAIN.SCADAdata.Power_day[327]</AdsSymbol>
+					<AdsSymbol ID="328" Type="REAL" IGroup="16448" IOffset="13388720" BitSize="32" AllocationName="SCADAdata.Power_day[328]">MAIN.SCADAdata.Power_day[328]</AdsSymbol>
+					<AdsSymbol ID="329" Type="REAL" IGroup="16448" IOffset="13388724" BitSize="32" AllocationName="SCADAdata.Power_day[329]">MAIN.SCADAdata.Power_day[329]</AdsSymbol>
+					<AdsSymbol ID="330" Type="REAL" IGroup="16448" IOffset="13388728" BitSize="32" AllocationName="SCADAdata.Power_day[330]">MAIN.SCADAdata.Power_day[330]</AdsSymbol>
+					<AdsSymbol ID="331" Type="REAL" IGroup="16448" IOffset="13388732" BitSize="32" AllocationName="SCADAdata.Power_day[331]">MAIN.SCADAdata.Power_day[331]</AdsSymbol>
+					<AdsSymbol ID="332" Type="REAL" IGroup="16448" IOffset="13388736" BitSize="32" AllocationName="SCADAdata.Power_day[332]">MAIN.SCADAdata.Power_day[332]</AdsSymbol>
+					<AdsSymbol ID="333" Type="REAL" IGroup="16448" IOffset="13388740" BitSize="32" AllocationName="SCADAdata.Power_day[333]">MAIN.SCADAdata.Power_day[333]</AdsSymbol>
+					<AdsSymbol ID="334" Type="REAL" IGroup="16448" IOffset="13388744" BitSize="32" AllocationName="SCADAdata.Power_day[334]">MAIN.SCADAdata.Power_day[334]</AdsSymbol>
+					<AdsSymbol ID="335" Type="REAL" IGroup="16448" IOffset="13388748" BitSize="32" AllocationName="SCADAdata.Power_day[335]">MAIN.SCADAdata.Power_day[335]</AdsSymbol>
+					<AdsSymbol ID="336" Type="REAL" IGroup="16448" IOffset="13388752" BitSize="32" AllocationName="SCADAdata.Power_day[336]">MAIN.SCADAdata.Power_day[336]</AdsSymbol>
+					<AdsSymbol ID="337" Type="REAL" IGroup="16448" IOffset="13388756" BitSize="32" AllocationName="SCADAdata.Power_day[337]">MAIN.SCADAdata.Power_day[337]</AdsSymbol>
+					<AdsSymbol ID="338" Type="REAL" IGroup="16448" IOffset="13388760" BitSize="32" AllocationName="SCADAdata.Power_day[338]">MAIN.SCADAdata.Power_day[338]</AdsSymbol>
+					<AdsSymbol ID="339" Type="REAL" IGroup="16448" IOffset="13388764" BitSize="32" AllocationName="SCADAdata.Power_day[339]">MAIN.SCADAdata.Power_day[339]</AdsSymbol>
+					<AdsSymbol ID="340" Type="REAL" IGroup="16448" IOffset="13388768" BitSize="32" AllocationName="SCADAdata.Power_day[340]">MAIN.SCADAdata.Power_day[340]</AdsSymbol>
+					<AdsSymbol ID="341" Type="REAL" IGroup="16448" IOffset="13388772" BitSize="32" AllocationName="SCADAdata.Power_day[341]">MAIN.SCADAdata.Power_day[341]</AdsSymbol>
+					<AdsSymbol ID="342" Type="REAL" IGroup="16448" IOffset="13388776" BitSize="32" AllocationName="SCADAdata.Power_day[342]">MAIN.SCADAdata.Power_day[342]</AdsSymbol>
+					<AdsSymbol ID="343" Type="REAL" IGroup="16448" IOffset="13388780" BitSize="32" AllocationName="SCADAdata.Power_day[343]">MAIN.SCADAdata.Power_day[343]</AdsSymbol>
+					<AdsSymbol ID="344" Type="REAL" IGroup="16448" IOffset="13388784" BitSize="32" AllocationName="SCADAdata.Power_day[344]">MAIN.SCADAdata.Power_day[344]</AdsSymbol>
+					<AdsSymbol ID="345" Type="REAL" IGroup="16448" IOffset="13388788" BitSize="32" AllocationName="SCADAdata.Power_day[345]">MAIN.SCADAdata.Power_day[345]</AdsSymbol>
+					<AdsSymbol ID="346" Type="REAL" IGroup="16448" IOffset="13388792" BitSize="32" AllocationName="SCADAdata.Power_day[346]">MAIN.SCADAdata.Power_day[346]</AdsSymbol>
+					<AdsSymbol ID="347" Type="REAL" IGroup="16448" IOffset="13388796" BitSize="32" AllocationName="SCADAdata.Power_day[347]">MAIN.SCADAdata.Power_day[347]</AdsSymbol>
+					<AdsSymbol ID="348" Type="REAL" IGroup="16448" IOffset="13388800" BitSize="32" AllocationName="SCADAdata.Power_day[348]">MAIN.SCADAdata.Power_day[348]</AdsSymbol>
+					<AdsSymbol ID="349" Type="REAL" IGroup="16448" IOffset="13388804" BitSize="32" AllocationName="SCADAdata.Power_day[349]">MAIN.SCADAdata.Power_day[349]</AdsSymbol>
+					<AdsSymbol ID="350" Type="REAL" IGroup="16448" IOffset="13388808" BitSize="32" AllocationName="SCADAdata.Power_day[350]">MAIN.SCADAdata.Power_day[350]</AdsSymbol>
+					<AdsSymbol ID="351" Type="REAL" IGroup="16448" IOffset="13388812" BitSize="32" AllocationName="SCADAdata.Power_day[351]">MAIN.SCADAdata.Power_day[351]</AdsSymbol>
+					<AdsSymbol ID="352" Type="REAL" IGroup="16448" IOffset="13388816" BitSize="32" AllocationName="SCADAdata.Power_day[352]">MAIN.SCADAdata.Power_day[352]</AdsSymbol>
+					<AdsSymbol ID="353" Type="REAL" IGroup="16448" IOffset="13388820" BitSize="32" AllocationName="SCADAdata.Power_day[353]">MAIN.SCADAdata.Power_day[353]</AdsSymbol>
+					<AdsSymbol ID="354" Type="REAL" IGroup="16448" IOffset="13388824" BitSize="32" AllocationName="SCADAdata.Power_day[354]">MAIN.SCADAdata.Power_day[354]</AdsSymbol>
+					<AdsSymbol ID="355" Type="REAL" IGroup="16448" IOffset="13388828" BitSize="32" AllocationName="SCADAdata.Power_day[355]">MAIN.SCADAdata.Power_day[355]</AdsSymbol>
+					<AdsSymbol ID="356" Type="REAL" IGroup="16448" IOffset="13388832" BitSize="32" AllocationName="SCADAdata.Power_day[356]">MAIN.SCADAdata.Power_day[356]</AdsSymbol>
+					<AdsSymbol ID="357" Type="REAL" IGroup="16448" IOffset="13388836" BitSize="32" AllocationName="SCADAdata.Power_day[357]">MAIN.SCADAdata.Power_day[357]</AdsSymbol>
+					<AdsSymbol ID="358" Type="REAL" IGroup="16448" IOffset="13388840" BitSize="32" AllocationName="SCADAdata.Power_day[358]">MAIN.SCADAdata.Power_day[358]</AdsSymbol>
+					<AdsSymbol ID="359" Type="REAL" IGroup="16448" IOffset="13388844" BitSize="32" AllocationName="SCADAdata.Power_day[359]">MAIN.SCADAdata.Power_day[359]</AdsSymbol>
+					<AdsSymbol ID="360" Type="REAL" IGroup="16448" IOffset="13388848" BitSize="32" AllocationName="SCADAdata.Power_day[360]">MAIN.SCADAdata.Power_day[360]</AdsSymbol>
+					<AdsSymbol ID="361" Type="REAL" IGroup="16448" IOffset="13388852" BitSize="32" AllocationName="SCADAdata.Power_day[361]">MAIN.SCADAdata.Power_day[361]</AdsSymbol>
+					<AdsSymbol ID="362" Type="REAL" IGroup="16448" IOffset="13388856" BitSize="32" AllocationName="SCADAdata.Power_day[362]">MAIN.SCADAdata.Power_day[362]</AdsSymbol>
+					<AdsSymbol ID="363" Type="REAL" IGroup="16448" IOffset="13388860" BitSize="32" AllocationName="SCADAdata.Power_day[363]">MAIN.SCADAdata.Power_day[363]</AdsSymbol>
+					<AdsSymbol ID="364" Type="REAL" IGroup="16448" IOffset="13388864" BitSize="32" AllocationName="SCADAdata.Power_day[364]">MAIN.SCADAdata.Power_day[364]</AdsSymbol>
+					<AdsSymbol ID="365" Type="REAL" IGroup="16448" IOffset="13388868" BitSize="32" AllocationName="SCADAdata.Power_day[365]">MAIN.SCADAdata.Power_day[365]</AdsSymbol>
+				</Symbols>
+			</AutoLogGroup>
+		</AutoLogGroups>
+	</BaseConfig>
+</Configuration>
